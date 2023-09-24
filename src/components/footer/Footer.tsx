@@ -10,7 +10,7 @@ import { useMemo } from 'react';
 
 const FooterWrapper = styled.footer`
   background-color: #282d33;
-  padding: 20px 0;
+  padding: 20px 40px;
   color: white;
 `;
 
@@ -40,13 +40,14 @@ const LogoWrapper = styled.div`
 
 const ContactInfo = styled.div`
   font-size: 14px;
-  max-width: 230px;
   font-weight: 400;
+  width: 270px;
 
   li {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    max-width: 230px;
 
     &:last-of-type {
       margin-bottom: 0;
