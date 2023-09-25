@@ -5,6 +5,7 @@ import ContentLayout from '../layout/ContentLayout';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import Button from '../buttons/Button';
+import { TabletContainer } from '@/theme/breakpoints';
 
 const PageWrapper = styled(ContentLayout)`
   height: 95vh;
@@ -70,7 +71,9 @@ const HeroSection = () => {
       </HeroBackground>
       <BannerWrapper>
         <ContainerLayout>
-          <MainBanner />
+          <TabletContainer>
+            <MainBanner />
+          </TabletContainer>
         </ContainerLayout>
       </BannerWrapper>
     </PageWrapper>

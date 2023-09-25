@@ -10,10 +10,14 @@ import { Instagram } from '../icons/Instagram';
 import ContainerLayout from '../layout/ContainerLayout';
 import { SectionHeading } from '../typography/typography';
 import Button from '../buttons/Button';
+import { device } from '@/theme/breakpoints';
 
 const ContactWrapper = styled.div`
   margin-bottom: 80px;
   position: relative;
+  @media ${device.sm} {
+    margin-bottom: 20px;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -144,7 +148,7 @@ const ContactForm = () => {
               name="entry.839337160"
               required
             />
-            <ButtonWrapper className="contacts_form_button">
+            <ButtonWrapper>
               <Button text="nosutit" />
             </ButtonWrapper>
             <YellowBlock>

@@ -1,7 +1,7 @@
 import StatisticBanner from '@/components/banners/StatisticBanner';
 import ContactForm from '@/components/contactForm/ContactForm';
 import HeroSection from '@/components/sections/HeroSection';
-import WhyUsSection from '@/components/sections/WhyUsSection';
+import ServicesSection from '@/components/sections/ServicesSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function ServicesPage() {
     <div>
       <HeroSection />
       <StatisticBanner />
-      <WhyUsSection />
+      <ServicesSection />
       <ContactForm />
     </div>
   );
