@@ -1,6 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
+import { device } from '@/theme/breakpoints';
 
 const StyledButton = styled.button`
   background-color: #ffc91e;
@@ -15,6 +16,9 @@ const StyledButton = styled.button`
 
   &:hover {
     transform: scale(1.05);
+  }
+  @media ${device.sm} {
+    padding: 14px 20px;
   }
 `;
 

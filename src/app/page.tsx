@@ -5,7 +5,7 @@ import ContactForm from "@/components/contactForm/ContactForm";
 
 export default function Home() {
   return <div>
-    <HeroSection/>
+    <HeroSection isBannerVisible/>
     <StatisticBanner/>
     <WhyUsSection/>
     <ContactForm/>

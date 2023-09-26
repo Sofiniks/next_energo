@@ -5,12 +5,20 @@ import ContentLayout from '../layout/ContentLayout';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import Button from '../buttons/Button';
-import { TabletContainer } from '@/theme/breakpoints';
+import { device } from '@/theme/breakpoints';
+
+interface HeroSectionProps {
+  isBannerVisible?: boolean;
+}
 
 const PageWrapper = styled(ContentLayout)`
   height: 95vh;
   position: relative;
   margin-bottom: 230px;
+
+  @media ${device.sm} {
+    height: 90vh;
+  }
 `;
 
 const HeroBackground = styled.div<{ $url: string }>`
@@ -32,16 +40,45 @@ const HeroText = styled.div`
     margin-bottom: 23px;
     padding-left: 32px;
     border-left: 10px solid #ffc91e;
+
+    @media ${device.md} {
+      font-size: 40px;
+      padding-left: 18px;
+      border-left: 8px solid #ffc91e;
+    }
+
+    @media ${device.sm} {
+      font-size: 25px;
+      padding-left: 10px;
+      border-left: 5px solid #ffc91e;
+    }
   }
   h3 {
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 20px;
     padding-left: 50px;
+
+    @media ${device.md} {
+      padding-left: 33px;
+    }
+
+    @media ${device.sm} {
+      padding-left: 20px;
+      font-size: 16px;
+    }
   }
 `;
 const ButtonWrapper = styled.div`
   padding-left: 50px;
+
+  @media ${device.md} {
+    padding-left: 33px;
+  }
+
+  @media ${device.sm} {
+    padding-left: 20px;
+  }
 `;
 const BannerWrapper = styled.div`
   position: absolute;
@@ -50,8 +87,16 @@ const BannerWrapper = styled.div`
   transform: translate(-50%, 50%);
   z-index: 2;
   width: 100%;
+
+  @media ${device.md} {
+    left: 0;
+    right: unset;
+    width: 100%;
+    overflow-x: scroll;
+    transform: translateY(100%);
+  }
 `;
-const HeroSection = () => {
+const HeroSection = ({ isBannerVisible }: HeroSectionProps) => {
   return (
     <PageWrapper>
       <HeroBackground $url="/images/mainBanner.jpg">
@@ -70,11 +115,7 @@ const HeroSection = () => {
         </ContainerLayout>
       </HeroBackground>
       <BannerWrapper>
-        <ContainerLayout>
-          <TabletContainer>
-            <MainBanner />
-          </TabletContainer>
-        </ContainerLayout>
+        <ContainerLayout>{isBannerVisible && <MainBanner />}</ContainerLayout>
       </BannerWrapper>
     </PageWrapper>
   );

@@ -6,7 +6,8 @@ import { Location } from '../icons/Location';
 import { Letter } from '../icons/Letter';
 import { Phone } from '../icons/Phone';
 import ContainerLayout from '../layout/ContainerLayout';
-import { useMemo } from 'react';
+import { device } from '@/theme/breakpoints';
+import { TabletContainer } from '@/theme/breakpoints';
 
 const FooterWrapper = styled.footer`
   background-color: #282d33;
@@ -18,6 +19,11 @@ const FooterTop = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 18px;
+  @media ${device.md} {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
 `;
 
 const FooterBottom = styled.div`
@@ -28,6 +34,9 @@ const FooterBottom = styled.div`
 const LogoWrapper = styled.div`
   transition: all 0.2s;
 
+  @media ${device.md} {
+    margin-bottom: 30px;
+  }
   &:hover {
     transform: scale(1.05);
   }
@@ -74,37 +83,41 @@ const CredentialsLink = styled.div`
   }
 `;
 
-export default function Footer() {
-  const contactInfoList = useMemo(
-    () => (
-      <div>
-        <ul>
-          <li>
-            <SvgWrapper>
-              <Location />
-            </SvgWrapper>
-            <p>Ludzas iela 2, Latgales priekšpilsēta, Rīga, LV-1003</p>
-          </li>
-          <li>
-            <SvgWrapper>
-              <Letter />
-            </SvgWrapper>
-            <p>energoefektivitate@gmail.com</p>
-          </li>
-          <li>
-            <SvgWrapper>
-              <Phone />
-            </SvgWrapper>
-            <p>
-              <a href={`tel:${'+371-2777-3555'}`}>+371-2777-3555</a>
-            </p>
-          </li>
-        </ul>
-      </div>
-    ),
-    []
+const MobileHeading = styled.h4`
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+`;
+const ContactInfoList = () => {
+  return (
+    <div>
+      <ul>
+        <li>
+          <SvgWrapper>
+            <Location />
+          </SvgWrapper>
+          <p>Ludzas iela 2, Latgales priekšpilsēta, Rīga, LV-1003</p>
+        </li>
+        <li>
+          <SvgWrapper>
+            <Letter />
+          </SvgWrapper>
+          <p>energoefektivitate@gmail.com</p>
+        </li>
+        <li>
+          <SvgWrapper>
+            <Phone />
+          </SvgWrapper>
+          <p>
+            <a href={`tel:${'+371-2777-3555'}`}>+371-2777-3555</a>
+          </p>
+        </li>
+      </ul>
+    </div>
   );
+};
 
+export default function Footer() {
   return (
     <FooterWrapper>
       <ContainerLayout>
@@ -119,7 +132,13 @@ export default function Footer() {
               />
             </Link>
           </LogoWrapper>
-          <ContactInfo>{contactInfoList}</ContactInfo>
+          <ContactInfo>
+            <TabletContainer>
+              <MobileHeading>Kontakti</MobileHeading>
+            </TabletContainer>
+
+            <ContactInfoList />
+          </ContactInfo>
         </FooterTop>
         <FooterBottom>
           <CredentialsLink>

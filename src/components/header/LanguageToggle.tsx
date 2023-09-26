@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Russian } from '../icons/Russian';
 import { Latvian } from '../icons/Latvian';
 import English from '../icons/English';
+import { device } from '@/theme/breakpoints';
 
 const languagesList = [
   { key: 'ru', img: <Russian />, title: 'Russian' },
@@ -28,6 +29,15 @@ const LanguageToggleBox = styled.div`
     width: 30px;
     height: 20px;
     border-radius: 4px;
+  }
+  @media ${device.sm} {
+    width: 35px;
+    height: 35px;
+
+    img {
+      width: 23px;
+      height: 15px;
+    }
   }
 `;
 

@@ -4,7 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ContainerLayout from '../layout/ContainerLayout';
 import LanguageToggle from './LanguageToggle';
+import { TabletContainer } from '@/theme/breakpoints';
+import { DesktopContainer } from '@/theme/breakpoints';
 import { Contact } from '../icons/Contact';
+import { Burger } from '../icons/Burger';
+import { device } from '@/theme/breakpoints';
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -17,8 +21,12 @@ const HeaderWrapper = styled.header`
   left: 0;
   right: 0;
   z-index: 10;
+  @media ${device.sm} {
+    height: 60px;
+    padding: 0 20px;
+  }
 `;
-const HeaderContainer = styled.div`
+const HeaderDesktopContainer = styled(DesktopContainer)`
   display: flex;
   justify-content: space-between;
 `;
@@ -30,7 +38,7 @@ const HeaderRight = styled.div`
   display: flex;
   align-items: center;
 `;
-const Logo = styled.div`
+const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-right: 80px;
@@ -38,6 +46,9 @@ const Logo = styled.div`
   &:hover {
     transform: scale(1.05);
     transition: all 0.2s;
+  }
+  @media ${device.md} {
+    margin-right: 0;
   }
 `;
 const Navbar = styled.nav`
@@ -72,6 +83,13 @@ const Info = styled.div`
     font-weight: 600;
   }
 `;
+const HeaderMobile = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+`;
+const BurgerIconWrapper = styled.div``;
 
 const list = () => {
   return (
@@ -86,9 +104,9 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <ContainerLayout>
-        <HeaderContainer>
+        <HeaderDesktopContainer>
           <HeaderLeft>
-            <Logo>
+            <LogoWrapper>
               <Link href="/">
                 <Image
                   src="/images/energoLogo.png"
@@ -97,7 +115,7 @@ export default function Header() {
                   height={72}
                 />
               </Link>
-            </Logo>
+            </LogoWrapper>
             <Navbar>{list()}</Navbar>
           </HeaderLeft>
           <HeaderRight>
@@ -110,7 +128,26 @@ export default function Header() {
             </Info>
             <LanguageToggle />
           </HeaderRight>
-        </HeaderContainer>
+        </HeaderDesktopContainer>
+
+        <TabletContainer>
+          <HeaderMobile>
+            <BurgerIconWrapper>
+              <Burger />
+            </BurgerIconWrapper>
+            <LogoWrapper>
+              <Link href="/">
+                <Image
+                  src="/images/energoLogo.png"
+                  alt="logo"
+                  width={100}
+                  height={72}
+                />
+              </Link>
+            </LogoWrapper>
+            <LanguageToggle />
+          </HeaderMobile>
+        </TabletContainer>
       </ContainerLayout>
     </HeaderWrapper>
   );

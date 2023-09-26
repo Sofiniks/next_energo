@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import ContainerLayout from '../layout/ContainerLayout';
 import { SectionHeading } from '../typography/typography';
 import Image from 'next/image';
+import { DesktopContainer, TabletContainer } from '@/theme/breakpoints';
+import { device } from '@/theme/breakpoints';
 
 const data = [
   {
@@ -34,8 +36,13 @@ const SectionWrapper = styled.section`
 
 const AdvantagesList = styled.ul`
   display: flex;
-  &::-webkit-scrollbar {
-    display: none !important;
+  @media ${device.md} {
+    width: 100%;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
   }
 `;
 
@@ -114,42 +121,79 @@ const AdvantageItem = styled.li`
   }
 `;
 
+const BlockForTablets = styled.div`
+  background-color: #ffc91e;
+  width: 285px;
+  min-height: 200px;
+  padding: 20px;
+  margin-right: 20px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 14px;
+
+    @media ${device.sm} {
+      font-size: 12px;
+    }
+  }
+`;
+
 export default function WhyUsSection() {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
+
+  const advantagesListDesktop = (
+    <AdvantagesList>
+      {data.map((item, index) => (
+        <AdvantageItem
+          key={index}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(-1)}
+        >
+          <ImageWrapper>
+            <Image src={item.img} alt="advantage" height={400} width={275} />
+          </ImageWrapper>
+          {hoveredIndex === index ? (
+            <HoverBlock>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </HoverBlock>
+          ) : (
+            <BlockWithImage>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </BlockWithImage>
+          )}
+        </AdvantageItem>
+      ))}
+    </AdvantagesList>
+  );
+
+  const advantagesListTablet = (
+    <AdvantagesList>
+      {data.map((item, index) => (
+        <AdvantageItem key={index}>
+          <BlockForTablets>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </BlockForTablets>
+        </AdvantageItem>
+      ))}
+    </AdvantagesList>
+  );
 
   return (
     <SectionWrapper>
       <ContainerLayout>
         <SectionHeading text="Kapec mes?" />
-        <AdvantagesList>
-          {data.map((item, index) => (
-            <AdvantageItem
-              key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(-1)}
-            >
-              <ImageWrapper>
-                <Image
-                  src={item.img}
-                  alt="advantage"
-                  height={400}
-                  width={275}
-                />
-              </ImageWrapper>
-              {hoveredIndex === index ? (
-                <HoverBlock>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </HoverBlock>
-              ) : (
-                <BlockWithImage>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </BlockWithImage>
-              )}
-            </AdvantageItem>
-          ))}
-        </AdvantagesList>
+        <DesktopContainer>{advantagesListDesktop}</DesktopContainer>
+        <TabletContainer>{advantagesListTablet}</TabletContainer>
       </ContainerLayout>
     </SectionWrapper>
   );
