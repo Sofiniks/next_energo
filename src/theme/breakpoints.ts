@@ -28,7 +28,7 @@ export const device = {
 };
 
 export const DesktopContainer = styled.div`
-  @media ${device.lg} {
+  @media ${device.md} {
     display: none !important;
   }
 `;

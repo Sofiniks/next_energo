@@ -1,38 +1,42 @@
 'use client';
-import React from 'react';
 import styled from 'styled-components';
-import ContentLayout from '../layout/ContentLayout';
+import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
-import Button from '../buttons/Button';
-import { device } from '@/theme/breakpoints';
+import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
 
 interface HeroSectionProps {
-  isBannerVisible?: boolean;
+  isMainPage?: boolean;
 }
 
-const PageWrapper = styled(ContentLayout)`
+const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
   height: 95vh;
+  padding-top: 80px;
+  margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '230px' : '80px')};
   position: relative;
-  margin-bottom: 230px;
 
-  @media ${device.sm} {
+  @media ${device.md} {
+    margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '300px' : 0)};
     height: 90vh;
+    padding-top: 60px;
   }
 `;
 
-const HeroBackground = styled.div<{ $url: string }>`
+const Container = styled(ContainerLayout)`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
+
+const SectionBackground = styled.div<{ $url: string }>`
   background-image: ${({ $url }) => `url(${$url})`};
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
 `;
-
-const HeroText = styled.div`
-  padding-top: 10%;
+const SectionText = styled.div`
   max-width: 560px;
   color: white;
-
   h1 {
     text-transform: uppercase;
     font-size: 54px;
@@ -71,53 +75,59 @@ const HeroText = styled.div`
 `;
 const ButtonWrapper = styled.div`
   padding-left: 50px;
-
-  @media ${device.md} {
-    padding-left: 33px;
-  }
-
-  @media ${device.sm} {
-    padding-left: 20px;
-  }
 `;
 const BannerWrapper = styled.div`
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 50%);
-  z-index: 2;
   width: 100%;
-
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
   @media ${device.md} {
-    left: 0;
-    right: unset;
-    width: 100%;
     overflow-x: scroll;
     transform: translateY(100%);
+    left: 0;
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
   }
 `;
-const HeroSection = ({ isBannerVisible }: HeroSectionProps) => {
+
+const HeroSection = ({ isMainPage }: HeroSectionProps) => {
   return (
-    <PageWrapper>
-      <HeroBackground $url="/images/mainBanner.jpg">
-        <ContainerLayout>
-          <HeroText>
-            <h1>Pakalpojumi ar fosilo energiju</h1>
+    <SectionWrapper $isMainPage={Boolean(isMainPage)}>
+      <SectionBackground $url="/images/mainBanner.jpg">
+        <Container>
+          <SectionText>
+            <h1>Par mums</h1>
             <h3>
-              Izmantojot tradicionālos enerģijas avotus, galvenais elements ir
-              ikmēneša pakalpojumu maksa! Savā darbā mēs klientiem piedāvājam
-              alternatīvus energotaupības veidus, nezaudējot komfortu.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+              dolore debitis. Facere porro nesciunt eius accusamus repellat
+              dolorum ducimus excepturi incidunt aperiam non! Eos accusantium
+              nulla, porro veritatis alias beatae quidem dolore, harum,
             </h3>
             <ButtonWrapper>
-              <Button text="uzzinat vairak par musu pakalpojumiem" />
+              <Button text="Uzzinat par musu pakalpojumiem" />
             </ButtonWrapper>
-          </HeroText>
-        </ContainerLayout>
-      </HeroBackground>
-      <BannerWrapper>
-        <ContainerLayout>{isBannerVisible && <MainBanner />}</ContainerLayout>
-      </BannerWrapper>
-    </PageWrapper>
+          </SectionText>
+        </Container>
+        {isMainPage && (
+          <>
+            <DesktopContainer>
+              <BannerWrapper>
+                <ContainerLayout>
+                  <MainBanner />
+                </ContainerLayout>
+              </BannerWrapper>
+            </DesktopContainer>
+            <TabletContainer>
+              <BannerWrapper>
+                <MainBanner />
+              </BannerWrapper>
+            </TabletContainer>
+          </>
+        )}
+      </SectionBackground>
+    </SectionWrapper>
   );
 };
 

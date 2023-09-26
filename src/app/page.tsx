@@ -1,13 +1,15 @@
-import StatisticBanner from "@/components/banners/StatisticBanner";
-import HeroSection from "@/components/sections/HeroSection";
-import WhyUsSection from "@/components/sections/WhyUsSection";
-import ContactForm from "@/components/contactForm/ContactForm";
+import StatisticBanner from '@/components/banners/StatisticBanner';
+import HeroSection from '@/components/sections/HeroSection';
+import WhyUsSection from '@/components/sections/WhyUsSection';
+import ContactForm from '@/components/contactForm/ContactForm';
 
 export default function Home() {
-  return <div>
-    <HeroSection isBannerVisible/>
-    <StatisticBanner/>
-    <WhyUsSection/>
-    <ContactForm/>
-  </div>;
+  return (
+    <>
+      <HeroSection isMainPage/>
+      <StatisticBanner />
+      <WhyUsSection />
+      <ContactForm />
+    </>
+  );
 }

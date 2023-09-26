@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ContainerLayout from '../layout/ContainerLayout';
 import Button from '../buttons/Button';
+import { device } from '@/theme/breakpoints';
 
 interface SubService {
   title: string;
@@ -173,12 +174,25 @@ const ServicesWrapper = styled.div`
 const ServicesContainer = styled(ContainerLayout)`
   display: flex;
   justify-content: space-between;
+  @media ${device.md} {
+    flex-direction: column;
+  }
 `;
 
 const ServicesMenu = styled.div`
   background-color: #fff;
   margin-right: 40px;
   min-width: 30%;
+  @media ${device.md} {
+    margin-right: 0;
+    min-height: 450px;
+    margin-bottom: 20px;
+  }
+`;
+
+const ServicesContent = styled.div`
+  background-color: #fff;
+  padding: 20px 20px 40px 20px;
 `;
 
 const ServicesHeading = styled.div`
@@ -190,6 +204,9 @@ const ServicesHeading = styled.div`
   h2 {
     font-size: 24px;
     text-transform: uppercase;
+    @media ${device.sm} {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -197,11 +214,24 @@ const ServicesItem = styled.li`
   text-transform: uppercase;
   margin-bottom: 30px;
   margin-left: 20px;
+  @media ${device.md} {
+    ul {
+      transition: all 0.4s;
+      position: relative;
+    }
+  }
   &:last-of-type {
     margin-bottom: 0;
   }
   h3 {
     margin-bottom: 10px;
+    @media ${device.md} {
+      font-size: 18px;
+    }
+
+    @media ${device.sm} {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -220,17 +250,35 @@ const SubServicesItem = styled.li<{ $isActive: boolean }>`
   &:last-of-type {
     margin-bottom: 0;
   }
+  @media ${device.sm} {
+    font-size: 12px;
+  }
 `;
 
 const ServicesText = styled.div`
   margin-bottom: 40px;
+  @media ${device.md} {
+    margin-bottom: 20px;
+  }
   h3 {
     margin-bottom: 20px;
+    @media ${device.md} {
+      margin-bottom: 18px;
+    }
   }
 
   p {
     margin-bottom: 40px;
     line-height: 25px;
+    @media ${device.md} {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @media ${device.sm} {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 `;
 
@@ -238,6 +286,13 @@ const ServicesMainImage = styled.div`
   width: 100%;
   height: 440px;
   margin-bottom: 10px;
+  @media ${device.md} {
+    height: 300px;
+  }
+
+  @media ${device.sm} {
+    height: 200px;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -249,6 +304,9 @@ const ServicesImagesList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 10px;
+  @media ${device.md} {
+    column-gap: 4px;
+  }
 `;
 
 const ServicesImagesItem = styled.li`
@@ -259,12 +317,28 @@ const ServicesImagesItem = styled.li`
   }
 `;
 
+const SubservicesList = styled.ul<{ $isSubserviceActive: boolean }>`
+  @media ${device.md} {
+    opacity: ${({ $isSubserviceActive }) => ($isSubserviceActive ? 1 : 0)};
+    z-index: ${({ $isSubserviceActive }) => ($isSubserviceActive ? 3 : '-3')};
+    top: ${({ $isSubserviceActive }) => ($isSubserviceActive ? 0 : '-40px')};
+    overflow: ${({ $isSubserviceActive }) =>
+      $isSubserviceActive ? 'unset' : 'hidden'};
+    height: ${({ $isSubserviceActive }) =>
+      $isSubserviceActive ? 'unset' : '0'};
+  }
+`;
+
 const ServicesComponent = () => {
+  const [activeService, setActiveService] = useState<Service>(
+    fossilServices[0]
+  );
   const [activeSubService, setActiveSubService] = useState<SubService>(
     fossilServices[0]?.service?.subServices[0]
   );
 
   const toggleActiveService = (service: Service) => {
+    setActiveService(service);
     setActiveSubService(service.service.subServices[0]);
   };
 
@@ -275,7 +349,11 @@ const ServicesComponent = () => {
   const servicesList = fossilServices.map((serviceItem: Service, index) => (
     <ServicesItem key={index} onClick={() => toggleActiveService(serviceItem)}>
       <h3>{serviceItem.service.title}</h3>
-      <ul>
+      <SubservicesList
+        $isSubserviceActive={
+          serviceItem.service.title === activeService.service.title
+        }
+      >
         {serviceItem.service.subServices.map((subService, subServiceIndex) => (
           <SubServicesItem
             key={subServiceIndex}
@@ -288,7 +366,7 @@ const ServicesComponent = () => {
             {subService.title}
           </SubServicesItem>
         ))}
-      </ul>
+      </SubservicesList>
     </ServicesItem>
   ));
 
@@ -307,7 +385,7 @@ const ServicesComponent = () => {
           </ServicesHeading>
           <ul>{servicesList}</ul>
         </ServicesMenu>
-        <div>
+        <ServicesContent>
           <ServicesText>
             <h3>{activeSubService.title}</h3>
             {activeSubService.desc.map((desc, idx) => (
@@ -326,7 +404,7 @@ const ServicesComponent = () => {
             </ServicesMainImage>
             <ServicesImagesList>{servicesImages}</ServicesImagesList>
           </div>
-        </div>
+        </ServicesContent>
       </ServicesContainer>
     </ServicesWrapper>
   );
