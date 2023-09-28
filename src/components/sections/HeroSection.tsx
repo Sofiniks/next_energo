@@ -1,10 +1,15 @@
 'use client';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
-import { useTranslations } from 'next-intl';
+import { MainBannerData } from '@/types/dataTypes';
+import BuildingIcon1 from '../icons/BuildingIcon1';
+import BuildingIcon2 from '../icons/BuildingIcon2';
+import BuildingIcon3 from '../icons/BuildingIcon3';
+import BuildingIcon4 from '../icons/BuildingIcon4';
 
 interface HeroSectionProps {
   isMainPage?: boolean;
@@ -99,6 +104,30 @@ const BannerWrapper = styled.div`
 
 const HeroSection = ({ isMainPage }: HeroSectionProps) => {
   const t = useTranslations('Hero');
+  const data: MainBannerData[] = [
+    {
+      title: t('mainBanner.titles.1'),
+      subtitle: t('mainBanner.titles.2'),
+      icon: <BuildingIcon1 />,
+    },
+    {
+      title: t('mainBanner.titles.2'),
+      subtitle: t('mainBanner.subtitles.2'),
+      icon: <BuildingIcon2 />,
+    },
+
+    {
+      title: t('mainBanner.titles.3'),
+      subtitle: t('mainBanner.subtitles.3'),
+      icon: <BuildingIcon3 />,
+    },
+
+    {
+      title: t('mainBanner.titles.4'),
+      subtitle: t('mainBanner.subtitles.4'),
+      icon: <BuildingIcon4 />,
+    },
+  ];
   return (
     <SectionWrapper $isMainPage={Boolean(isMainPage)}>
       <SectionBackground
@@ -108,15 +137,10 @@ const HeroSection = ({ isMainPage }: HeroSectionProps) => {
       >
         <Container>
           <SectionText>
-            <h1>{t('title')}</h1>
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
-              dolore debitis. Facere porro nesciunt eius accusamus repellat
-              dolorum ducimus excepturi incidunt aperiam non! Eos accusantium
-              nulla, porro veritatis alias beatae quidem dolore, harum,
-            </h3>
+            <h1>{t('sectionTitle')}</h1>
+            <h3>{t('sectionSubtitle')}</h3>
             <ButtonWrapper>
-              <Button text="Uzzinat par musu pakalpojumiem" />
+              <Button text={t('button')} />
             </ButtonWrapper>
           </SectionText>
         </Container>
@@ -125,13 +149,13 @@ const HeroSection = ({ isMainPage }: HeroSectionProps) => {
             <DesktopContainer>
               <BannerWrapper>
                 <ContainerLayout>
-                  <MainBanner />
+                  <MainBanner data={data}/>
                 </ContainerLayout>
               </BannerWrapper>
             </DesktopContainer>
             <TabletContainer>
               <BannerWrapper>
-                <MainBanner />
+                <MainBanner data={data}/>
               </BannerWrapper>
             </TabletContainer>
           </>

@@ -1,27 +1,11 @@
 'use client';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 import ContainerLayout from '../layout/ContainerLayout';
 import { TabletContainer } from '@/theme/breakpoints';
 import { DesktopContainer } from '@/theme/breakpoints';
 import { device } from '@/theme/breakpoints';
-
-const data = [
-  {
-    number: '4000+',
-    title: 'numberTitle1',
-    text: 'numberText1',
-  },
-  {
-    number: '10+',
-    title: 'numberTitle2',
-    text: 'numberText2',
-  },
-  {
-    number: '3.5m',
-    title: 'numberTitle3',
-    text: 'numberText3',
-  },
-];
+import { StatisticsBannerData } from '@/types/dataTypes';
 
 const BannerWrapper = styled.div`
   background-color: #282d33;
@@ -83,6 +67,24 @@ const StyledItem = styled.li`
 `;
 
 export default function StatisticBanner() {
+  const t = useTranslations('Statistics');
+  const data: StatisticsBannerData[] = [
+    {
+      number: '4000+',
+      title: t('titles.1'),
+      text: t('subtitles.1'),
+    },
+    {
+      number: '10+',
+      title: t('titles.2'),
+      text: t('subtitles.2'),
+    },
+    {
+      number: '3.5m',
+      title: t('titles.3'),
+      text: t('subtitles.3'),
+    },
+  ];
   return (
     <BannerWrapper>
       <ContainerLayout>

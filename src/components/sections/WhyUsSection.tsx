@@ -1,34 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 import ContainerLayout from '../layout/ContainerLayout';
 import { SectionHeading } from '../typography/typography';
 import Image from 'next/image';
 import { DesktopContainer, TabletContainer } from '@/theme/breakpoints';
 import { device } from '@/theme/breakpoints';
-
-const data = [
-  {
-    title: 'whyTitle1',
-    desc: 'whyDesc1',
-    img: '/images/Services1.png',
-  },
-  {
-    title: 'whyTitle2',
-    desc: 'whyDesc2',
-    img: '/images/land.png',
-  },
-  {
-    title: 'whyTitle3',
-    desc: 'whyDesc3',
-    img: '/images/servicesBanner.jpg',
-  },
-  {
-    title: 'whyTitle4',
-    desc: 'whyDesc4',
-    img: '/images/solar_battery.png',
-  },
-];
+import { WhyUsSectionData } from '@/types/dataTypes';
 
 const SectionWrapper = styled.section`
   margin-bottom: 90px;
@@ -83,7 +62,7 @@ const HoverBlock = styled.div`
 const BlockWithImage = styled.div`
   position: absolute;
   width: 275px;
-  height: 115px;
+  height: 120px;
   bottom: -10px;
   left: -10px;
   background-color: #ffc91e;
@@ -146,6 +125,29 @@ const BlockForTablets = styled.div`
 `;
 
 export default function WhyUsSection() {
+  const t = useTranslations('WhyUs');
+  const data: WhyUsSectionData[] = [
+    {
+      title: t('titles.1'),
+      desc: t('descriptions.1'),
+      img: '/images/Services1.png',
+    },
+    {
+      title: t('titles.2'),
+      desc: t('descriptions.2'),
+      img: '/images/land.png',
+    },
+    {
+      title: t('titles.3'),
+      desc: t('descriptions.3'),
+      img: '/images/servicesBanner.jpg',
+    },
+    {
+      title: t('titles.4'),
+      desc: t('descriptions.4'),
+      img: '/images/solar_battery.png',
+    },
+  ];
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   const advantagesListDesktop = (
@@ -191,7 +193,7 @@ export default function WhyUsSection() {
   return (
     <SectionWrapper>
       <ContainerLayout>
-        <SectionHeading text="Kapec mes?" />
+        <SectionHeading text={t('sectionTitle')} />
         <DesktopContainer>{advantagesListDesktop}</DesktopContainer>
         <TabletContainer>{advantagesListTablet}</TabletContainer>
       </ContainerLayout>

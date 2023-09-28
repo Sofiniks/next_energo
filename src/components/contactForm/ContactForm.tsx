@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 import { LocationBlack } from '../icons/LocationBlack';
 import { LetterBlack } from '../icons/LetterBlack';
 import { PhoneBlack } from '../icons/PhoneBlack';
@@ -47,6 +48,7 @@ const Form = styled.form`
 
   h4 {
     font-weight: 300;
+    white-space: nowrap;
     &:last-of-type {
       margin-bottom: 20px;
     }
@@ -147,10 +149,10 @@ const SvgWrapper = styled.div`
   margin-right: 20px;
 `;
 
-const ContactsBlock = () => {
+const ContactsBlock = ({ title }: { title: string }) => {
   return (
     <>
-      <h5>Kontakti</h5>
+      <h5>{title}</h5>
       <ContactsList>
         <li>
           <SvgWrapper>
@@ -195,42 +197,49 @@ const ContactsBlock = () => {
 };
 
 const FormElement = () => {
+  const t = useTranslations('ContactUs');
   return (
     <Form method="post" target="hidden_iframe">
-      <h4>Juties brivi sazinaties ar mums jebkura laika</h4>
-      <h4>Mes ar jums sazinasimies, cik driz vien varesim</h4>
-      <input type="text" placeholder="Vards" name="entry.2005620554" required />
+      <h4>{t('form.heading1')}</h4>
+      <h4>{t('form.heading2')}</h4>
       <input
         type="text"
-        placeholder="E-pasts vai talruna numurs"
+        placeholder={t('form.placeholders.name')}
+        name="entry.2005620554"
+        required
+      />
+      <input
+        type="text"
+        placeholder={t('form.placeholders.email')}
         name="entry.1045781291"
         required
       />
       <textarea
         rows={1}
-        placeholder="Zinojums"
+        placeholder={t('form.placeholders.message')}
         name="entry.839337160"
         required
       />
       <ButtonWrapper>
-        <Button text="nosutit" />
+        <Button text={t('form.button')} />
       </ButtonWrapper>
     </Form>
   );
 };
 
 const ContactForm = () => {
+  const t = useTranslations('ContactUs');
   return (
     <ContactWrapper>
       <DesktopContainer>
         <ContainerLayout>
-          <SectionHeading text="Sazinaties ar mums" />
+          <SectionHeading text={t('sectionTitle')} />
           <SectionWrapper>
             <FormContainer>
               <FormElement />
               <PositionAbsoluteBlock>
                 <YellowBlock>
-                  <ContactsBlock />
+                  <ContactsBlock title={t('contacts')} />
                 </YellowBlock>
               </PositionAbsoluteBlock>
             </FormContainer>
@@ -240,7 +249,7 @@ const ContactForm = () => {
       <TabletContainer>
         <YellowBlock>
           <TabletContainer>
-            <ContactsBlock />
+            <ContactsBlock title={t('contacts')} />
           </TabletContainer>
         </YellowBlock>
         <FormContainer>

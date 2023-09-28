@@ -1,34 +1,7 @@
 'use client';
 import styled from 'styled-components';
-import BuildingIcon1 from '../icons/BuildingIcon1';
 import { device } from '@/theme/breakpoints';
-
-const data = [
-  {
-    title: 'Pieredze',
-    subtitle: 'musu pieredze saja sektora ir vairak neka desmit gadu',
-    icon: <BuildingIcon1 />,
-  },
-  {
-    title: 'Pieredze',
-    subtitle:
-      '80% no ienākošajiem pasūtījumiem ir atkārtoti, no klientiem, kas jau sadarbojās ar mums.',
-    icon: <BuildingIcon1 />,
-  },
-
-  {
-    title: 'Pieredze',
-    subtitle: 'musu pieredze saja sektora ir vairak neka desmit gadu',
-    icon: <BuildingIcon1 />,
-  },
-
-  {
-    title: 'Pieredze',
-    subtitle:
-      '80% no ienākošajiem pasūtījumiem ir atkārtoti, no klientiem, kas jau sadarbojās ar mums.',
-    icon: <BuildingIcon1 />,
-  },
-];
+import { MainBannerData } from '@/types/dataTypes';
 
 const Banner = styled.div`
   z-index: 3;
@@ -89,7 +62,7 @@ const StyledItem = styled.li`
 const IconWrapper = styled.div`
   margin-bottom: 27px;
 `;
-export default function MainBanner() {
+export default function MainBanner({data}: {data: MainBannerData[]}) {
   return (
     <Banner>
       <StyledList>

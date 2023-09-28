@@ -1,5 +1,163 @@
-{
+{   "Header": {
+        "home": "Home",
+        "services": "Services",
+        "contactUs": "Contact us"
+    },
     "Hero": {
-        "title": "Hello world"
+        "sectionTitle": "About us",
+        "sectionSubtitle": "We work for you to save! Also, as a result of the work, the environmental footprint and energy consumption are reduced. Our team is committed to the long-term development and popularization of the use of alternative energy sources.",
+        "button": "find out more about our services",
+        "mainBanner": {
+            "titles": {
+                "1": "Experience",
+                "2": "Direct contacts",
+                "3": "Theory and practice",
+                "4": "Satisfied clients"
+            },
+            "subtitles": {
+                "1": "We have more than ten years of experience in the sector.",
+                "2": "We work closely with a wide range of industry professionals and the public sector.",
+                "3": "We guarantee that the client will achieve the desired result.",
+                "4": "80% of the orders received by us are from our loyal clients who have already cooperated with us."
+            }
+        }
+    },
+    "Statistics": {
+        "titles": {
+            "1": "Projects",
+            "2": "Years",
+            "3": "Investments"
+        },
+        "subtitles": {
+            "1": "already implemented",
+            "2": "on the market",
+            "3": "attracted to our clients"
+        }
+    },
+    "WhyUs": {
+        "sectionTitle": "Why us?",
+         "titles": {
+            "1": "Terms",
+            "2": "No advance payment",
+            "3": "Responsibility",
+            "4": "Mediation"
+        },
+        "descriptions": {
+            "1": "Arrival at the site within 2 working days. Completion of small and medium orders within one working week. Completion of large orders within 20 working days.",
+            "2": "Remuneration only upon completion of all agreements",
+            "3": "100% problem solving at the highest level",
+            "4": "We represent the interests of clients in the construction and design regulatory bodies"
+        }
+    },
+    "ContactUs": {
+        "sectionTitle": "Contact us",
+        "form" : {
+            "heading1": "Feel free to contact us any time",
+            "heading2": "We will get back to you as soon as we can!",
+            "placeholders": {
+                "name": "Name",
+                "email": "E-mail or phone number",
+                "message": "Message"
+            },
+            "button": "Send",
+            "sendConfirmation": "Message sent!",
+            "messageReceived": "We have received your message and will contact you within the next 24 hours!"
+        },
+        "contacts": "Contacts"
+    },
+    "Footer": {
+        "developedBy": "Developed by:",
+        "contacts": "Contacts"
+    },
+    "Services": {
+        "sectionTitle": "Services",
+        "servicesList": {
+            "service1" : {
+                "title": "Energy certification and audits",
+                "subservices": {
+                    "subservice1" : {
+                        "title": "Energy audit of buildings",
+                        "text": "An energy audit is a procedure that determines the energy consumption of a building, the factors affecting it and the measures that can be taken to reduce energy consumption. The final product of the energy audit is a report that shows the potential for energy saving and gives the client unbiased information that allows the client to make the right decision on the modernization of the site and energy saving measures with the shortest possible payback period."
+                    },
+                    "subservice2" : {
+                        "title": "Energy certification of buildings",
+                        "text": "A process in which the energy efficiency of a building or a separate part of it is determined and an energy certificate of the building is issued for a period of 10 years.  The existing energy efficiency indicators of the site or its part to be designed, reconstructed or updated are determined.  Unlike the temporary energy certificate, the calculation is based on the real energy consumption (kWh, m3) obtained over the past 3-5 years."
+                    },
+                    "subservice3" : {
+                        "title": "Temporary energy certificate",
+                        "text": "As of 2012, when commissioning a new or reconstructed building, a temporary energy passport is required.  This temporary certificate is valid for 3 years and is registered in the construction information system. The calculation is carried out based on a mathematical model built on the basis of the building's project documentation."
+                    },
+                    "subservice4" : {
+                        "title": "Calculation of passive house rates",
+                        "text": "Zero-energy homes – Buildings that use zero-cost alternative energy for heating or no heat at all. The specification of the passive house applies not only to residential buildings but also to public buildings. A passive house can be a school, a kindergarten or a supermarket, and the main condition is to follow the EU standards on passive houses. In our work, we calculate the energy balance of buildings in accordance with the requirements of Latvian legislation and international standards based on the calculation methodology of the Passive House Institute. "
+                    }
+                }
+            },
+            "service2" : {
+                "title": "Thermography and air exchange",
+                "subservices": {
+                    "subservice1" : {
+                        "title": "Thermography",
+                        "text": "Thermography is a method by which it is possible to determine the surface temperature distribution of sites by converting the site's emitted infrared radiation into a color image (thermogram). Thermal imaging inspection of buildings and structures is an effective way to test enclosing structures at the end of construction and during operation. With it, we will help you determine the partial and total heat loss of your structure, as well as detect possible, hidden defects in construction."
+                    },
+                    "subservice2" : {
+                        "title": "Blower Door test",
+                        "text": "Cold rooms are not always a consequence of insufficient insulation of the building, so before you start investing significant monetary resources into your real estate's insulation, check the breathability of its structures. This procedure will cost you much less and will give you a 100% understanding of what work you need to do."
+                    }
+                }
+            },
+            "service3" : {
+                "title": "Industrial audit",
+                "subservices": {
+                    "subservice1" : {
+                        "title": "Energy audit of a production site",
+                        "text": "An energy audit is a procedure carried out in large companies to obtain information about all energy consumption structures of the company, which are quantitatively estimated for cost-effective energy saving and their results are summarized in a report prepared and issued by the company."
+                    },
+                    "subservice2" : {
+                        "title": "Preparation of the electric balance for the year",
+                        "text": "In accordance with the law on energy efficiency, a consumer of electricity is a merchant with annual electricity consumption exceeding 500 MWh for the next two calendar years. We assist merchants in the preparation and submission of electricity balances to state bodies and also help to identify incidental electricity consumption in the course of their activities, which can lead to optimization of the merchant's expenses."
+                    },
+                    "subservice3" : {
+                        "title": "ISO Company Certification",
+                        "text": {
+                            "1": "With the rapidly rising energy cost around the world and the demands of society to reduce greenhouse gas emissions, effective energy management is becoming a priority for every business and ensures not only a quick return on production but also long-term development in the face of unstable energy prices. We help introduce and maintain ISO 50001.",
+                            "2": "ISO 50001 (\"Energy management systems – Requirements with guidance for use\") is an international standard created by the International Organization for Standardization for managing energy systems, which defines the requirements for the installation, introduction, maintenance and improvement of an energy management system aimed at enabling a company to follow a systematic approach in achieving consistent improvement of its energy system, including energy efficiency, security and consumption.",
+                            "3": "Standard ISO 50001 provides any organization regardless of its size and territorial or geographical location with a complete strategy of action in managerial and technical areas in order to improve the efficiency of the organization's energy system."
+                        }
+                    }
+                }
+            },
+             "service4" : {
+                "title": "Technical examination",
+                "subservices": {
+                    "subservice1" : {
+                        "title": "Examination of energy certificates and proposed projects",
+                        "text": {
+                            "1": "Our company's experts have extensive experience in conducting examinations of energy audits and energy passports for buildings of various classifications.",
+                            "2": "The expert opinion assesses the compliance of the energy audit with the methodology for calculating energy audit(Cabinet of Ministers Regulation No. 222 \"Methodology for Calculating the Energy Efficiency of Buildings and the Rules for Energy Certification of Buildings\") and other regulations and standards."
+                        }
+                    },
+                    "subservice2" : {
+                        "title": "Assessments of the  heating, ventilation and air conditioning systems",
+                        "text": {
+                            "1": "Inspection of the heating and air conditioning system is carried out:",
+                            "2": "1) for a heating system and a heating system combined with a ventilation system with the total useful nominal power exceeding 70 kilowatts;",
+                            "3": "2) for an air-conditioning system and an air-conditioning system combined with a ventilation system with the total useful nominal power exceeding 70 kilowatts.",
+                            "4": "When conducting an audit, an independent expert draws up an act that includes the results of the audit and recommendations for improving the energy efficiency of the audited system, as well as indicates the costs of and savings from introducing measures to improve energy efficiency."
+                        }
+                    }
+                }
+            },
+             "service5" : {
+                "title": "Managing energy efficiency projects",
+                "subservices": {
+                    "subservice1" : {
+                        "title": "Preparation of application sections for co-financing from European Funds",
+                        "text": "To apply for EU co-financing in any of the programs, it is necessary to prepare and file a significant number of documents. In our work, we undertake all the formalities of this procedure and guarantee our clients the highest level of service."
+                    }
+                }
+            }
+        },
+        "button": "Find out the cost of the service"
     }
 }

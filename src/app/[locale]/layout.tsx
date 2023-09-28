@@ -7,9 +7,12 @@ import Footer from '@/components/footer/Footer';
 import PageLayout from '@/components/layout/PageLayout';
 import { NextIntlClientProvider } from 'next-intl';
 
-
-const montserrat = Montserrat({ subsets: ['latin','cyrillic'] });
+const montserrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
 const locales = ['en', 'ru', 'lv'];
+
+export function generateStaticParams() {
+  return [{ locale: 'lv' }, { locale: 'en' }, { locale: 'ru' }];
+}
 
 export const metadata: Metadata = {
   title: {
@@ -33,18 +36,18 @@ export default async function LocaleLayout({
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
-  }catch(error) {
-    notFound()
+  } catch (error) {
+    notFound();
   }
   return (
     <html lang={locale}>
       <body className={montserrat.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <PageLayout>
-          <Header />
-          {children}
-          <Footer />
-        </PageLayout>
+            <Header />
+            {children}
+            <Footer />
+          </PageLayout>
         </NextIntlClientProvider>
       </body>
     </html>

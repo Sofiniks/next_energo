@@ -1,5 +1,6 @@
 'use client';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Location } from '../icons/Location';
@@ -118,6 +119,7 @@ const ContactInfoList = () => {
 };
 
 export default function Footer() {
+  const t = useTranslations('Footer');
   return (
     <FooterWrapper>
       <ContainerLayout>
@@ -134,7 +136,7 @@ export default function Footer() {
           </LogoWrapper>
           <ContactInfo>
             <TabletContainer>
-              <MobileHeading>Kontakti</MobileHeading>
+              <MobileHeading>{t('contacts')}</MobileHeading>
             </TabletContainer>
 
             <ContactInfoList />
@@ -142,7 +144,7 @@ export default function Footer() {
         </FooterTop>
         <FooterBottom>
           <CredentialsLink>
-            Majas lapu izstrade
+            {t('developedBy')}
             <span>
               <a href="https://webbynavia.no"> Webbynavia</a>
             </span>
