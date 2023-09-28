@@ -31,6 +31,7 @@ const data = [
 ];
 
 const Banner = styled.div`
+  z-index: 3;
   &::-webkit-scrollbar {
     display: none !important;
   }
@@ -40,7 +41,7 @@ const StyledList = styled.ul`
   display: flex;
   background-color: #fff;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-  @media ${device.md}{
+  @media ${device.md} {
     min-width: 100%;
   }
 `;

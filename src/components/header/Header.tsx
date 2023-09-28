@@ -2,13 +2,15 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
+import { device } from '@/theme/breakpoints';
+import { useState } from 'react';
 import ContainerLayout from '../layout/ContainerLayout';
 import LanguageToggle from './LanguageToggle';
+import MobileBurgerMenu from './MobileBurgerMenu';
 import { TabletContainer } from '@/theme/breakpoints';
 import { DesktopContainer } from '@/theme/breakpoints';
 import { Contact } from '../icons/Contact';
 import { Burger } from '../icons/Burger';
-import { device } from '@/theme/breakpoints';
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -20,7 +22,7 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
   @media ${device.sm} {
     height: 60px;
     padding: 0 20px;
@@ -89,7 +91,6 @@ const HeaderMobile = styled.div`
   width: 100%;
   align-items: center;
 `;
-const BurgerIconWrapper = styled.div``;
 
 const list = () => {
   return (
@@ -101,6 +102,11 @@ const list = () => {
 };
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <HeaderWrapper>
       <ContainerLayout>
@@ -132,21 +138,22 @@ export default function Header() {
 
         <TabletContainer>
           <HeaderMobile>
-            <BurgerIconWrapper>
+            <div onClick={handleToggleMenu}>
               <Burger />
-            </BurgerIconWrapper>
+            </div>
             <LogoWrapper>
               <Link href="/">
                 <Image
                   src="/images/energoLogo.png"
                   alt="logo"
-                  width={100}
-                  height={72}
+                  width={80}
+                  height={58}
                 />
               </Link>
             </LogoWrapper>
             <LanguageToggle />
           </HeaderMobile>
+          <MobileBurgerMenu isOpen={isMenuOpen} onClose={handleToggleMenu} />
         </TabletContainer>
       </ContainerLayout>
     </HeaderWrapper>

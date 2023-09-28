@@ -62,17 +62,16 @@ const Form = styled.form`
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     padding: 7px;
     color: #fff;
+    &::placeholder {
+      color: white;
+      font-family: 'Montserrat' !important;
+    }
   }
   input {
     margin-bottom: 30px;
   }
   textarea {
     margin-bottom: 50px;
-  }
-
-  ::placeholder {
-    color: white;
-    font-family: 'Montserrat';
   }
 `;
 

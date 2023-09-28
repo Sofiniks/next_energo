@@ -4,12 +4,14 @@ import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
+import { useTranslations } from 'next-intl';
 
 interface HeroSectionProps {
   isMainPage?: boolean;
 }
 
 const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
+  min-height: 95vh;
   height: 95vh;
   padding-top: 80px;
   margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '230px' : '80px')};
@@ -18,6 +20,7 @@ const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
   @media ${device.md} {
     margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '300px' : 0)};
     height: 90vh;
+    min-height: 90vh;
     padding-top: 60px;
   }
 `;
@@ -33,10 +36,12 @@ const SectionBackground = styled.div<{ $url: string }>`
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  position: relative;
 `;
 const SectionText = styled.div`
   max-width: 560px;
   color: white;
+  z-index: 3;
   h1 {
     text-transform: uppercase;
     font-size: 54px;
@@ -93,12 +98,17 @@ const BannerWrapper = styled.div`
 `;
 
 const HeroSection = ({ isMainPage }: HeroSectionProps) => {
+  const t = useTranslations('Hero');
   return (
     <SectionWrapper $isMainPage={Boolean(isMainPage)}>
-      <SectionBackground $url="/images/mainBanner.jpg">
+      <SectionBackground
+        $url={`/images/${
+          isMainPage ? 'MainBannerOverlay.jpg' : 'servicesBanner.jpg'
+        }`}
+      >
         <Container>
           <SectionText>
-            <h1>Par mums</h1>
+            <h1>{t('title')}</h1>
             <h3>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
               dolore debitis. Facere porro nesciunt eius accusamus repellat
