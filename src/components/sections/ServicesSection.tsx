@@ -1,14 +1,14 @@
 'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
+import { useState } from 'react';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { Link } from 'react-scroll';
 import ContainerLayout from '../layout/ContainerLayout';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
 import { ServiceData, SubServiceData } from '@/types/dataTypes';
 import servicesData from '@/data/servicesData.json';
-import { Link } from 'react-scroll';
 
 const ServicesWrapper = styled.div`
   margin-bottom: 80px;
@@ -26,6 +26,7 @@ const ServicesMenu = styled.div`
   background-color: #fff;
   margin-right: 40px;
   min-width: 30%;
+  padding-bottom: 20px;
   @media ${device.md} {
     margin-right: 0;
     min-height: 450px;

@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import './globals.css';
 import { Montserrat } from 'next/font/google';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import PageLayout from '@/components/layout/PageLayout';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
-import PageLayout from '@/components/layout/PageLayout';
-import { NextIntlClientProvider } from 'next-intl';
 
 const montserrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
 const locales = ['en', 'ru', 'lv'];

@@ -6,7 +6,7 @@ const PageLayout = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  align-items: stretch;
+  /* align-items: stretch; */
 `;
 
 export default PageLayout;

@@ -2,9 +2,7 @@
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
 import ContainerLayout from '../layout/ContainerLayout';
-import { TabletContainer } from '@/theme/breakpoints';
-import { DesktopContainer } from '@/theme/breakpoints';
-import { device } from '@/theme/breakpoints';
+import { TabletContainer, DesktopContainer, device } from '@/theme/breakpoints';
 import { StatisticsBannerData } from '@/types/dataTypes';
 import statisticsData from '@/data/statisticsData.json';
 
@@ -14,6 +12,8 @@ const BannerWrapper = styled.div`
   padding: 20px 0;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
+  width: 100vw;
+  max-width: 100vw;
 
   @media ${device.md} {
     margin-bottom: 40px;

@@ -1,8 +1,8 @@
 'use client';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 import { device } from '@/theme/breakpoints';
 import { MainBannerData } from '@/types/dataTypes';
-import { useTranslations } from 'next-intl';
 import getIconComponent from '../icons/IconMapper';
 
 const Banner = styled.div`
@@ -16,6 +16,10 @@ const StyledList = styled.ul`
   display: flex;
   background-color: #fff;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
   @media ${device.md} {
     min-width: 100%;
   }
@@ -64,7 +68,7 @@ const StyledItem = styled.li`
 const IconWrapper = styled.div`
   margin-bottom: 27px;
 `;
-export default function MainBanner({data}: {data: MainBannerData[]}) {
+export default function MainBanner({ data }: { data: MainBannerData[] }) {
   const t = useTranslations('Hero');
   return (
     <Banner>

@@ -2,13 +2,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
-import ContainerLayout from '../layout/ContainerLayout';
-import { SectionHeading } from '../typography/typography';
 import Image from 'next/image';
 import { DesktopContainer, TabletContainer } from '@/theme/breakpoints';
 import { device } from '@/theme/breakpoints';
+import ContainerLayout from '../layout/ContainerLayout';
+import { SectionHeading } from '../typography/typography';
 import { WhyUsSectionData } from '@/types/dataTypes';
-import whyUsData from '@/data/whyUsSectionData.json'
+import whyUsData from '@/data/whyUsSectionData.json';
+import { textCut } from '@/utils/helpers';
+
+
 
 const SectionWrapper = styled.section`
   margin-bottom: 90px;
@@ -16,10 +19,9 @@ const SectionWrapper = styled.section`
 
 const AdvantagesList = styled.ul`
   display: flex;
-  @media ${device.md} {
-    width: 100%;
+  padding: 10px 0;
+  @media ${device.lg} {
     overflow-x: scroll;
-
     &::-webkit-scrollbar {
       display: none !important;
     }
@@ -148,7 +150,7 @@ export default function WhyUsSection() {
           ) : (
             <BlockWithImage>
               <h3>{t(`${item.title}`)}</h3>
-              <p>{t(`${item.desc}`)}</p>
+              <p>{textCut(t(`${item.desc}`), 65)}</p>
             </BlockWithImage>
           )}
         </AdvantageItem>

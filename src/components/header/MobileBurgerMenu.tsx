@@ -53,7 +53,7 @@ const MobileBurgerMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const t = useTranslations('Header');
   const navLinks = [
     { title: 'home', href: '/' },
-    { title: 'contactUs', href: '/services' },
+    { title: 'services', href: '/services' },
   ];
 
   return (

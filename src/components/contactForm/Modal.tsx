@@ -1,10 +1,10 @@
 'use client';
 import styled from 'styled-components';
-import { TickGreen } from '../icons/TickGreen';
-import { Cross } from '../icons/Cross';
 import { useTranslations } from 'next-intl';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
+import { TickGreen } from '../icons/TickGreen';
+import { Cross } from '../icons/Cross';
 
 interface modalProps {
   onClose: () => void;

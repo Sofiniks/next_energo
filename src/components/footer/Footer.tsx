@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import ContainerLayout from '../layout/ContainerLayout';
+import { device, TabletContainer } from '@/theme/breakpoints';
 import { Location } from '../icons/Location';
 import { Letter } from '../icons/Letter';
 import { Phone } from '../icons/Phone';
-import ContainerLayout from '../layout/ContainerLayout';
-import { device } from '@/theme/breakpoints';
-import { TabletContainer } from '@/theme/breakpoints';
 
 const FooterWrapper = styled.footer`
   background-color: #282d33;

@@ -1,12 +1,12 @@
 'use client';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
+import { Link } from 'react-scroll';
 import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
 import bannerData from '../../data/mainBanner.json';
-import { Link } from 'react-scroll';
 
 interface HeroSectionProps {
   isMainPage?: boolean;
@@ -59,7 +59,7 @@ const SectionText = styled.div`
     }
 
     @media ${device.sm} {
-      font-size: 25px;
+      font-size: 22px;
       padding-left: 10px;
       border-left: 5px solid #ffc91e;
     }
@@ -82,6 +82,9 @@ const SectionText = styled.div`
 `;
 const ButtonWrapper = styled.div`
   padding-left: 50px;
+  @media ${device.sm} {
+    padding-left: 0;
+  }
 `;
 const BannerWrapper = styled.div`
   position: absolute;

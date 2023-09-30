@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
+import { Element } from 'react-scroll';
 import { LocationBlack } from '../icons/LocationBlack';
 import { LetterBlack } from '../icons/LetterBlack';
 import { PhoneBlack } from '../icons/PhoneBlack';
@@ -13,7 +14,7 @@ import { SectionHeading } from '../typography/typography';
 import Button from '../buttons/Button';
 import { DesktopContainer, TabletContainer, device } from '@/theme/breakpoints';
 import MessageModal from './Modal';
-import { Element } from 'react-scroll';
+
 
 const ContactWrapper = styled.div`
   margin-bottom: 80px;
@@ -40,7 +41,7 @@ const FormContainer = styled.div`
 const Form = styled.form`
   background-color: #282d33;
   color: #fff;
-  padding: 60px 280px 60px 280px;
+  padding: 60px 0 60px 240px;
   display: flex;
   flex-direction: column;
 
@@ -50,7 +51,7 @@ const Form = styled.form`
 
   h4 {
     font-weight: 300;
-    white-space: nowrap;
+    white-space: pre-wrap;
     &:last-of-type {
       margin-bottom: 20px;
     }
