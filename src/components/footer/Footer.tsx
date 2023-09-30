@@ -8,6 +8,7 @@ import { device, TabletContainer } from '@/theme/breakpoints';
 import { Location } from '../icons/Location';
 import { Letter } from '../icons/Letter';
 import { Phone } from '../icons/Phone';
+import contacts from '@/data/contacts.json';
 
 const FooterWrapper = styled.footer`
   background-color: #282d33;
@@ -96,20 +97,20 @@ const ContactInfoList = () => {
           <SvgWrapper>
             <Location />
           </SvgWrapper>
-          <p>Ludzas iela 2, Latgales priekšpilsēta, Rīga, LV-1003</p>
+          <p>{contacts.address}</p>
         </li>
         <li>
           <SvgWrapper>
             <Letter />
           </SvgWrapper>
-          <p>energoefektivitate@gmail.com</p>
+          <p>{contacts.email}</p>
         </li>
         <li>
           <SvgWrapper>
             <Phone />
           </SvgWrapper>
           <p>
-            <a href={`tel:${'+371-2777-3555'}`}>+371-2777-3555</a>
+            <a href={`tel:${contacts.phoneNumber}`}>{contacts.phoneNumber}</a>
           </p>
         </li>
       </ul>

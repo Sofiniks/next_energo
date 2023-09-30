@@ -26,6 +26,7 @@ html, body, div, span, ul, li, nav, header, footer {
     outline-style: none;
     box-shadow: none;
     border-color: transparent;
+    font-family: var(--font-montserrat);
 }
 
 h1,
@@ -57,14 +58,21 @@ a:active {
 body {
     background-color: #e5e5e5;
     color: #282d33;
-    font-family: "Montserrat";
     font-weight: normal;
     font-size: 16px;
     margin: 0;
+    font-family: var(--font-montserrat);
 }
 
 textarea:focus,
 input:focus,
 select:focus {
     outline: none;
+}
+
+textarea {
+    font-family: var(--font-montserrat);
+}
+input {
+font-family: var(--font-montserrat);
 }

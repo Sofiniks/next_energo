@@ -49,9 +49,13 @@ const StyledText = styled.p`
 
 const MessageModal = ({ onClose }: modalProps) => {
   const t = useTranslations('ContactUs');
+  const handleOnClose = () => {
+    onClose();
+     window.location.reload.bind(window.location)();
+  }
   return (
     <ModalWrapper>
-      <CrossIconWrapper onClick={onClose}>
+      <CrossIconWrapper onClick={handleOnClose}>
         <Cross />
       </CrossIconWrapper>
       <h3>{t('form.sendConfirmation')}</h3>
@@ -59,7 +63,7 @@ const MessageModal = ({ onClose }: modalProps) => {
         <TickGreen />
       </TickIconWrapper>
       <StyledText>{t('form.messageReceived')}</StyledText>
-      <Button text="OK" />
+      <Button onClick={handleOnClose} text="OK" />
     </ModalWrapper>
   );
 };

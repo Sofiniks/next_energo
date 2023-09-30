@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
 import { Element } from 'react-scroll';
@@ -14,7 +14,7 @@ import { SectionHeading } from '../typography/typography';
 import Button from '../buttons/Button';
 import { DesktopContainer, TabletContainer, device } from '@/theme/breakpoints';
 import MessageModal from './Modal';
-
+import contacts from '@/data/contacts.json';
 
 const ContactWrapper = styled.div`
   margin-bottom: 80px;
@@ -68,8 +68,7 @@ const Form = styled.form`
     padding: 7px;
     color: #fff;
     &::placeholder {
-      color: white;
-      font-family: 'Montserrat' !important;
+      color: #fff;
     }
   }
   input {
@@ -161,20 +160,20 @@ const ContactsBlock = ({ title }: { title: string }) => {
           <SvgWrapper>
             <LocationBlack />
           </SvgWrapper>
-          <p>Ludzas iela 2</p>
+          <p>{contacts.address}</p>
         </li>
         <li>
           <SvgWrapper>
             <LetterBlack />
           </SvgWrapper>
-          <p>energoefektivitate@gmail.com</p>
+          <p>{contacts.email}</p>
         </li>
         <li>
           <SvgWrapper>
             <PhoneBlack />
           </SvgWrapper>
           <p>
-            <a href={`tel:+371-2777-3555`}>+371-2777-3555</a>
+            <a href={`tel:${contacts.phoneNumber}`}>{contacts.phoneNumber}</a>
           </p>
         </li>
       </ContactsList>
@@ -201,32 +200,52 @@ const ContactsBlock = ({ title }: { title: string }) => {
 
 const FormElement = ({ setModalOpen }: { setModalOpen: () => void }) => {
   const t = useTranslations('ContactUs');
+  const handleSubmit = () => {
+    setModalOpen();
+  };
+
+  const GOOGLE_FORM_URL =
+    'https://docs.google.com/forms/d/e/1FAIpQLSce5TU4kF7h6CudZUIUh6W0HYVtyTAb0FMWeL07TD9Nb5PSZw/formResponse';
+
   return (
-    <Form method="post" target="hidden_iframe">
-      <h4>{t('form.heading1')}</h4>
-      <h4>{t('form.heading2')}</h4>
-      <input
-        type="text"
-        placeholder={t('form.placeholders.name')}
-        // name="entry.2005620554"
-        required
-      />
-      <input
-        type="text"
-        placeholder={t('form.placeholders.email')}
-        // name="entry.1045781291"
-        required
-      />
-      <textarea
-        rows={1}
-        placeholder={t('form.placeholders.message')}
-        // name="entry.839337160"
-        required
-      />
-      <ButtonWrapper>
-        <Button text={t('form.button')} onClick={setModalOpen} />
-      </ButtonWrapper>
-    </Form>
+    <>
+      <iframe
+        title="hidden_iframe"
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style={{ visibility: 'hidden', height: '14px' }}
+      ></iframe>
+      <Form
+        action={GOOGLE_FORM_URL}
+        method="post"
+        target="hidden_iframe"
+        onSubmit={handleSubmit}
+      >
+        <h4>{t('form.heading1')}</h4>
+        <h4>{t('form.heading2')}</h4>
+        <input
+          type="text"
+          placeholder={t('form.placeholders.name')}
+          // name="entry.2005620554"
+          required
+        />
+        <input
+          type="text"
+          placeholder={t('form.placeholders.email')}
+          // name="entry.1045781291"
+          required
+        />
+        <textarea
+          rows={1}
+          placeholder={t('form.placeholders.message')}
+          // name="entry.839337160"
+          required
+        />
+        <ButtonWrapper>
+          <Button text={t('form.button')} onClick={setModalOpen} />
+        </ButtonWrapper>
+      </Form>
+    </>
   );
 };
 

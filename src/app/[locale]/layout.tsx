@@ -6,8 +6,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import PageLayout from '@/components/layout/PageLayout';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
+import StyledComponentsRegistry from '@/lib/registry';
 
-const montserrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
+const montserrat = Montserrat({ subsets: ['latin', 'cyrillic'], variable: '--font-montserrat' });
 const locales = ['en', 'ru', 'lv'];
 
 export function generateStaticParams() {
@@ -43,11 +44,14 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={montserrat.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <PageLayout>
+          <StyledComponentsRegistry>
+            <PageLayout>
             <Header />
             {children}
             <Footer />
           </PageLayout>
+          </StyledComponentsRegistry>
+          
         </NextIntlClientProvider>
       </body>
     </html>
