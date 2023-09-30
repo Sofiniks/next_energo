@@ -2,6 +2,8 @@
 import styled from 'styled-components';
 import { device } from '@/theme/breakpoints';
 import { MainBannerData } from '@/types/dataTypes';
+import { useTranslations } from 'next-intl';
+import getIconComponent from '../icons/IconMapper';
 
 const Banner = styled.div`
   z-index: 3;
@@ -63,14 +65,15 @@ const IconWrapper = styled.div`
   margin-bottom: 27px;
 `;
 export default function MainBanner({data}: {data: MainBannerData[]}) {
+  const t = useTranslations('Hero');
   return (
     <Banner>
       <StyledList>
         {data.map((item) => (
           <StyledItem key={item.title}>
-            <IconWrapper>{item.icon}</IconWrapper>
-            <h2>{item.title}</h2>
-            <p>{item.subtitle}</p>
+            <IconWrapper>{getIconComponent(item.iconKey)}</IconWrapper>
+            <h2>{t(`${item.title}`)}</h2>
+            <p>{t(`${item.subtitle}`)}</p>
           </StyledItem>
         ))}
       </StyledList>

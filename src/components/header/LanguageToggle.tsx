@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocale } from 'next-intl';
+import { useSelectedLayoutSegment } from 'next/navigation';
 import styled from 'styled-components';
-import { Russian } from '../icons/Russian';
-import { Latvian } from '../icons/Latvian';
-import English from '../icons/English';
+import Link from 'next/link';
+import { LanguagesToggleData } from '@/types/dataTypes';
 import { device } from '@/theme/breakpoints';
+import getIconComponent from '../icons/IconMapper';
 
-const languagesList = [
-  { key: 'ru', img: <Russian />, title: 'Russian' },
-  { key: 'lv', img: <Latvian />, title: 'Latvian' },
-  { key: 'en', img: <English />, title: 'English' },
+const languagesList: LanguagesToggleData[] = [
+  { key: 'lv', iconKey: 'Latvian', title: 'Latviski' },
+  { key: 'en', iconKey: 'English', title: 'English' },
+  { key: 'ru', iconKey: 'Russian', title: 'Русский' },
 ];
 
 const LanguageToggleWrapper = styled.div`
@@ -65,7 +67,7 @@ const LanguageOptions = styled.div<{ $isOpen: boolean }>`
     margin-bottom: 10px;
     height: 25px;
     border-radius: 3px;
-    transition: all .3s;
+    transition: all 0.3s;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -73,38 +75,50 @@ const LanguageOptions = styled.div<{ $isOpen: boolean }>`
     &:hover {
       background-color: #fff;
     }
-    svg {
-        margin-right: 10px;
-        width: 29px;
-        height: 20px;
-    }
+  }
+`;
+
+const LinkContent = styled.div`
+  display: flex;
+  svg {
+    margin-right: 10px;
+    width: 29px;
+    height: 20px;
   }
 `;
 
 function LanguageToggle() {
+  const selectedLayoutSegment = useSelectedLayoutSegment();
+  const locale = useLocale();
+  const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/';
   const [isOpen, setIsOpen] = useState(false);
+  const [activeIcon, setActiveIcon] = useState('lv');
+  useEffect(() => {
+    const newLocale = languagesList.find(
+      (item: LanguagesToggleData) => item.key === locale
+    )?.iconKey;
+    setActiveIcon(newLocale || 'lv');
+  }, [locale]);
 
   const toggleLanguageOptions = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleChangeLanguage = () => {
-    // Implement language change logic here
-    // You can dispatch an action to update the language in your Redux store
-    // or use any other method based on your project setup
-  };
-
   return (
     <LanguageToggleWrapper>
       <LanguageToggleBox onClick={toggleLanguageOptions}>
-        <English />
+        {getIconComponent(activeIcon)}
       </LanguageToggleBox>
       <LanguageOptions $isOpen={isOpen}>
         <ul>
           {languagesList.map((item) => (
-            <li key={item.key} onClick={() => handleChangeLanguage()}>
-              {item.img}
-              <p>{item.title}</p>
+            <li key={item.key}>
+              <Link locale={item.key} href={`/${item.key}/${pathname}`}>
+                <LinkContent>
+                  {getIconComponent(item.iconKey)}
+                  <p>{item.title}</p>
+                </LinkContent>
+              </Link>
             </li>
           ))}
         </ul>

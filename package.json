@@ -22,10 +22,12 @@
     "npm": "^10.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-scroll": "^1.8.9",
     "styled-components": "^6.0.8",
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/react-scroll": "^1.8.8",
     "husky": "^8.0.3",
     "prettier": "^3.0.3"
   }

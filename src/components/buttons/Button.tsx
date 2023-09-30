@@ -24,7 +24,8 @@ const StyledButton = styled.button`
 
 interface ButtonProps {
   text: string;
+  onClick?: () => void;
 }
-export default function Button({ text }: ButtonProps) {
-  return <StyledButton>{text}</StyledButton>;
+export default function Button({ text, onClick }: ButtonProps) {
+  return <StyledButton onClick={onClick}>{text}</StyledButton>;
 }

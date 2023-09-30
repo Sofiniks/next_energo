@@ -1,6 +1,6 @@
 import React from 'react';
 
-const English: React.FunctionComponent<React.SVGProps<SVGSVGElement>> = () => (
+const English = () => (
   <svg
     width="28"
     height="19"

@@ -1,16 +1,18 @@
 'use client';
-import styled from 'styled-components';
-import Image from 'next/image';
-import Link from 'next/link';
-import { device } from '@/theme/breakpoints';
 import { useState } from 'react';
+import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Image from 'next/image';
+import { device } from '@/theme/breakpoints';
 import ContainerLayout from '../layout/ContainerLayout';
-import LanguageToggle from './LanguageToggle';
-import MobileBurgerMenu from './MobileBurgerMenu';
-import { TabletContainer } from '@/theme/breakpoints';
-import { DesktopContainer } from '@/theme/breakpoints';
+import { TabletContainer, DesktopContainer } from '@/theme/breakpoints';
+import LanguageToggle  from './LanguageToggle';
+import  MobileBurgerMenu  from './MobileBurgerMenu';
 import { Contact } from '../icons/Contact';
 import { Burger } from '../icons/Burger';
+import contacts from '@/data/contacts.json';
+
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -92,16 +94,8 @@ const HeaderMobile = styled.div`
   align-items: center;
 `;
 
-const list = () => {
-  return (
-    <NavList>
-      <li>Uz sakumu</li>
-      <li>Pakalpojumi</li>
-    </NavList>
-  );
-};
-
 export default function Header() {
+  const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -122,14 +116,23 @@ export default function Header() {
                 />
               </Link>
             </LogoWrapper>
-            <Navbar>{list()}</Navbar>
+            <Navbar>
+              <NavList>
+                <li>
+                  <Link href="/">{t('home')}</Link>
+                </li>
+                <li>
+                  <Link href="/services">{t('services')}</Link>
+                </li>
+              </NavList>
+            </Navbar>
           </HeaderLeft>
           <HeaderRight>
             <Info>
               <Contact />
               <div>
-                <p>Sazinaties ar mums</p>
-                <a href={`tel:${'+371-2777-3555'}`}>+371-2777-3555</a>
+                <p>{t('contactUs')}</p>
+                <a href={`tel:${contacts.phoneNumber}`}>{contacts.phoneNumber}</a>
               </div>
             </Info>
             <LanguageToggle />

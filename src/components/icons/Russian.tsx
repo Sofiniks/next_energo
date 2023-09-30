@@ -1,9 +1,9 @@
 export function Russian() {
   return (
     <svg
-      width="60"
-      height="45"
-      viewBox="0 0 60 45"
+      width="29"
+      height="20"
+      viewBox="0 0 58 43"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

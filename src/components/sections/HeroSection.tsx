@@ -5,11 +5,8 @@ import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
-import { MainBannerData } from '@/types/dataTypes';
-import BuildingIcon1 from '../icons/BuildingIcon1';
-import BuildingIcon2 from '../icons/BuildingIcon2';
-import BuildingIcon3 from '../icons/BuildingIcon3';
-import BuildingIcon4 from '../icons/BuildingIcon4';
+import bannerData from '../../data/mainBanner.json';
+import { Link } from 'react-scroll';
 
 interface HeroSectionProps {
   isMainPage?: boolean;
@@ -104,30 +101,7 @@ const BannerWrapper = styled.div`
 
 const HeroSection = ({ isMainPage }: HeroSectionProps) => {
   const t = useTranslations('Hero');
-  const data: MainBannerData[] = [
-    {
-      title: t('mainBanner.titles.1'),
-      subtitle: t('mainBanner.titles.2'),
-      icon: <BuildingIcon1 />,
-    },
-    {
-      title: t('mainBanner.titles.2'),
-      subtitle: t('mainBanner.subtitles.2'),
-      icon: <BuildingIcon2 />,
-    },
 
-    {
-      title: t('mainBanner.titles.3'),
-      subtitle: t('mainBanner.subtitles.3'),
-      icon: <BuildingIcon3 />,
-    },
-
-    {
-      title: t('mainBanner.titles.4'),
-      subtitle: t('mainBanner.subtitles.4'),
-      icon: <BuildingIcon4 />,
-    },
-  ];
   return (
     <SectionWrapper $isMainPage={Boolean(isMainPage)}>
       <SectionBackground
@@ -137,10 +111,22 @@ const HeroSection = ({ isMainPage }: HeroSectionProps) => {
       >
         <Container>
           <SectionText>
-            <h1>{t('sectionTitle')}</h1>
-            <h3>{t('sectionSubtitle')}</h3>
+            <h1>
+              {isMainPage ? t('sectionTitle') : t('servicesSectionTitle')}
+            </h1>
+            <h3>
+              {isMainPage ? t('sectionSubtitle') : t('servicesSectionSubtitle')}
+            </h3>
             <ButtonWrapper>
-              <Button text={t('button')} />
+              <Link
+                to="contactUs"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-100}
+              >
+                <Button text={t('button')} />
+              </Link>
             </ButtonWrapper>
           </SectionText>
         </Container>
@@ -149,13 +135,13 @@ const HeroSection = ({ isMainPage }: HeroSectionProps) => {
             <DesktopContainer>
               <BannerWrapper>
                 <ContainerLayout>
-                  <MainBanner data={data}/>
+                  <MainBanner data={bannerData} />
                 </ContainerLayout>
               </BannerWrapper>
             </DesktopContainer>
             <TabletContainer>
               <BannerWrapper>
-                <MainBanner data={data}/>
+                <MainBanner data={bannerData} />
               </BannerWrapper>
             </TabletContainer>
           </>

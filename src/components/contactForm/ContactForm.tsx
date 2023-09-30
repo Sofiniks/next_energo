@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
 import { LocationBlack } from '../icons/LocationBlack';
@@ -12,6 +12,8 @@ import ContainerLayout from '../layout/ContainerLayout';
 import { SectionHeading } from '../typography/typography';
 import Button from '../buttons/Button';
 import { DesktopContainer, TabletContainer, device } from '@/theme/breakpoints';
+import MessageModal from './Modal';
+import { Element } from 'react-scroll';
 
 const ContactWrapper = styled.div`
   margin-bottom: 80px;
@@ -196,7 +198,7 @@ const ContactsBlock = ({ title }: { title: string }) => {
   );
 };
 
-const FormElement = () => {
+const FormElement = ({ setModalOpen }: { setModalOpen: () => void }) => {
   const t = useTranslations('ContactUs');
   return (
     <Form method="post" target="hidden_iframe">
@@ -205,23 +207,23 @@ const FormElement = () => {
       <input
         type="text"
         placeholder={t('form.placeholders.name')}
-        name="entry.2005620554"
+        // name="entry.2005620554"
         required
       />
       <input
         type="text"
         placeholder={t('form.placeholders.email')}
-        name="entry.1045781291"
+        // name="entry.1045781291"
         required
       />
       <textarea
         rows={1}
         placeholder={t('form.placeholders.message')}
-        name="entry.839337160"
+        // name="entry.839337160"
         required
       />
       <ButtonWrapper>
-        <Button text={t('form.button')} />
+        <Button text={t('form.button')} onClick={setModalOpen} />
       </ButtonWrapper>
     </Form>
   );
@@ -229,36 +231,40 @@ const FormElement = () => {
 
 const ContactForm = () => {
   const t = useTranslations('ContactUs');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <ContactWrapper>
-      <DesktopContainer>
-        <ContainerLayout>
-          <SectionHeading text={t('sectionTitle')} />
-          <SectionWrapper>
-            <FormContainer>
-              <FormElement />
-              <PositionAbsoluteBlock>
-                <YellowBlock>
-                  <ContactsBlock title={t('contacts')} />
-                </YellowBlock>
-              </PositionAbsoluteBlock>
-            </FormContainer>
-          </SectionWrapper>
-        </ContainerLayout>
-      </DesktopContainer>
-      <TabletContainer>
-        <YellowBlock>
-          <TabletContainer>
-            <ContactsBlock title={t('contacts')} />
-          </TabletContainer>
-        </YellowBlock>
-        <FormContainer>
+    <Element name="contactUs" className="element">
+      <ContactWrapper>
+        <DesktopContainer>
           <ContainerLayout>
-            <FormElement />
+            <SectionHeading text={t('sectionTitle')} />
+            <SectionWrapper>
+              <FormContainer>
+                <FormElement setModalOpen={() => setIsModalOpen(true)} />
+                <PositionAbsoluteBlock>
+                  <YellowBlock>
+                    <ContactsBlock title={t('contacts')} />
+                  </YellowBlock>
+                </PositionAbsoluteBlock>
+              </FormContainer>
+            </SectionWrapper>
           </ContainerLayout>
-        </FormContainer>
-      </TabletContainer>
-    </ContactWrapper>
+        </DesktopContainer>
+        <TabletContainer>
+          <YellowBlock>
+            <TabletContainer>
+              <ContactsBlock title={t('contacts')} />
+            </TabletContainer>
+          </YellowBlock>
+          <FormContainer>
+            <ContainerLayout>
+              <FormElement setModalOpen={() => setIsModalOpen(true)} />
+            </ContainerLayout>
+          </FormContainer>
+        </TabletContainer>
+        {isModalOpen && <MessageModal onClose={() => setIsModalOpen(false)} />}
+      </ContactWrapper>
+    </Element>
   );
 };
 

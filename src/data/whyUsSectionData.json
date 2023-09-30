@@ -1,0 +1,22 @@
+ [
+    {
+      "title": "titles.1",
+      "desc": "descriptions.1",
+      "img": "/images/Services1.png"
+    },
+    {
+      "title": "titles.2",
+      "desc": "descriptions.2",
+      "img": "/images/land.png"
+    },
+    {
+      "title": "titles.3",
+      "desc": "descriptions.3",
+      "img": "/images/servicesBanner.jpg"
+    },
+    {
+      "title": "titles.4",
+      "desc": "descriptions.4",
+      "img": "/images/solar_battery.png"
+    }
+  ]

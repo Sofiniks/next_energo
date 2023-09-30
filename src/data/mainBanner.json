@@ -1,0 +1,22 @@
+[
+    {
+      "title": "mainBanner.titles.1",
+        "subtitle": "mainBanner.subtitles.1",
+        "iconKey": "BuildingIcon1"  
+    },
+    {
+      "title": "mainBanner.titles.2",
+        "subtitle": "mainBanner.subtitles.2",
+        "iconKey": "BuildingIcon2"  
+    },
+    {
+      "title": "mainBanner.titles.3",
+        "subtitle": "mainBanner.subtitles.3",
+        "iconKey": "BuildingIcon3"  
+    },
+    {
+      "title": "mainBanner.titles.4",
+        "subtitle": "mainBanner.subtitles.4",
+        "iconKey": "BuildingIcon4"  
+    }
+]

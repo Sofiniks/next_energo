@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { DesktopContainer, TabletContainer } from '@/theme/breakpoints';
 import { device } from '@/theme/breakpoints';
 import { WhyUsSectionData } from '@/types/dataTypes';
+import whyUsData from '@/data/whyUsSectionData.json'
 
 const SectionWrapper = styled.section`
   margin-bottom: 90px;
@@ -126,33 +127,11 @@ const BlockForTablets = styled.div`
 
 export default function WhyUsSection() {
   const t = useTranslations('WhyUs');
-  const data: WhyUsSectionData[] = [
-    {
-      title: t('titles.1'),
-      desc: t('descriptions.1'),
-      img: '/images/Services1.png',
-    },
-    {
-      title: t('titles.2'),
-      desc: t('descriptions.2'),
-      img: '/images/land.png',
-    },
-    {
-      title: t('titles.3'),
-      desc: t('descriptions.3'),
-      img: '/images/servicesBanner.jpg',
-    },
-    {
-      title: t('titles.4'),
-      desc: t('descriptions.4'),
-      img: '/images/solar_battery.png',
-    },
-  ];
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   const advantagesListDesktop = (
     <AdvantagesList>
-      {data.map((item, index) => (
+      {whyUsData.map((item: WhyUsSectionData, index) => (
         <AdvantageItem
           key={index}
           onMouseEnter={() => setHoveredIndex(index)}
@@ -163,13 +142,13 @@ export default function WhyUsSection() {
           </ImageWrapper>
           {hoveredIndex === index ? (
             <HoverBlock>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <h3>{t(`${item.title}`)}</h3>
+              <p>{t(`${item.desc}`)}</p>
             </HoverBlock>
           ) : (
             <BlockWithImage>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <h3>{t(`${item.title}`)}</h3>
+              <p>{t(`${item.desc}`)}</p>
             </BlockWithImage>
           )}
         </AdvantageItem>
@@ -179,11 +158,11 @@ export default function WhyUsSection() {
 
   const advantagesListTablet = (
     <AdvantagesList>
-      {data.map((item, index) => (
+      {whyUsData.map((item: WhyUsSectionData, index) => (
         <AdvantageItem key={index}>
           <BlockForTablets>
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+            <h3>{t(`${item.title}`)}</h3>
+            <p>{t(`${item.desc}`)}</p>
           </BlockForTablets>
         </AdvantageItem>
       ))}

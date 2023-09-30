@@ -6,6 +6,7 @@ import { TabletContainer } from '@/theme/breakpoints';
 import { DesktopContainer } from '@/theme/breakpoints';
 import { device } from '@/theme/breakpoints';
 import { StatisticsBannerData } from '@/types/dataTypes';
+import statisticsData from '@/data/statisticsData.json';
 
 const BannerWrapper = styled.div`
   background-color: #282d33;
@@ -68,35 +69,18 @@ const StyledItem = styled.li`
 
 export default function StatisticBanner() {
   const t = useTranslations('Statistics');
-  const data: StatisticsBannerData[] = [
-    {
-      number: '4000+',
-      title: t('titles.1'),
-      text: t('subtitles.1'),
-    },
-    {
-      number: '10+',
-      title: t('titles.2'),
-      text: t('subtitles.2'),
-    },
-    {
-      number: '3.5m',
-      title: t('titles.3'),
-      text: t('subtitles.3'),
-    },
-  ];
   return (
     <BannerWrapper>
       <ContainerLayout>
         <StyledList>
-          {data.map((item) => {
+          {statisticsData.map((item: StatisticsBannerData) => {
             return (
               <StyledItem key={item.title}>
                 <DesktopContainer>
                   <h3>{item.number}</h3>
                 </DesktopContainer>
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
+                <h4>{t(`${item.title}`)}</h4>
+                <p>{t(`${item.text}`)}</p>
                 <TabletContainer>
                   <h3>{item.number}</h3>
                 </TabletContainer>

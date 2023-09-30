@@ -1,171 +1,14 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import ContainerLayout from '../layout/ContainerLayout';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
-
-interface SubService {
-  title: string;
-  desc: string[];
-  images: string[];
-}
-interface Service {
-  service: {
-    title: string;
-    subServices: SubService[];
-  };
-}
-
-export const fossilServices: Service[] = [
-  {
-    service: {
-      title: 'fossilService1Title',
-      subServices: [
-        {
-          title: 'fossilService1Subtitle1',
-          desc: ['fossilService1Desc1'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services3.png',
-            '/images/Services4.png',
-          ],
-        },
-        {
-          title: 'fossilService1Subtitle2',
-          desc: ['fossilService1Desc2'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2',
-            '/images/Services4.png',
-          ],
-        },
-        {
-          title: 'fossilService1Subtitle3',
-          desc: ['fossilService1Desc3'],
-          images: ['/images/Services3.png', '/images/Services4.png'],
-        },
-        {
-          title: 'fossilService1Subtitle4',
-          desc: ['fossilService1Desc4.png'],
-          images: ['/images/Services2.png'],
-        },
-      ],
-    },
-  },
-  {
-    service: {
-      title: 'fossilService2Title',
-      subServices: [
-        {
-          title: 'fossilService2Subtitle1',
-          desc: ['fossilService2Desc1'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services3.png',
-            '/images/Services4.png',
-          ],
-        },
-        {
-          title: 'fossilService2Subtitle2',
-          desc: ['fossilService2Desc2'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-
-            '/images/Services4.png',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    service: {
-      title: 'fossilService3Title',
-      subServices: [
-        {
-          title: 'fossilService3Subtitle1',
-          desc: ['fossilService3Desc1'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services3.png',
-            '/images/Services4.png',
-          ],
-        },
-        {
-          title: 'fossilService3Subtitle2',
-          desc: ['fossilService3Desc2'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services4.png',
-          ],
-        },
-        {
-          title: 'fossilService3Subtitle3',
-          desc: ['fossilService3Desc3', 'iso1', 'iso2'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2',
-            '/images/Services4.png',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    service: {
-      title: 'fossilService4Title',
-      subServices: [
-        {
-          title: 'fossilService4Subtitle1',
-          desc: ['fossilService4Desc1pt1', 'fossilService4Desc1pt2'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services3.png',
-            '/images/Services4.png',
-          ],
-        },
-        {
-          title: 'fossilService4Subtitle2',
-          desc: [
-            'fossilService4Desc2pt1.png',
-            'fossilService4Desc2pt2',
-            'fossilService4Desc2pt3',
-            'fossilService4Desc2pt4',
-          ],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services4.png',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    service: {
-      title: 'fossilService5Title',
-      subServices: [
-        {
-          title: 'fossilService5Subtitle1',
-          desc: ['fossilService5Desc1'],
-          images: [
-            '/images/Services1.png',
-            '/images/Services2.png',
-            '/images/Services3.png',
-            '/images/Services4.png',
-          ],
-        },
-      ],
-    },
-  },
-];
+import { ServiceData, SubServiceData } from '@/types/dataTypes';
+import servicesData from '@/data/servicesData.json';
+import { Link } from 'react-scroll';
 
 const ServicesWrapper = styled.div`
   margin-bottom: 80px;
@@ -330,25 +173,26 @@ const SubservicesList = styled.ul<{ $isSubserviceActive: boolean }>`
 `;
 
 const ServicesComponent = () => {
-  const [activeService, setActiveService] = useState<Service>(
-    fossilServices[0]
+  const t = useTranslations('Services');
+  const [activeService, setActiveService] = useState<ServiceData>(
+    servicesData[0]
   );
-  const [activeSubService, setActiveSubService] = useState<SubService>(
-    fossilServices[0]?.service?.subServices[0]
+  const [activeSubService, setActiveSubService] = useState<SubServiceData>(
+    servicesData[0]?.service?.subServices[0]
   );
 
-  const toggleActiveService = (service: Service) => {
+  const toggleActiveService = (service: ServiceData) => {
     setActiveService(service);
     setActiveSubService(service.service.subServices[0]);
   };
 
-  const toggleActiveSubService = (subService: SubService) => {
+  const toggleActiveSubService = (subService: SubServiceData) => {
     setActiveSubService(subService);
   };
 
-  const servicesList = fossilServices.map((serviceItem: Service, index) => (
+  const servicesList = servicesData.map((serviceItem: ServiceData, index) => (
     <ServicesItem key={index} onClick={() => toggleActiveService(serviceItem)}>
-      <h3>{serviceItem.service.title}</h3>
+      <h3>{t(`${serviceItem.service.title}`)}</h3>
       <SubservicesList
         $isSubserviceActive={
           serviceItem.service.title === activeService.service.title
@@ -363,7 +207,7 @@ const ServicesComponent = () => {
             }}
             $isActive={subService === activeSubService}
           >
-            {subService.title}
+            {t(`${subService.title}`)}
           </SubServicesItem>
         ))}
       </SubservicesList>
@@ -381,17 +225,25 @@ const ServicesComponent = () => {
       <ServicesContainer>
         <ServicesMenu>
           <ServicesHeading>
-            <h2>Fossil Services</h2>
+            <h2>{t('sectionTitle')}</h2>
           </ServicesHeading>
           <ul>{servicesList}</ul>
         </ServicesMenu>
         <ServicesContent>
           <ServicesText>
-            <h3>{activeSubService.title}</h3>
+            <h3>{t(`${activeSubService.title}`)}</h3>
             {activeSubService.desc.map((desc, idx) => (
-              <p key={idx}>{desc}</p>
+              <p key={idx}>{t(`${desc}`)}</p>
             ))}
-            <Button text="Service Price Button" />
+            <Link
+              to="contactUs"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-100}
+            >
+              <Button text={t('button')} />
+            </Link>
           </ServicesText>
           <div>
             <ServicesMainImage>

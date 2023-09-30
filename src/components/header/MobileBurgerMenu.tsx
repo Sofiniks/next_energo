@@ -1,6 +1,7 @@
 'use client';
-import Link from 'next/link';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { Cross } from '../icons/Cross';
 
 interface MobileMenuProps {
@@ -49,9 +50,10 @@ const MenuItem = styled.li`
 `;
 
 const MobileBurgerMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  const t = useTranslations('Header');
   const navLinks = [
-    { text: 'Uz sakumu', href: '/' },
-    { text: 'Services', href: '/services' },
+    { title: 'home', href: '/' },
+    { title: 'contactUs', href: '/services' },
   ];
 
   return (
@@ -64,9 +66,9 @@ const MobileBurgerMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </div>
         </MenuHeader>
         <MenuList>
-          {navLinks.map((link, index) => (
-            <MenuItem key={index} onClick={onClose}>
-              <Link href={link.href}>{link.text}</Link>
+          {navLinks.map((link) => (
+            <MenuItem key={link.title} onClick={onClose}>
+              <Link href={link.href}>{t(`${link.title}`)}</Link>
             </MenuItem>
           ))}
         </MenuList>

@@ -6,6 +6,8 @@
     "Hero": {
         "sectionTitle": "About us",
         "sectionSubtitle": "We work for you to save! Also, as a result of the work, the environmental footprint and energy consumption are reduced. Our team is committed to the long-term development and popularization of the use of alternative energy sources.",
+        "servicesSectionTitle": "Services with fossil energy",
+        "servicesSectionSubtitle": "When using traditional energy sources, the fundamental element is a monthly fee for services! In our work, we offer our clients alternative ways to reduce energy costs without losing comfort.",
         "button": "find out more about our services",
         "mainBanner": {
             "titles": {
