@@ -1,0 +1,16 @@
+{
+  "name": "Energo Efektivitate",
+  "short_name": "Energo",
+  "description": "We are a trusted energy efficiency company specializing in energy certification, audits, thermography, and more. Contact us for sustainable solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#282d33",
+  "background_color": "#e5e5e5",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

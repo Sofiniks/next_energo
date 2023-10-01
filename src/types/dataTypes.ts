@@ -1,5 +1,3 @@
-import { JSX } from 'react';
-
 export interface MainBannerData {
   title: string;
   subtitle: string;

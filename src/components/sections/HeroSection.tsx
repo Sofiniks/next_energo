@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
 import { Link } from 'react-scroll';
-import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
 import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
@@ -65,7 +64,7 @@ const SectionText = styled.div`
     }
   }
   h3 {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-weight: 500;
     font-size: 20px;
     padding-left: 50px;
@@ -82,8 +81,10 @@ const SectionText = styled.div`
 `;
 const ButtonWrapper = styled.div`
   padding-left: 50px;
+  margin-top: 30px;
   @media ${device.sm} {
     padding-left: 0;
+    text-align: center;
   }
 `;
 const BannerWrapper = styled.div`
@@ -99,6 +100,25 @@ const BannerWrapper = styled.div`
     &::-webkit-scrollbar {
       display: none !important;
     }
+  }
+`;
+
+const StyledYellowLink = styled(Link)`
+  background-color: #ffc91e;
+  border-radius: 3px;
+  color: #282d33;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 40px;
+  border: 1px solid #ffc91e;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media ${device.sm} {
+    padding: 14px 20px;
   }
 `;
 
@@ -121,15 +141,15 @@ const HeroSection = ({ isMainPage }: HeroSectionProps) => {
               {isMainPage ? t('sectionSubtitle') : t('servicesSectionSubtitle')}
             </h3>
             <ButtonWrapper>
-              <Link
+              <StyledYellowLink
                 to="contactUs"
                 spy={true}
                 smooth={true}
                 duration={500}
                 offset={-100}
               >
-                <Button text={t('button')} />
-              </Link>
+                {t('button')}
+              </StyledYellowLink>
             </ButtonWrapper>
           </SectionText>
         </Container>
