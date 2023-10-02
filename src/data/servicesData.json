@@ -103,8 +103,8 @@
         {
           "title": "servicesList.service4.subservices.subservice1.title",
           "desc": [
-            "servicesList.service4.subservices.subservice3.text.1",
-            "servicesList.service4.subservices.subservice3.text.2"
+            "servicesList.service4.subservices.subservice1.text.1",
+            "servicesList.service4.subservices.subservice1.text.2"
           ],
           "images": [
             "/images/Services1.png",
