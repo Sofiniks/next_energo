@@ -1,11 +1,21 @@
 [
   {
     "service": {
-      "title": "servicesList.service1.title",
+      "title": "",
       "subServices": [
         {
           "title": "servicesList.service1.subservices.subservice1.title",
-          "desc": ["servicesList.service1.subservices.subservice1.text"],
+          "list": [
+            "servicesList.service1.subservices.subservice1.list.1",
+            "servicesList.service1.subservices.subservice1.list.2",
+            "servicesList.service1.subservices.subservice1.list.3",
+            "servicesList.service1.subservices.subservice1.list.4",
+            "servicesList.service1.subservices.subservice1.list.5",
+            "servicesList.service1.subservices.subservice1.list.6",
+            "servicesList.service1.subservices.subservice1.list.7",
+            "servicesList.service1.subservices.subservice1.list.8",
+            "servicesList.service1.subservices.subservice1.list.9",
+            "servicesList.service1.subservices.subservice1.list.10"],
           "images": [
             "/images/Services1.png",
             "/images/Services2.png",
@@ -15,7 +25,10 @@
         },
         {
           "title": "servicesList.service1.subservices.subservice2.title",
-          "desc": ["servicesList.service1.subservices.subservice2.text"],
+          "list": [
+            "servicesList.service1.subservices.subservice1.list.1",
+            "servicesList.service1.subservices.subservice1.list.2",
+            "servicesList.service1.subservices.subservice1.list.3"],
           "images": [
             "/images/Services1.png",
             "/images/Services2.png",
@@ -29,118 +42,57 @@
         },
         {
           "title": "servicesList.service1.subservices.subservice4.title",
-          "desc": ["servicesList.service1.subservices.subservice4.text"],
+          "list": [
+            "servicesList.service1.subservices.subservice4.list.1",
+            "servicesList.service1.subservices.subservice4.list.2",
+            "servicesList.service1.subservices.subservice4.list.3"],
           "images": ["/images/Services2.png"]
-        }
-      ]
-    }
-  },
-  {
-    "service": {
-      "title": "servicesList.service2.title",
-      "subServices": [
-        {
-          "title": "servicesList.service2.subservices.subservice1.title",
-          "desc": ["servicesList.service2.subservices.subservice1.text"],
-          "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services3.png",
-            "/images/Services4.png"
-          ]
         },
         {
-          "title": "servicesList.service2.subservices.subservice2.title",
-          "desc": ["servicesList.service2.subservices.subservice2.text"],
-          "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services4.png"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "service": {
-      "title": "servicesList.service3.title",
-      "subServices": [
-        {
-          "title": "servicesList.service3.subservices.subservice1.title",
-          "desc": ["servicesList.service3.subservices.subservice1.text"],
-          "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services3.png",
-            "/images/Services4.png"
-          ]
-        },
-        {
-          "title": "servicesList.service3.subservices.subservice2.title",
-          "desc": ["servicesList.service3.subservices.subservice2.text"],
-          "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services4.png"
-          ]
-        },
-        {
-          "title": "servicesList.service3.subservices.subservice3.title",
-          "desc": [
-            "servicesList.service3.subservices.subservice3.text.1",
-            "servicesList.service3.subservices.subservice3.text.2",
-            "servicesList.service3.subservices.subservice3.text.3"
-          ],
-          "images": ["/images/Services1.png", "/images/Services2", "/images/Services4.png"]
-        }
-      ]
-    }
-  },
-  {
-    "service": {
-      "title": "servicesList.service4.title",
-      "subServices": [
-        {
-          "title": "servicesList.service4.subservices.subservice1.title",
-          "desc": [
-            "servicesList.service4.subservices.subservice1.text.1",
-            "servicesList.service4.subservices.subservice1.text.2"
-          ],
-          "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services3.png",
-            "/images/Services4.png"
-          ]
-        },
-        {
-          "title": "servicesList.service4.subservices.subservice2.title",
-          "desc": [
-            "servicesList.service4.subservices.subservice2.text.1",
-            "servicesList.service4.subservices.subservice2.text.2",
-            "servicesList.service4.subservices.subservice2.text.3",
-            "servicesList.service4.subservices.subservice2.text.4"
+          "title": "servicesList.service1.subservices.subservice5.title",
+          "list": [
+            "servicesList.service1.subservices.subservice5.list.1",
+            "servicesList.service1.subservices.subservice5.list.2"
           ],
           "images": [
             "/images/Services1.png",
             "/images/Services2.png",
             "/images/Services4.png"
           ]
-        }
-      ]
-    }
-  },
-  {
-    "service": {
-      "title": "servicesList.service5.title",
-      "subServices": [
+        },
         {
-          "title": "servicesList.service5.subservices.subservice1.title",
-          "desc": ["servicesList.service5.subservices.subservice1.text"],
+          "title": "servicesList.service1.subservices.subservice6.title",
+          "list": [
+            "servicesList.service1.subservices.subservice6.list.1",
+            "servicesList.service1.subservices.subservice6.list.2"
+          ],
           "images": [
             "/images/Services1.png",
             "/images/Services2.png",
-            "/images/Services3.png",
+            "/images/Services4.png"
+          ]
+        },
+        {
+          "title": "servicesList.service1.subservices.subservice7.title",
+          "list": [
+            "servicesList.service1.subservices.subservice7.list.1",
+            "servicesList.service1.subservices.subservice7.list.2"
+          ],
+          "images": [
+            "/images/Services1.png",
+            "/images/Services2.png",
+            "/images/Services4.png"
+          ]
+        },
+        {
+          "title": "servicesList.service1.subservices.subservice8.title",
+          "list": [
+            "servicesList.service1.subservices.subservice8.list.1",
+            "servicesList.service1.subservices.subservice8.list.2"
+          ],
+          "images": [
+            "/images/Services1.png",
+            "/images/Services2.png",
             "/images/Services4.png"
           ]
         }

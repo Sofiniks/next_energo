@@ -226,19 +226,19 @@ const FormElement = ({ setModalOpen }: { setModalOpen: () => void }) => {
         <input
           type="text"
           placeholder={t('form.placeholders.name')}
-          // name="entry.2005620554"
+          name="entry.2005620554"
           required
         />
         <input
           type="text"
           placeholder={t('form.placeholders.email')}
-          // name="entry.1045781291"
+          name="entry.1045781291"
           required
         />
         <textarea
           rows={1}
           placeholder={t('form.placeholders.message')}
-          // name="entry.839337160"
+          name="entry.839337160"
           required
         />
         <ButtonWrapper>

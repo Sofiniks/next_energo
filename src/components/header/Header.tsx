@@ -116,9 +116,9 @@ export default function Header() {
             </LogoWrapper>
             <Navbar>
               <NavList>
-                {/* <li>
+                <li>
                   <Link href="/">{t('home')}</Link>
-                </li> */}
+                </li>
                 <li>
                   <Link href="/fossil-energy-services">
                     <div>{t('servicesWith')}</div>

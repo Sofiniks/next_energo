@@ -39,6 +39,7 @@ const ServicesMenu = styled.div`
 `;
 
 const ServicesContent = styled.div`
+  min-width: 70%;
   background-color: #fff;
   padding: 20px 20px 40px 20px;
 `;
@@ -89,11 +90,16 @@ const SubServicesItem = styled.li<{ $isActive: boolean }>`
   text-transform: none;
   padding-left: 20px;
   padding-right: 65px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   cursor: pointer;
+  transition: ease-in .3s;
   border-left: ${({ $isActive }) =>
     $isActive ? '3px solid #ffc91e' : '3px solid transparent'};
   font-weight: ${({ $isActive }) => ($isActive ? 'bold' : 'unset')};
+  &:hover {
+    border-left: 3px solid #ffc91e;;
+    font-weight: bold;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
@@ -116,7 +122,7 @@ const ServicesText = styled.div`
   }
 
   p {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     line-height: 25px;
     @media ${device.md} {
       font-size: 14px;
@@ -165,19 +171,36 @@ const ServicesImagesItem = styled.li`
   }
 `;
 
-const SubservicesList = styled.ul<{ $isSubserviceActive: boolean }>`
+const SubservicesList = styled.ul<{
+  $isSubserviceActive: boolean;
+  $isNoTitle: boolean;
+}>`
   @media ${device.md} {
-    opacity: ${({ $isSubserviceActive }) => ($isSubserviceActive ? 1 : 0)};
-    z-index: ${({ $isSubserviceActive }) => ($isSubserviceActive ? 3 : '-3')};
-    top: ${({ $isSubserviceActive }) => ($isSubserviceActive ? 0 : '-40px')};
-    overflow: ${({ $isSubserviceActive }) =>
-      $isSubserviceActive ? 'unset' : 'hidden'};
-    height: ${({ $isSubserviceActive }) =>
-      $isSubserviceActive ? 'unset' : '0'};
+    opacity: ${({ $isSubserviceActive, $isNoTitle }) =>
+      $isSubserviceActive || $isNoTitle ? 1 : 0};
+    z-index: ${({ $isSubserviceActive, $isNoTitle }) =>
+      $isSubserviceActive || $isNoTitle ? 3 : '-3'};
+    top: ${({ $isSubserviceActive, $isNoTitle }) =>
+      $isSubserviceActive || $isNoTitle ? 0 : '-40px'};
+    overflow: ${({ $isSubserviceActive, $isNoTitle }) =>
+      $isSubserviceActive || $isNoTitle ? 'unset' : 'hidden'};
+    height: ${({ $isSubserviceActive, $isNoTitle }) =>
+      $isSubserviceActive || $isNoTitle ? 'unset' : '0'};
   }
 `;
 
-const ServicesComponent = ({translationTitle, servicesData}: ServicesSectionProps) => {
+const ContentList = styled.ul`
+  margin-top: 20px;
+  margin-bottom: 30px;
+  li {
+    margin-bottom: 10px;
+  }
+`;
+
+const ServicesComponent = ({
+  translationTitle,
+  servicesData,
+}: ServicesSectionProps) => {
   const t = useTranslations(translationTitle);
   const [activeService, setActiveService] = useState<ServiceData>(
     servicesData[0]
@@ -197,11 +220,14 @@ const ServicesComponent = ({translationTitle, servicesData}: ServicesSectionProp
 
   const servicesList = servicesData.map((serviceItem: ServiceData, index) => (
     <ServicesItem key={index} onClick={() => toggleActiveService(serviceItem)}>
-      <h3>{t(`${serviceItem.service.title}`)}</h3>
+      {serviceItem.service.title && (
+        <h3>{t(`${serviceItem.service.title}`)}</h3>
+      )}
       <SubservicesList
         $isSubserviceActive={
           serviceItem.service.title === activeService.service.title
         }
+        $isNoTitle={serviceItem.service.title === ''}
       >
         {serviceItem.service.subServices.map((subService, subServiceIndex) => (
           <SubServicesItem
@@ -237,9 +263,16 @@ const ServicesComponent = ({translationTitle, servicesData}: ServicesSectionProp
         <ServicesContent>
           <ServicesText>
             <h3>{t(`${activeSubService.title}`)}</h3>
-            {activeSubService.desc.map((desc, idx) => (
+            {activeSubService?.desc?.map((desc, idx) => (
               <p key={idx}>{t(`${desc}`)}</p>
             ))}
+            {activeSubService?.list && (
+              <ContentList>
+                {activeSubService?.list?.map((item, index) => (
+                  <li key={index}>{t(`${item}`)}</li>
+                ))}
+              </ContentList>
+            )}
             <Link
               to="contactUs"
               spy={true}

@@ -18,7 +18,8 @@ export interface WhyUsSectionData {
 
 export interface SubServiceData {
   title: string;
-  desc: string[];
+  desc?: string[];
+  list?: string[];
   images: string[];
 }
 export interface ServiceData {
