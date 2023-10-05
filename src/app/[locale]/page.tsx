@@ -7,7 +7,11 @@ import { Suspense } from 'react';
 export default function Home() {
   return (
     <Suspense fallback={<div>Loading</div>}>
-      <HeroSection isMainPage />
+      <HeroSection
+        isMainPage
+        sectionTitle="homeSectionTitle"
+        sectionContent="homeSectionContent"
+      />
       <StatisticBanner />
       <WhyUsSection />
       <ContactForm />

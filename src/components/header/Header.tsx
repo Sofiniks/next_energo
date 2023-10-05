@@ -7,12 +7,11 @@ import Image from 'next/image';
 import { device } from '@/theme/breakpoints';
 import ContainerLayout from '../layout/ContainerLayout';
 import { TabletContainer, DesktopContainer } from '@/theme/breakpoints';
-import LanguageToggle  from './LanguageToggle';
-import  MobileBurgerMenu  from './MobileBurgerMenu';
+import LanguageToggle from './LanguageToggle';
+import MobileBurgerMenu from './MobileBurgerMenu';
 import { Contact } from '../icons/Contact';
 import { Burger } from '../icons/Burger';
 import contacts from '@/data/contacts.json';
-
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -57,13 +56,12 @@ const LogoWrapper = styled.div`
 `;
 const Navbar = styled.nav`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 `;
 const NavList = styled.ul`
   display: flex;
   li {
     margin-right: 40px;
-    padding-bottom: 24px;
     font-weight: 600;
     font-size: 18px;
     white-space: nowrap;
@@ -118,11 +116,20 @@ export default function Header() {
             </LogoWrapper>
             <Navbar>
               <NavList>
-                <li>
+                {/* <li>
                   <Link href="/">{t('home')}</Link>
+                </li> */}
+                <li>
+                  <Link href="/fossil-energy-services">
+                    <div>{t('servicesWith')}</div>
+                    <div>{t('fossilEnergy')}</div>
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/services">{t('services')}</Link>
+                  <Link href="/electricity-services">
+                    <div>{t('servicesWith')}</div>
+                    <div>{t('electricity')}</div>
+                  </Link>
                 </li>
               </NavList>
             </Navbar>
@@ -132,7 +139,9 @@ export default function Header() {
               <Contact />
               <div>
                 <p>{t('contactUs')}</p>
-                <a href={`tel:${contacts.phoneNumber}`}>{contacts.phoneNumber}</a>
+                <a href={`tel:${contacts.phoneNumber}`}>
+                  {contacts.phoneNumber}
+                </a>
               </div>
             </Info>
             <LanguageToggle />

@@ -10,12 +10,14 @@ import bannerData from '../../data/mainBanner.json';
 
 interface HeroSectionProps {
   isMainPage?: boolean;
+  sectionTitle: string;
+  sectionContent: string;
 }
 
 const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
   min-height: 95vh;
   height: 95vh;
-  padding-top: 80px;
+  padding-top: 60px;
   margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '230px' : '80px')};
   position: relative;
 
@@ -23,7 +25,7 @@ const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
     margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '300px' : 0)};
     height: 90vh;
     min-height: 90vh;
-    padding-top: 60px;
+    padding-top: 50px;
   }
 `;
 
@@ -102,7 +104,7 @@ const BannerWrapper = styled.div`
   }
 `;
 
-const HeroSection = ({ isMainPage }: HeroSectionProps) => {
+const HeroSection = ({ isMainPage, sectionContent, sectionTitle }: HeroSectionProps) => {
   const t = useTranslations('Hero');
 
   return (
@@ -114,12 +116,8 @@ const HeroSection = ({ isMainPage }: HeroSectionProps) => {
       >
         <Container>
           <SectionText>
-            <h1>
-              {isMainPage ? t('sectionTitle') : t('servicesSectionTitle')}
-            </h1>
-            <h3>
-              {isMainPage ? t('sectionSubtitle') : t('servicesSectionSubtitle')}
-            </h3>
+            <h1>{t(`${sectionTitle}`)}</h1>
+            <h3>{t(`${sectionContent}`)}</h3>
             <ButtonWrapper>
               <Link
                 to="contactUs"

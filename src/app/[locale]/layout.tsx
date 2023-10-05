@@ -1,12 +1,14 @@
 import './globals.css';
 import { Montserrat } from 'next/font/google';
-// import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
+import { FacebookPixelEvents } from '@/components/pixel-events';
 import PageLayout from '@/components/layout/PageLayout';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import StyledComponentsRegistry from '@/lib/registry';
+import {latvianKeywords, englishKeywords, russianKeywords} from './keywords'
+import { Suspense } from 'react';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -40,72 +42,20 @@ export async function generateMetadata({
   const keywords = (() => {
     switch (params.locale) {
       case 'lv':
-        return [
-          'Enerģijas sertifikācija',
-          'Enerģijas revīzijas',
-          'Termogrāfija',
-          'Energoefektivitāte',
-          'Ilgtspējīgi risinājumi',
-          'ISO sertifikācija',
-          'Tehniskā pārbaude',
-          'Enerģijas pārvaldes sistēmas',
-          'Termogrāfisks izpētes metods',
-          'Ēku inspekcijas',
-          'Sildīšanas un ventilācijas efektivitāte',
-          'Rūpnieciskie enerģijas auditi',
-        ];
+        return latvianKeywords;
       case 'en':
-        return [
-          'Energy Certification',
-          'Energy Audits',
-          'Thermography',
-          'Energy Efficiency',
-          'Sustainable Solutions',
-          'ISO Certification',
-          'Technical Examination',
-          'Energy Management Systems',
-          'Thermal Imaging',
-          'Building Inspections',
-          'Heating Efficiency',
-          'Industrial Energy Audits',
-        ];
+        return englishKeywords
       case 'ru':
-        return [
-          'Сертификация энергии',
-          'Энергетические аудиты',
-          'Термография',
-          'Энергоэффективность',
-          'Устойчивые решения',
-          'Сертификация ISO',
-          'Техническое обследование',
-          'Системы управления энергией',
-          'Тепловизия',
-          'Инспекции зданий',
-          'Эффективность отопления',
-          'Энергетические аудиты промышленных предприятий',
-        ];
+        return russianKeywords
       default:
-        return [
-          'Enerģijas sertifikācija',
-          'Enerģijas revīzijas',
-          'Termogrāfija',
-          'Energoefektivitāte',
-          'Ilgtspējīgi risinājumi',
-          'ISO sertifikācija',
-          'Tehniskā pārbaude',
-          'Enerģijas pārvaldes sistēmas',
-          'Termogrāfisks izpētes metods',
-          'Ēku inspekcijas',
-          'Sildīšanas un ventilācijas efektivitāte',
-          'Rūpnieciskie enerģijas auditi',
-        ];
+        return latvianKeywords;
     }
   })();
 
   return {
     metadataBase: new URL('https://sofiniks.store/'),
     title: {
-      default: 'Energo',
+      default: 'Energo Efektivitate',
       template: '%s | Energo',
     },
     description,
@@ -119,20 +69,12 @@ export async function generateMetadata({
     },
     // manifest: 'https://sofiniks.store/manifest.json',
     verification: {
-      google: 'google',
-      yandex: 'yandex',
-      yahoo: 'yahoo',
+      other: {
+        ['facebook-domain-verification']: 'y5eifh8wzn4cj3yixxb43jpu2bdphg',
+      },
     },
   };
 }
-
-// export const metadata: Metadata = {
-//   title: {
-//     default: 'Energo',
-//     template: '%s | Energo',
-//   },
-//   description: 'Pakalpojumi ar fosilo enerģiju',
-// };
 
 export default async function LocaleLayout({
   children,
@@ -161,6 +103,9 @@ export default async function LocaleLayout({
               {children}
               <Footer />
             </PageLayout>
+            <Suspense fallback={null}>
+              <FacebookPixelEvents />
+            </Suspense>
           </StyledComponentsRegistry>
         </NextIntlClientProvider>
       </body>

@@ -8,7 +8,11 @@ import ContainerLayout from '../layout/ContainerLayout';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
 import { ServiceData, SubServiceData } from '@/types/dataTypes';
-import servicesData from '@/data/servicesData.json';
+
+interface ServicesSectionProps {
+  translationTitle: string;
+  servicesData: ServiceData[];
+}
 
 const ServicesWrapper = styled.div`
   margin-bottom: 80px;
@@ -173,8 +177,8 @@ const SubservicesList = styled.ul<{ $isSubserviceActive: boolean }>`
   }
 `;
 
-const ServicesComponent = () => {
-  const t = useTranslations('Services');
+const ServicesComponent = ({translationTitle, servicesData}: ServicesSectionProps) => {
+  const t = useTranslations(translationTitle);
   const [activeService, setActiveService] = useState<ServiceData>(
     servicesData[0]
   );
