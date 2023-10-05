@@ -117,9 +117,6 @@ export default function Header() {
             <Navbar>
               <NavList>
                 <li>
-                  <Link href="/">{t('home')}</Link>
-                </li>
-                <li>
                   <Link href="/fossil-energy-services">
                     <div>{t('servicesWith')}</div>
                     <div>{t('fossilEnergy')}</div>
