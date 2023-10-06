@@ -1,4 +1,4 @@
-export function Russian() {
+export function lv() {
   return (
     <svg
       width="29"
@@ -16,14 +16,8 @@ export function Russian() {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M0 15H60V45H0V15Z"
-        fill="#0039A6"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M0 30H60V45H0V30Z"
-        fill="#D52B1E"
+        d="M0 0H60V18H0V0ZM0 27H60V45H0V27Z"
+        fill="#981E32"
       />
     </svg>
   );

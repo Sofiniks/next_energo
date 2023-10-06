@@ -1,6 +1,6 @@
 import React from 'react';
 
-const English = () => (
+const en = () => (
   <svg
     width="28"
     height="19"
@@ -45,4 +45,4 @@ const English = () => (
   </svg>
 );
 
-export default English;
+export default en;

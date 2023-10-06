@@ -5,17 +5,17 @@ import BuildingIcon4 from "./BuildingIcon4";
 import { Burger } from "./Burger";
 import { Contact } from "./Contact";
 import { Cross } from "./Cross";
-import English from "./English";
+import en from "./en";
 import { Facebook } from "./Facebook";
 import { Instagram } from "./Instagram";
-import { Latvian } from "./Latvian";
+import { lv } from "./lv";
 import { Letter } from "./Letter";
 import { LetterBlack } from "./LetterBlack";
 import { Location } from "./Location";
 import { LocationBlack } from "./LocationBlack";
 import { Phone } from "./Phone";
 import { PhoneBlack } from "./PhoneBlack";
-import { Russian } from "./Russian";
+import { ru } from "./ru";
 import { Tick } from "./Tick";
 import { TickGreen } from "./TickGreen";
 import { Whatsapp } from "./Whatsapp";
@@ -32,17 +32,17 @@ const componentMap: IconComponentMap = {
   Burger,
   Contact,
   Cross,
-  English,
+  en,
   Facebook,
   Instagram,
-  Latvian,
+  lv,
   Letter,
   LetterBlack,
   Location,
   LocationBlack,
   Phone,
   PhoneBlack,
-  Russian,
+  ru,
   Tick,
   TickGreen,
   Whatsapp

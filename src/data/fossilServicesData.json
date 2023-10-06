@@ -43,10 +43,17 @@
           "title": "servicesList.service2.subservices.subservice1.title",
           "desc": ["servicesList.service2.subservices.subservice1.text"],
           "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services3.png",
-            "/images/Services4.png"
+            "/images/thermo1.jpeg",
+            "/images/thermo2.jpeg",
+            "/images/thermo3.jpeg",
+            "/images/thermo4.jpeg",
+            "/images/thermo5.jpeg",
+            "/images/thermo6.jpeg",
+            "/images/thermo7.jpeg",
+            "/images/thermo8.jpeg",
+            "/images/thermo9.jpeg",
+            "/images/thermo10.jpeg"
+         
           ]
         },
         {

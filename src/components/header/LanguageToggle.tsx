@@ -8,9 +8,9 @@ import { device } from '@/theme/breakpoints';
 import getIconComponent from '../icons/IconMapper';
 
 const languagesList: LanguagesToggleData[] = [
-  { key: 'lv', iconKey: 'Latvian', title: 'Latviski' },
-  { key: 'en', iconKey: 'English', title: 'English' },
-  { key: 'ru', iconKey: 'Russian', title: 'Русский' },
+  { key: 'lv', iconKey: 'lv', title: 'Latviski' },
+  { key: 'en', iconKey: 'en', title: 'English' },
+  { key: 'ru', iconKey: 'ru', title: 'Русский' },
 ];
 
 const LanguageToggleWrapper = styled.div`
@@ -92,7 +92,7 @@ function LanguageToggle() {
   const locale = useLocale();
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/';
   const [isOpen, setIsOpen] = useState(false);
-  const [activeIcon, setActiveIcon] = useState('lv');
+  const [activeIcon, setActiveIcon] = useState(locale);
   useEffect(() => {
     const newLocale = languagesList.find(
       (item: LanguagesToggleData) => item.key === locale

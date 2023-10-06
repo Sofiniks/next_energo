@@ -54,7 +54,7 @@ const MobileBurgerMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const navLinks = [
     { title: 'home', href: '/' },
     { title: 'mobileServicesFossil', href: '/fossil-energy-services' },
-    { title: 'mobileServicesElectricity', href: '/electricity-energy-services' },
+    { title: 'mobileServicesElectricity', href: '/electricity-services' },
   ];
 
   return (
