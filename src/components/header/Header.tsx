@@ -94,8 +94,8 @@ const HeaderMobile = styled.div`
 
 export default function Header() {
   const t = useTranslations('Header');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const locale = useLocale();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -106,7 +106,7 @@ export default function Header() {
         <HeaderDesktopContainer>
           <HeaderLeft>
             <LogoWrapper>
-              <Link locale={locale} href="/">
+              <Link href={`/${locale}`}>
                 <Image
                   src="/images/energoLogo.png"
                   alt="logo"
@@ -118,13 +118,13 @@ export default function Header() {
             <Navbar>
               <NavList>
                 <li>
-                  <Link locale={locale} href="/fossil-energy-services">
+                  <Link href={`/${locale}/fossil-energy-services`}>
                     <div>{t('servicesWith')}</div>
                     <div>{t('fossilEnergy')}</div>
                   </Link>
                 </li>
                 <li>
-                  <Link locale={locale} href="/electricity-services">
+                  <Link href={`/${locale}/electricity-services`}>
                     <div>{t('servicesWith')}</div>
                     <div>{t('electricity')}</div>
                   </Link>
@@ -152,7 +152,7 @@ export default function Header() {
               <Burger />
             </div>
             <LogoWrapper>
-              <Link locale={locale} href="/">
+              <Link href={`/${locale}`}>
                 <Image
                   src="/images/energoLogo.png"
                   alt="logo"

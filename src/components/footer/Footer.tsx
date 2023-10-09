@@ -114,7 +114,7 @@ export default function Footer() {
       <ContainerLayout>
         <FooterTop>
           <LogoWrapper>
-            <Link href="/" locale={locale}>
+            <Link href={`/${locale}`}>
               <Image
                 src="/images/energoLogo.png"
                 alt="logo"

@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Cross } from '../icons/Cross';
 
@@ -51,10 +51,17 @@ const MenuItem = styled.li`
 
 const MobileBurgerMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const t = useTranslations('Header');
+  const locale = useLocale();
   const navLinks = [
-    { title: 'home', href: '/' },
-    { title: 'mobileServicesFossil', href: '/fossil-energy-services' },
-    { title: 'mobileServicesElectricity', href: '/electricity-services' },
+    { title: 'home', href: `/${locale}` },
+    {
+      title: 'mobileServicesFossil',
+      href: `/${locale}/fossil-energy-services`,
+    },
+    {
+      title: 'mobileServicesElectricity',
+      href: `${locale}/electricity-services`,
+    },
   ];
 
   return (

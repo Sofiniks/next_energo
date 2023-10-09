@@ -92,13 +92,6 @@ function LanguageToggle() {
   const locale = useLocale();
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/';
   const [isOpen, setIsOpen] = useState(false);
-  const [activeIcon, setActiveIcon] = useState(locale);
-  useEffect(() => {
-    const newLocale = languagesList.find(
-      (item: LanguagesToggleData) => item.key === locale
-    )?.iconKey;
-    setActiveIcon(newLocale || 'lv');
-  }, [locale]);
 
   const toggleLanguageOptions = () => {
     setIsOpen(!isOpen);
@@ -107,13 +100,13 @@ function LanguageToggle() {
   return (
     <LanguageToggleWrapper>
       <LanguageToggleBox onClick={toggleLanguageOptions}>
-        {getIconComponent(activeIcon)}
+        {getIconComponent(locale)}
       </LanguageToggleBox>
       <LanguageOptions $isOpen={isOpen}>
         <ul>
           {languagesList.map((item) => (
             <li key={item.key}>
-              <Link locale={item.key} href={`/${item.key}/${pathname}`}>
+              <Link href={`/${item.key}/${pathname}`}>
                 <LinkContent>
                   {getIconComponent(item.iconKey)}
                   <p>{item.title}</p>
