@@ -9,6 +9,7 @@ import Footer from '@/components/footer/Footer';
 import StyledComponentsRegistry from '@/lib/registry';
 import {latvianKeywords, englishKeywords, russianKeywords} from './keywords'
 import { Suspense } from 'react';
+import GoogleAnalytics from './GoogleAnalytics';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -96,6 +97,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={montserrat.className}>
+        <GoogleAnalytics/>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <StyledComponentsRegistry>
             <PageLayout>

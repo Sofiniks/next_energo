@@ -11,10 +11,10 @@ const ContainerLayout = styled.div`
     max-width: 966px;
   }
   @media (max-width: 1000px) {
-    max-width: calc(100vw - 60px);
+    max-width: calc(100% - 60px);
   }
   @media ${device.sm} {
-    max-width: calc(100vw - 20px);
+    max-width: calc(100% - 20px);
   }
 `;
 

@@ -15,16 +15,16 @@ interface HeroSectionProps {
 }
 
 const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
-  min-height: 95vh;
+  min-height: 95%;
   height: 95vh;
-  padding-top: 60px;
+  padding-top: 40px;
   margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '230px' : '80px')};
   position: relative;
 
   @media ${device.md} {
     margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '300px' : 0)};
     height: 90vh;
-    min-height: 90vh;
+    min-height: 90%;
     padding-top: 50px;
   }
 `;
@@ -104,7 +104,11 @@ const BannerWrapper = styled.div`
   }
 `;
 
-const HeroSection = ({ isMainPage, sectionContent, sectionTitle }: HeroSectionProps) => {
+const HeroSection = ({
+  isMainPage,
+  sectionContent,
+  sectionTitle,
+}: HeroSectionProps) => {
   const t = useTranslations('Hero');
 
   return (

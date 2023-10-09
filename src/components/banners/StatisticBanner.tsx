@@ -12,8 +12,8 @@ const BannerWrapper = styled.div`
   padding: 20px 0;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
 
   @media ${device.md} {
     margin-bottom: 40px;
