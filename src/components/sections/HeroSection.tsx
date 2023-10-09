@@ -15,7 +15,7 @@ interface HeroSectionProps {
 }
 
 const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
-  min-height: 95%;
+  min-height: 900px;
   height: 95vh;
   padding-top: 40px;
   margin-bottom: ${({ $isMainPage }) => ($isMainPage ? '230px' : '80px')};
