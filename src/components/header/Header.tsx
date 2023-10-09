@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import { device } from '@/theme/breakpoints';
@@ -95,6 +95,7 @@ const HeaderMobile = styled.div`
 export default function Header() {
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locale = useLocale();
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -105,7 +106,7 @@ export default function Header() {
         <HeaderDesktopContainer>
           <HeaderLeft>
             <LogoWrapper>
-              <Link href="/">
+              <Link locale={locale} href="/">
                 <Image
                   src="/images/energoLogo.png"
                   alt="logo"
@@ -117,13 +118,13 @@ export default function Header() {
             <Navbar>
               <NavList>
                 <li>
-                  <Link href="/fossil-energy-services">
+                  <Link locale={locale} href="/fossil-energy-services">
                     <div>{t('servicesWith')}</div>
                     <div>{t('fossilEnergy')}</div>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/electricity-services">
+                  <Link locale={locale} href="/electricity-services">
                     <div>{t('servicesWith')}</div>
                     <div>{t('electricity')}</div>
                   </Link>
@@ -151,7 +152,7 @@ export default function Header() {
               <Burger />
             </div>
             <LogoWrapper>
-              <Link href="/">
+              <Link locale={locale} href="/">
                 <Image
                   src="/images/energoLogo.png"
                   alt="logo"

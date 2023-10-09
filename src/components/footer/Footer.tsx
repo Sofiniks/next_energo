@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import ContainerLayout from '../layout/ContainerLayout';
@@ -25,11 +25,6 @@ const FooterTop = styled.div`
     align-items: center;
     margin-bottom: 40px;
   }
-`;
-
-const FooterBottom = styled.div`
-  display: flex;
-  justify-content: center;
 `;
 
 const LogoWrapper = styled.div`
@@ -77,13 +72,6 @@ const SvgWrapper = styled.div`
   height: 24px;
 `;
 
-const CredentialsLink = styled.div`
-  span {
-    color: #ffc91e;
-    font-weight: 600;
-  }
-`;
-
 const MobileHeading = styled.h4`
   text-align: center;
   font-size: 18px;
@@ -120,12 +108,13 @@ const ContactInfoList = () => {
 
 export default function Footer() {
   const t = useTranslations('Footer');
+  const locale = useLocale();
   return (
     <FooterWrapper>
       <ContainerLayout>
         <FooterTop>
           <LogoWrapper>
-            <Link href="/">
+            <Link href="/" locale={locale}>
               <Image
                 src="/images/energoLogo.png"
                 alt="logo"
@@ -142,14 +131,6 @@ export default function Footer() {
             <ContactInfoList />
           </ContactInfo>
         </FooterTop>
-        <FooterBottom>
-          <CredentialsLink>
-            {t('developedBy')}
-            <span>
-              <a href="https://webbynavia.no"> Webbynavia</a>
-            </span>
-          </CredentialsLink>
-        </FooterBottom>
       </ContainerLayout>
     </FooterWrapper>
   );
