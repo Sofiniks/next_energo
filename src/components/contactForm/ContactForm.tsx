@@ -289,7 +289,6 @@ const FormElement = () => {
 
 const ContactForm = () => {
   const t = useTranslations('ContactUs');
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Element name="contactUs" className="element">
       <ContactWrapper>
