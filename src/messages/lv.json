@@ -77,7 +77,8 @@
             },
             "button": "Nosūtīt",
             "sendConfirmation": "Ziņojums ir nosūtīts!",
-            "messageReceived": "Mēs esam saņēmuši jūsu ziņu un sazināsimies ar jums tuvāko 24 stundu laikā!"
+            "messageReceived": "Mēs esam saņēmuši jūsu ziņu un sazināsimies ar jums tuvāko 24 stundu laikā!",
+            "textAreaMessage": "Labdien! Cik maksā {serviceName} pakalpojums?"
         },
         "contacts": "Kontakti"
     },

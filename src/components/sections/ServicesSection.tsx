@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import Image from 'next/image';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { scroller, Element, Link } from 'react-scroll';
@@ -206,7 +206,6 @@ const ServicesComponent = ({
   servicesData,
 }: ServicesSectionProps) => {
   const params = useSearchParams();
-  const pathname = usePathname();
   const servicesParam = params.get('services');
   const router = useRouter();
   const t = useTranslations(translationTitle);

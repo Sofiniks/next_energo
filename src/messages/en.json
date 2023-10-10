@@ -75,7 +75,8 @@
             },
             "button": "Send",
             "sendConfirmation": "Message sent!",
-            "messageReceived": "We have received your message and will contact you within the next 24 hours!"
+            "messageReceived": "We have received your message and will contact you within the next 24 hours!",
+            "textAreaMessage": "Hello! How much does {serviceName} service cost?"
         },
         "contacts": "Contacts"
     },

@@ -54,7 +54,7 @@ export async function generateMetadata({
   })();
 
   return {
-    metadataBase: new URL('https://sofiniks.store/'),
+    metadataBase: new URL('https://energoefektivitate.com/'),
     title: {
       default: 'Energo Efektivitate',
       template: '%s | Energo',
@@ -68,7 +68,6 @@ export async function generateMetadata({
     openGraph: {
       images: '/opengraph-image.png',
     },
-    // manifest: 'https://sofiniks.store/manifest.json',
     verification: {
       other: {
         ['facebook-domain-verification']: 'y5eifh8wzn4cj3yixxb43jpu2bdphg',

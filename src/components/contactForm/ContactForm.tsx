@@ -215,7 +215,7 @@ const FormElement = () => {
     if (serviceNameParam) {
       setFormData({
         ...formData,
-        message: `Hello! How much does ${serviceNameParam} service cost?`
+        message: t('form.textAreaMessage', {serviceName: serviceNameParam}),
       });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
