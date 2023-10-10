@@ -26,7 +26,7 @@ const ModalWrapper = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  color: #ffc91e;
+  color: #ffffff;
   border-radius: 3px;
   background-color: #282d33;
   font-size: 16px;
