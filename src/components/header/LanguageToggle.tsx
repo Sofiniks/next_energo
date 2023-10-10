@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import styled from 'styled-components';

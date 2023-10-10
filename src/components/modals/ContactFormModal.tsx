@@ -1,15 +1,10 @@
 'use client';
 import styled from 'styled-components';
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
 import { TickGreen } from '../icons/TickGreen';
 import { Cross } from '../icons/Cross';
-
-// interface modalProps {
-//   onClose: () => void;
-// }
 
 const ModalWrapper = styled.div`
   width: 500px;
