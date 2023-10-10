@@ -183,7 +183,7 @@
             "service1" : {
                 "subservices": {
                     "subservice1" : {
-                        "title": "Noformējam aktus, atbilstoši MK noteikumiem Nr. 238:",
+                        "title": "Noformējam aktus, atbilstoši MK noteikumiem Nr. 238",
                         "list": {
                             "1": "Māju nodošanai ekspluatācijā ir nepieciešams veikt sekojošus mērījumus:",
                             "2": "Elektroinstalācijas un kabeļu izolācijas pretestības mērījumi;",
@@ -198,7 +198,7 @@
                         }
                     },
                     "subservice2" : {
-                        "title": "Kabeļu vilkšana un ierīkošana:",
+                        "title": "Kabeļu vilkšana un ierīkošana",
                         "list": {
                             "1": "Elektrokabeļu vilkšana un savienošana.",
                             "2": "Signālkabeļu ierīkošana un pieslēgšana.",
@@ -206,11 +206,11 @@
                         }
                     },
                     "subservice3" : {
-                        "title": "Jauno elektroinstalāciju ierīkošana, uzstādīšana, pieslēgšana un pārbaude:",
+                        "title": "Jauno elektroinstalāciju ierīkošana, uzstādīšana, pieslēgšana un pārbaude",
                         "text": "Elektroinstalāciju testēšana un pārbaude, lai nodrošinātu drošu un efektīvu lietošanu"
                     },
                    "subservice4" : {
-                        "title": "Sadales skapju uzstādīšana, pārveidošana un pārvietošana:",
+                        "title": "Sadales skapju uzstādīšana, pārveidošana un pārvietošana",
                         "list": {
                             "1": "Jauno elektrosadales skapju uzstādīšana un pieslēgšana.",
                             "2": "Veco sadales skapju pārveidošana, lai atbilstu MK noteikumiem 238, kā arī mūsdienīgajiem tehniska.",
@@ -218,28 +218,28 @@
                         }
                     },
                     "subservice5" : {
-                        "title": "Ielu apgaismojuma uzstādīšana:",
+                        "title": "Ielu apgaismojuma uzstādīšana",
                         "list": {
                             "1": "Ielu lukturu uzstādīšana un pieslēgšana.",
                             "2": "Apgaismojuma sistēmu vadu novietošana un savienošana."
                         }
                     },
                     "subservice6" : {
-                        "title": "Pieslēgšanas ierīkošana pie \"Sadales Tīkls\" sadales skapjiem:",
+                        "title": "Pieslēgšanas ierīkošana pie \"Sadales Tīkls\" sadales skapjiem",
                         "list": {
                             "1": "Elektriskā pieslēgšana pie vietējā elektroapgādes tīkla.",
                             "2": "Sadales skapju savienošana ar klienta elektrosistēmu."
                         }
                     },
                     "subservice7" : {
-                        "title": "Ražošanas iekārtu uzstādīšana:",
+                        "title": "Ražošanas iekārtu uzstādīšana",
                         "list": {
                             "1": "Elektroiekārtu uzstādīšana ražošanas procesiem.",
                             "2": "Pieslēgšanas un testēšanas darbi ražošanas iekārtu darbības nodrošināšanai."
                         }
                     },
                     "subservice8" : {
-                        "title": "Elektroapgādes un elektroiekārtu bojājumu atrašana un novēršana:",
+                        "title": "Elektroapgādes un elektroiekārtu bojājumu atrašana un novēršana",
                         "list": {
                             "1": "Diagnostikas darbi, lai noteiktu elektroapgādes problēmas.",
                             "2": "Bojājumu novēršana, remonts un labošana, lai atjaunotu elektroiekārtu darbību."

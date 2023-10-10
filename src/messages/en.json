@@ -181,7 +181,7 @@
             "service1" : {
                 "subservices": {
                     "subservice1" : {
-                        "title": "Registration of acts for building commissioning per the law (Cabinet of Ministers Regulation No. 238).",
+                        "title": "Registration of acts for building commissioning per the law (Cabinet of Ministers Regulation No. 238)",
                         "list": {
                             "1": "The following measures must be obtained in order to complete a building commissioning:",
                             "2": "Measuring the insulation resistance of electrical installations and cables;",
@@ -196,7 +196,7 @@
                         }
                     },
                     "subservice2" : {
-                        "title": "Laying and installation of cables:",
+                        "title": "Laying and installation of cables",
                         "list": {
                             "1": "Laying and connecting electrical cables.",
                             "2": "Installation and connection of signal cables.",
@@ -204,11 +204,11 @@
                         }
                     },
                     "subservice3" : {
-                        "title": "Installation, connection and testing of new electrical installations:",
+                        "title": "Installation, connection and testing of new electrical installations",
                         "text": "Inspection and testing of electrical installations to ensure safe and efficient operation."
                     },
                    "subservice4" : {
-                        "title": "Installation, modernisation and relocation of distribution boards:",
+                        "title": "Installation, modernisation and relocation of distribution boards",
                         "list": {
                             "1": "Installation and connection of new electrical distribution boards.",
                             "2": "Modernisation of old switchboards in accordance with the law (Cabinet of Ministers Regulation No. 238) and modern technical solutions.",
@@ -216,28 +216,28 @@
                         }
                     },
                     "subservice5" : {
-                        "title": "Installation of street lighting:",
+                        "title": "Installation of street lighting",
                         "list": {
                             "1": "Installation and connection of street lamps.",
                             "2": "Laying and connecting lighting system wires."
                         }
                     },
                     "subservice6" : {
-                        "title": "Connection to distribution boards \"Sadales Tīkls\":",
+                        "title": "Connection to distribution boards \"Sadales Tīkls\"",
                         "list": {
                             "1": "Connection to local power supply.",
                             "2": "Connection of distribution boards with the client's electrical system."
                         }
                     },
                     "subservice7" : {
-                        "title": "Installation of equipment for production lines:",
+                        "title": "Installation of equipment for production lines",
                         "list": {
                             "1": "Installation of electrical equipment for production processes.",
                             "2": "Connecting and testing equipment to ensure its reliable operation."
                         }
                     },
                     "subservice8" : {
-                        "title": "Identification and troubleshooting of power supply and electrical equipment:",
+                        "title": "Identification and troubleshooting of power supply and electrical equipment",
                         "list": {
                             "1": "Diagnostics to identify problems in the power supply.",
                             "2": "Elimination of damage, repair and restoration of electrical equipment."
