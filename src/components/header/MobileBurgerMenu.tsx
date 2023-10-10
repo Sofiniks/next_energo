@@ -60,7 +60,7 @@ const MobileBurgerMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     },
     {
       title: 'mobileServicesElectricity',
-      href: `${locale}/electricity-services`,
+      href: `/${locale}/electricity-services`,
     },
   ];
 

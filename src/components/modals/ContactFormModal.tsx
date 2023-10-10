@@ -1,14 +1,15 @@
 'use client';
 import styled from 'styled-components';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
 import { TickGreen } from '../icons/TickGreen';
 import { Cross } from '../icons/Cross';
 
-interface modalProps {
-  onClose: () => void;
-}
+// interface modalProps {
+//   onClose: () => void;
+// }
 
 const ModalWrapper = styled.div`
   width: 500px;
@@ -46,25 +47,38 @@ const StyledText = styled.p`
   font-size: 14px;
   line-height: 20px;
 `;
+const Overlay = styled.div<{ $isHidden: boolean }>`
+  display: ${({ $isHidden }) => ($isHidden ? 'none' : 'unset')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9;
+`;
 
-const MessageModal = ({ onClose }: modalProps) => {
+const MessageModal = ({isOpen, setIsOpen}:{isOpen: boolean; setIsOpen: (_: boolean) => void}) => {
   const t = useTranslations('ContactUs');
-  const handleOnClose = () => {
-    onClose();
-     window.location.reload.bind(window.location)();
+  const handleModalClose = () => {
+    setIsOpen(false);
+
   }
+
   return (
-    <ModalWrapper>
-      <CrossIconWrapper onClick={handleOnClose}>
-        <Cross />
-      </CrossIconWrapper>
-      <h3>{t('form.sendConfirmation')}</h3>
-      <TickIconWrapper>
-        <TickGreen />
-      </TickIconWrapper>
-      <StyledText>{t('form.messageReceived')}</StyledText>
-      <Button onClick={handleOnClose} text="OK" />
-    </ModalWrapper>
+    <Overlay $isHidden={!isOpen} onClick={handleModalClose}>
+      <ModalWrapper>
+        <CrossIconWrapper onClick={handleModalClose}>
+          <Cross />
+        </CrossIconWrapper>
+        <h3>{t('form.sendConfirmation')}</h3>
+        <TickIconWrapper>
+          <TickGreen />
+        </TickIconWrapper>
+        <StyledText>{t('form.messageReceived')}</StyledText>
+        <Button text="OK" onClick={handleModalClose} />
+      </ModalWrapper>
+    </Overlay>
   );
 };
 

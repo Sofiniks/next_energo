@@ -2,7 +2,8 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { scroller, Element, Link } from 'react-scroll';
 import { useTranslations } from 'next-intl';
@@ -205,7 +206,10 @@ const ServicesComponent = ({
   servicesData,
 }: ServicesSectionProps) => {
   const params = useSearchParams();
+  const pathname = usePathname();
   const servicesParam = params.get('services');
+  const router = useRouter();
+  const t = useTranslations(translationTitle);
 
   useEffect(() => {
     if (servicesParam === 'true') {
@@ -217,7 +221,18 @@ const ServicesComponent = ({
       });
     }
   }, [servicesParam]);
-  const t = useTranslations(translationTitle);
+
+  const scrollToContactForm = (serviceName: string) => {
+    router.push(`?serviceName=${t(`${serviceName}`)}`);
+
+    scroller.scrollTo('servicesSection', {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -100,
+    });
+  };
+  
   const [activeService, setActiveService] = useState<ServiceData>(
     servicesData[0]
   );
@@ -296,6 +311,7 @@ const ServicesComponent = ({
                 smooth={true}
                 duration={1500}
                 offset={-100}
+                onClick={() => scrollToContactForm(activeSubService.title)}
               >
                 <Button text={t('button')} />
               </Link>

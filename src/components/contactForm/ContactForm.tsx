@@ -1,7 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
+import { useForm, ValidationError } from '@formspree/react';
 import { Element } from 'react-scroll';
 import { LocationBlack } from '../icons/LocationBlack';
 import { LetterBlack } from '../icons/LetterBlack';
@@ -198,53 +200,89 @@ const ContactsBlock = ({ title }: { title: string }) => {
   );
 };
 
-const FormElement = ({ setModalOpen }: { setModalOpen: () => void }) => {
+const FormElement = () => {
   const t = useTranslations('ContactUs');
-  const handleSubmit = () => {
-    setModalOpen();
+  const [state, handleSubmit] = useForm('xbjvqjdn');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const params = useSearchParams();
+  const serviceNameParam = params.get('serviceName');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  useEffect(() => {
+    if (serviceNameParam) {
+      setFormData({
+        ...formData,
+        message: `Hello! How much does ${serviceNameParam} service cost?`
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [serviceNameParam]);
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
-
-  const GOOGLE_FORM_URL =
-    'https://docs.google.com/forms/d/e/1FAIpQLSce5TU4kF7h6CudZUIUh6W0HYVtyTAb0FMWeL07TD9Nb5PSZw/formResponse';
+  const handleFormSubmit = async (e: any) => {
+    e.preventDefault();
+    handleSubmit(formData);
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
+    setIsModalOpen(true);
+  };
 
   return (
     <>
-      <iframe
-        title="hidden_iframe"
-        name="hidden_iframe"
-        id="hidden_iframe"
-        style={{ visibility: 'hidden', height: '14px' }}
-      ></iframe>
-      <Form
-        action={GOOGLE_FORM_URL}
-        method="post"
-        target="hidden_iframe"
-        onSubmit={handleSubmit}
-      >
-        <h4>{t('form.heading1')}</h4>
-        <h4>{t('form.heading2')}</h4>
+      <Form onSubmit={handleFormSubmit} id="form">
         <input
-          type="text"
+          id="name"
+          type="name"
+          name="name"
           placeholder={t('form.placeholders.name')}
-          name="entry.2005620554"
+          value={formData.name}
+          onChange={handleChange}
           required
         />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
         <input
-          type="text"
+          id="email"
+          type="email"
+          name="email"
           placeholder={t('form.placeholders.email')}
-          name="entry.1045781291"
+          value={formData.email}
+          onChange={handleChange}
           required
         />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
-          rows={1}
+          id="message"
+          name="message"
+          rows={3}
           placeholder={t('form.placeholders.message')}
-          name="entry.839337160"
+          value={formData.message}
+          onChange={handleChange}
           required
+        />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
         />
         <ButtonWrapper>
-          <Button text={t('form.button')} onClick={setModalOpen} />
+          <Button
+            type="submit"
+            disabled={state.submitting}
+            text={t('form.button')}
+          />
         </ButtonWrapper>
       </Form>
+      {state.succeeded && (
+        <MessageModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+      )}
     </>
   );
 };
@@ -260,7 +298,7 @@ const ContactForm = () => {
             <SectionHeading text={t('sectionTitle')} />
             <SectionWrapper>
               <FormContainer>
-                <FormElement setModalOpen={() => setIsModalOpen(true)} />
+                <FormElement />
                 <PositionAbsoluteBlock>
                   <YellowBlock>
                     <ContactsBlock title={t('contacts')} />
@@ -278,11 +316,10 @@ const ContactForm = () => {
           </YellowBlock>
           <FormContainer>
             <ContainerLayout>
-              <FormElement setModalOpen={() => setIsModalOpen(true)} />
+              <FormElement />
             </ContainerLayout>
           </FormContainer>
         </TabletContainer>
-        {isModalOpen && <MessageModal onClose={() => setIsModalOpen(false)} />}
       </ContactWrapper>
     </Element>
   );

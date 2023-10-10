@@ -25,7 +25,9 @@ const StyledButton = styled.button`
 interface ButtonProps {
   text: string;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
-export default function Button({ text, onClick }: ButtonProps) {
-  return <StyledButton onClick={onClick}>{text}</StyledButton>;
+export default function Button({ text, onClick, type, disabled }: ButtonProps) {
+  return <StyledButton onClick={onClick} type={type || 'button'} disabled={disabled}>{text}</StyledButton>;
 }
