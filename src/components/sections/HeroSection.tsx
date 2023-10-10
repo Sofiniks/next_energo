@@ -1,10 +1,12 @@
 'use client';
 import styled from 'styled-components';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from 'react-scroll';
 import Button from '../buttons/Button';
 import ContainerLayout from '../layout/ContainerLayout';
 import MainBanner from '../banners/MainBanner';
+import HeroSectionModal from '../modals/HeroSectionModal';
 import { DesktopContainer, device, TabletContainer } from '@/theme/breakpoints';
 import bannerData from '../../data/mainBanner.json';
 
@@ -13,6 +15,16 @@ interface HeroSectionProps {
   sectionTitle: string;
   sectionContent: string;
 }
+
+const Overlay = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background-color: rgba(0,0,0,.7);
+z-index: 9;
+`;
 
 const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
   min-height: 900px;
@@ -110,6 +122,15 @@ const HeroSection = ({
   sectionTitle,
 }: HeroSectionProps) => {
   const t = useTranslations('Hero');
+  const [isModalOpen, setIsModalOpen] = useState(false); // Add modal state
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <SectionWrapper $isMainPage={Boolean(isMainPage)}>
@@ -123,15 +144,19 @@ const HeroSection = ({
             <h1>{t(`${sectionTitle}`)}</h1>
             <h3>{t(`${sectionContent}`)}</h3>
             <ButtonWrapper>
-              <Link
-                to="contactUs"
-                spy={true}
-                smooth={true}
-                duration={500}
-                offset={-100}
-              >
-                <Button text={t('button')} />
-              </Link>
+              {isMainPage ? (
+                <Button text={t('button')} onClick={handleOpenModal}/>
+              ) : (
+                <Link
+                  to={isMainPage ? 'contactUs' : 'services'}
+                  spy={true}
+                  smooth={true}
+                  duration={1500}
+                  offset={-100}
+                >
+                  <Button text={t('button')} />
+                </Link>
+              )}
             </ButtonWrapper>
           </SectionText>
         </Container>
@@ -152,6 +177,8 @@ const HeroSection = ({
           </>
         )}
       </SectionBackground>
+      {isModalOpen && <Overlay/>}
+      {isModalOpen && <HeroSectionModal onClose={handleCloseModal} />}
     </SectionWrapper>
   );
 };

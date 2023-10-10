@@ -2,8 +2,10 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { scroller, Element, Link } from 'react-scroll';
 import { useTranslations } from 'next-intl';
-import { Link } from 'react-scroll';
 import ContainerLayout from '../layout/ContainerLayout';
 import Button from '../buttons/Button';
 import { device } from '@/theme/breakpoints';
@@ -92,12 +94,12 @@ const SubServicesItem = styled.li<{ $isActive: boolean }>`
   padding-right: 65px;
   margin-bottom: 12px;
   cursor: pointer;
-  transition: ease-in .3s;
+  transition: ease-in 0.3s;
   border-left: ${({ $isActive }) =>
     $isActive ? '3px solid #ffc91e' : '3px solid transparent'};
   font-weight: ${({ $isActive }) => ($isActive ? 'bold' : 'unset')};
   &:hover {
-    border-left: 3px solid #ffc91e;;
+    border-left: 3px solid #ffc91e;
     font-weight: bold;
   }
 
@@ -202,6 +204,19 @@ const ServicesComponent = ({
   translationTitle,
   servicesData,
 }: ServicesSectionProps) => {
+  const params = useSearchParams();
+  const servicesParam = params.get('services');
+
+  useEffect(() => {
+    if (servicesParam === 'true') {
+      scroller.scrollTo('servicesSection', {
+        duration: 1500,
+        delay: 100,
+        smooth: true,
+        offset: -100, 
+      });
+    }
+  }, [servicesParam]);
   const t = useTranslations(translationTitle);
   const [activeService, setActiveService] = useState<ServiceData>(
     servicesData[0]
@@ -253,51 +268,53 @@ const ServicesComponent = ({
   ));
 
   return (
-    <ServicesWrapper>
-      <ServicesContainer>
-        <ServicesMenu>
-          <ServicesHeading>
-            <h2>{t('sectionTitle')}</h2>
-          </ServicesHeading>
-          <ul>{servicesList}</ul>
-        </ServicesMenu>
-        <ServicesContent>
-          <ServicesText>
-            <h3>{t(`${activeSubService.title}`)}</h3>
-            {activeSubService?.desc?.map((desc, idx) => (
-              <p key={idx}>{t(`${desc}`)}</p>
-            ))}
-            {activeSubService?.list && (
-              <ContentList>
-                {activeSubService?.list?.map((item, index) => (
-                  <li key={index}>{t(`${item}`)}</li>
-                ))}
-              </ContentList>
-            )}
-            <Link
-              to="contactUs"
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-100}
-            >
-              <Button text={t('button')} />
-            </Link>
-          </ServicesText>
-          <div>
-            <ServicesMainImage>
-              <Image
-                src={activeSubService.images[0]}
-                alt="serviceMain"
-                width={760}
-                height={440}
-              />
-            </ServicesMainImage>
-            <ServicesImagesList>{servicesImages}</ServicesImagesList>
-          </div>
-        </ServicesContent>
-      </ServicesContainer>
-    </ServicesWrapper>
+    <Element name="servicesSection" className="element">
+      <ServicesWrapper id="services">
+        <ServicesContainer>
+          <ServicesMenu>
+            <ServicesHeading>
+              <h2>{t('sectionTitle')}</h2>
+            </ServicesHeading>
+            <ul>{servicesList}</ul>
+          </ServicesMenu>
+          <ServicesContent>
+            <ServicesText>
+              <h3>{t(`${activeSubService.title}`)}</h3>
+              {activeSubService?.desc?.map((desc, idx) => (
+                <p key={idx}>{t(`${desc}`)}</p>
+              ))}
+              {activeSubService?.list && (
+                <ContentList>
+                  {activeSubService?.list?.map((item, index) => (
+                    <li key={index}>{t(`${item}`)}</li>
+                  ))}
+                </ContentList>
+              )}
+              <Link
+                to="contactUs"
+                spy={true}
+                smooth={true}
+                duration={1500}
+                offset={-100}
+              >
+                <Button text={t('button')} />
+              </Link>
+            </ServicesText>
+            <div>
+              <ServicesMainImage>
+                <Image
+                  src={activeSubService.images[0]}
+                  alt="serviceMain"
+                  width={760}
+                  height={440}
+                />
+              </ServicesMainImage>
+              <ServicesImagesList>{servicesImages}</ServicesImagesList>
+            </div>
+          </ServicesContent>
+        </ServicesContainer>
+      </ServicesWrapper>
+    </Element>
   );
 };
 

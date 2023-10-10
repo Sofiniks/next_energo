@@ -28,6 +28,12 @@
                 "3": "We guarantee that the client will achieve the desired result.",
                 "4": "80% of the orders received by us are from our loyal clients who have already cooperated with us."
             }
+        },
+        "modal": {
+            "title": "Find out more about our services",
+            "fossil": "Services with fossil energy",
+            "electricity": "Services with electricity",
+            "cancel": "Cancel"
         }
     },
     "Statistics": {

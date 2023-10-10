@@ -13,7 +13,7 @@ import ContainerLayout from '../layout/ContainerLayout';
 import { SectionHeading } from '../typography/typography';
 import Button from '../buttons/Button';
 import { DesktopContainer, TabletContainer, device } from '@/theme/breakpoints';
-import MessageModal from './Modal';
+import MessageModal from '../modals/ContactFormModal';
 import contacts from '@/data/contacts.json';
 
 const ContactWrapper = styled.div`

@@ -29,6 +29,12 @@
                 "3": "garantējam ka klients sasniegs vēlamo rezultātu.",
                 "4": "80% no ienākošajiem pasūtījumiem ir atkārtoti, no klientiem, kas jau sadarbojās ar mums."
             }
+        },
+        "modal": {
+            "title": "Uzzināt vairāk par mūsu pakalpojumiem",
+            "fossil": "Pakalpojumi ar fosilo enerģiju",
+            "electricity": "Pakalpojumi ar elektrību",
+            "cancel": "Atpakaļ"
         }
     },
     "Statistics": {
