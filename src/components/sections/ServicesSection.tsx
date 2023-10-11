@@ -223,13 +223,6 @@ const ServicesComponent = ({
 
   const scrollToContactForm = (serviceName: string) => {
     router.push(`?serviceName=${t(`${serviceName}`)}`);
-
-    scroller.scrollTo('servicesSection', {
-      duration: 1500,
-      delay: 100,
-      smooth: true,
-      offset: -100,
-    });
   };
   
   const [activeService, setActiveService] = useState<ServiceData>(
