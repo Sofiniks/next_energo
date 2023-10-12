@@ -70,7 +70,8 @@
             "heading2": "We will get back to you as soon as we can!",
             "placeholders": {
                 "name": "Name",
-                "email": "E-mail or phone number",
+                "email": "E-mail",
+                "phone": "Phone number",
                 "message": "Message"
             },
             "button": "Send",

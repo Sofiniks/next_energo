@@ -209,16 +209,17 @@ const FormElement = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
   useEffect(() => {
     if (serviceNameParam) {
       setFormData({
         ...formData,
-        message: t('form.textAreaMessage', {serviceName: serviceNameParam}),
+        message: t('form.textAreaMessage', { serviceName: serviceNameParam }),
       });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [serviceNameParam]);
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -230,6 +231,7 @@ const FormElement = () => {
     setFormData({
       name: '',
       email: '',
+      phone: '',
       message: '',
     });
     setIsModalOpen(true);
@@ -258,6 +260,16 @@ const FormElement = () => {
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
+        <input
+          id="phone"
+          type="text"
+          name="phone"
+          placeholder={t('form.placeholders.phone')}
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+        <ValidationError prefix="Phone" field="phone" errors={state.errors} />
         <textarea
           id="message"
           name="message"

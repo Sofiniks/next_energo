@@ -72,7 +72,8 @@
             "heading2": "Mēs ar jums sazināsimies, cik drīz vien varēsim!",
             "placeholders": {
                 "name": "Vārds",
-                "email": "E-pasts vai tālruņa numurs",
+                "email": "E-pasts",
+                "phone": "Tālruņa numurs",
                 "message": "Ziņojums"
             },
             "button": "Nosūtīt",
