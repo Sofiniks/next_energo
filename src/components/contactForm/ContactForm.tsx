@@ -181,7 +181,7 @@ const ContactsBlock = ({ title }: { title: string }) => {
       </ContactsList>
       <SocialsList>
         <li>
-          <a href={'/'}>
+          <a href={contacts.whatsapp}>
             <Whatsapp />
           </a>
         </li>
