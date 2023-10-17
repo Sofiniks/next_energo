@@ -3,6 +3,7 @@ import ContactForm from '@/components/contactForm/ContactForm';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import fossilServicesData from '@/data/fossilServicesData.json';
+import { fossilEnergyDescription } from '../metadata';
 
 export async function generateMetadata({
   params,
@@ -11,6 +12,18 @@ export async function generateMetadata({
     locale: string;
   };
 }) {
+  const description = (() => {
+    switch (params.locale) {
+      case 'lv':
+        return fossilEnergyDescription.lv;
+      case 'en':
+        return fossilEnergyDescription.en;
+      case 'ru':
+        return fossilEnergyDescription.ru;
+      default:
+        return fossilEnergyDescription.lv;
+    }
+  })();
   return {
     title:
       params.locale === 'ru'
@@ -18,6 +31,7 @@ export async function generateMetadata({
         : params.locale === 'en'
         ? 'Services'
         : 'Pakalpojumi',
+    description,
   };
 }
 

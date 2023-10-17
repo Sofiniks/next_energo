@@ -186,12 +186,12 @@ const ContactsBlock = ({ title }: { title: string }) => {
           </a>
         </li>
         <li>
-          <a href={'/'}>
+          <a href={contacts.facebook}>
             <Facebook />
           </a>
         </li>
         <li>
-          <a href={'/'}>
+          <a href={contacts.instagram}>
             <Instagram />
           </a>
         </li>

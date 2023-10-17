@@ -7,7 +7,7 @@ import PageLayout from '@/components/layout/PageLayout';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import StyledComponentsRegistry from '@/lib/registry';
-import {latvianKeywords, englishKeywords, russianKeywords} from './keywords'
+import {latvianKeywords, englishKeywords, russianKeywords, homeDescription} from './metadata'
 import { Suspense } from 'react';
 import GoogleAnalytics from './GoogleAnalytics';
 
@@ -31,13 +31,13 @@ export async function generateMetadata({
   const description = (() => {
     switch (params.locale) {
       case 'lv':
-        return 'Mēs specializējamies enerģijas sertifikācijā un revīzijās. Saņemiet ilgtspējīgus risinājumus jau tagad!';
+        return homeDescription.lv;
       case 'en':
-        return 'We specialize in energy certification and audits. Get sustainable solutions now!';
+        return homeDescription.en;
       case 'ru':
-        return 'Мы специализируемся на энергетической сертификации и аудитах. Получите устойчивые решения уже сейчас!';
+        return homeDescription.ru;
       default:
-        return 'Mēs specializējamies enerģijas sertifikācijā un revīzijās. Saņemiet ilgtspējīgus risinājumus jau tagad!';
+        return homeDescription.lv;
     }
   })();
   const keywords = (() => {

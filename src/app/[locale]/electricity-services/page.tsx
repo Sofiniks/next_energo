@@ -3,6 +3,7 @@ import ContactForm from '@/components/contactForm/ContactForm';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ServicesData from '@/data/electricityServicesData.json';
+import { electricityDescription } from '../metadata';
 
 export async function generateMetadata({
   params,
@@ -11,6 +12,18 @@ export async function generateMetadata({
     locale: string;
   };
 }) {
+  const description = (() => {
+    switch (params.locale) {
+      case 'lv':
+        return electricityDescription.lv;
+      case 'en':
+        return electricityDescription.en;
+      case 'ru':
+        return electricityDescription.ru;
+      default:
+        return electricityDescription.lv;
+    }
+  })();
   return {
     title:
       params.locale === 'ru'
@@ -18,6 +31,7 @@ export async function generateMetadata({
         : params.locale === 'en'
         ? 'Services'
         : 'Pakalpojumi',
+    description,
   };
 }
 
