@@ -19,6 +19,7 @@ h3, p, ul, li {
 }
 li {
   width: 50%;
+  list-style-type: circle;
   @media ${device.md} {
     width: 100%;
   }
