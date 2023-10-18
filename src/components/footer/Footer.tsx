@@ -16,6 +16,11 @@ const FooterWrapper = styled.footer`
   color: white;
 `;
 
+const StyledContainer = styled(ContainerLayout)`
+  display: flex;
+  flex-direction: column;
+`;
+
 const FooterTop = styled.div`
   display: flex;
   justify-content: space-between;
@@ -24,6 +29,16 @@ const FooterTop = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
+  }
+`;
+
+const FooterBottom = styled.div`
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  a:hover {
+    text-decoration: underline;
   }
 `;
 
@@ -111,7 +126,7 @@ export default function Footer() {
   const locale = useLocale();
   return (
     <FooterWrapper>
-      <ContainerLayout>
+      <StyledContainer>
         <FooterTop>
           <LogoWrapper>
             <Link href={`/${locale}`}>
@@ -131,7 +146,15 @@ export default function Footer() {
             <ContactInfoList />
           </ContactInfo>
         </FooterTop>
-      </ContainerLayout>
+        <FooterBottom>
+          <a
+            href="https://docs.google.com/document/d/1kwXXkeF-WjTELwuZOpp8ARMOi2Co42O-w6XOipjSh9k/edit?usp=sharing"
+            target="_blank"
+          >
+            {t('privacyPolicy')}
+          </a>
+        </FooterBottom>
+      </StyledContainer>
     </FooterWrapper>
   );
 }
