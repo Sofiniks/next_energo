@@ -147,12 +147,12 @@ export default function Footer() {
           </ContactInfo>
         </FooterTop>
         <FooterBottom>
-          <a
-            href="https://docs.google.com/document/d/1kwXXkeF-WjTELwuZOpp8ARMOi2Co42O-w6XOipjSh9k/edit?usp=sharing"
-            target="_blank"
+          <Link
+            href='/privacy-policy'
+            target='_blank'
           >
             {t('privacyPolicy')}
-          </a>
+          </Link>
         </FooterBottom>
       </StyledContainer>
     </FooterWrapper>
