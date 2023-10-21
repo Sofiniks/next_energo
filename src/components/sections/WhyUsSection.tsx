@@ -11,8 +11,6 @@ import { WhyUsSectionData } from '@/types/dataTypes';
 import whyUsData from '@/data/whyUsSectionData.json';
 import { textCut } from '@/utils/helpers';
 
-
-
 const SectionWrapper = styled.section`
   margin-bottom: 90px;
 `;

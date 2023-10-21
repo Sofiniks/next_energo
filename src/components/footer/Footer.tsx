@@ -147,10 +147,7 @@ export default function Footer() {
           </ContactInfo>
         </FooterTop>
         <FooterBottom>
-          <Link
-            href='/privacy-policy'
-            target='_blank'
-          >
+          <Link href="/privacy-policy" target="_blank">
             {t('privacyPolicy')}
           </Link>
         </FooterBottom>

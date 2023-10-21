@@ -53,7 +53,6 @@
             "/images/thermo8.jpeg",
             "/images/thermo9.jpeg",
             "/images/thermo10.jpeg"
-         
           ]
         },
         {
@@ -98,7 +97,11 @@
             "servicesList.service3.subservices.subservice3.text.2",
             "servicesList.service3.subservices.subservice3.text.3"
           ],
-          "images": ["/images/Services1.png", "/images/Services2", "/images/Services4.png"]
+          "images": [
+            "/images/Services1.png",
+            "/images/Services2",
+            "/images/Services4.png"
+          ]
         }
       ]
     }

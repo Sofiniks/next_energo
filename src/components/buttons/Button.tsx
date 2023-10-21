@@ -29,5 +29,9 @@ interface ButtonProps {
   disabled?: boolean;
 }
 export default function Button({ text, onClick, type, disabled }: ButtonProps) {
-  return <StyledButton onClick={onClick} type={type || 'button'} disabled={disabled}>{text}</StyledButton>;
+  return (
+    <StyledButton onClick={onClick} type={type || 'button'} disabled={disabled}>
+      {text}
+    </StyledButton>
+  );
 }

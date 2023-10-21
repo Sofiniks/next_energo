@@ -2,31 +2,39 @@ a,
 a:visited,
 a:hover,
 a:active {
-    color: inherit;
+  color: inherit;
 }
 
 html,
 body,
-body>div {
-    min-height: 100%;
+body > div {
+  min-height: 100%;
 }
 
 *,
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body, div, span, ul, li, nav, header, footer {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
-    font-family: var(--font-montserrat);
+html,
+body,
+div,
+span,
+ul,
+li,
+nav,
+header,
+footer {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  font-family: var(--font-montserrat);
 }
 
 h1,
@@ -36,43 +44,43 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
+  margin: 0;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a:hover,
 a:visited,
 a:link,
 a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
-    background-color: #e5e5e5;
-    color: #282d33;
-    font-weight: normal;
-    font-size: 16px;
-    margin: 0;
-    font-family: var(--font-montserrat);
+  background-color: #e5e5e5;
+  color: #282d33;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  font-family: var(--font-montserrat);
 }
 
 textarea:focus,
 input:focus,
 select:focus {
-    outline: none;
+  outline: none;
 }
 
 textarea {
-    font-family: var(--font-montserrat);
+  font-family: var(--font-montserrat);
 }
 input {
-font-family: var(--font-montserrat);
+  font-family: var(--font-montserrat);
 }

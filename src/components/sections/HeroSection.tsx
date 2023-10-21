@@ -17,13 +17,13 @@ interface HeroSectionProps {
 }
 
 const Overlay = styled.div`
-position: fixed;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-background-color: rgba(0,0,0,.7);
-z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9;
 `;
 
 const SectionWrapper = styled.div<{ $isMainPage: boolean }>`
@@ -145,7 +145,7 @@ const HeroSection = ({
             <h3>{t(`${sectionContent}`)}</h3>
             <ButtonWrapper>
               {isMainPage ? (
-                <Button text={t('button')} onClick={handleOpenModal}/>
+                <Button text={t('button')} onClick={handleOpenModal} />
               ) : (
                 <Link
                   to={isMainPage ? 'contactUs' : 'services'}
@@ -177,7 +177,7 @@ const HeroSection = ({
           </>
         )}
       </SectionBackground>
-      {isModalOpen && <Overlay/>}
+      {isModalOpen && <Overlay />}
       {isModalOpen && <HeroSectionModal onClose={handleCloseModal} />}
     </SectionWrapper>
   );

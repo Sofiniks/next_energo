@@ -53,12 +53,17 @@ const Overlay = styled.div<{ $isHidden: boolean }>`
   z-index: 9;
 `;
 
-const MessageModal = ({isOpen, setIsOpen}:{isOpen: boolean; setIsOpen: (_: boolean) => void}) => {
+const MessageModal = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: (_: boolean) => void;
+}) => {
   const t = useTranslations('ContactUs');
   const handleModalClose = () => {
     setIsOpen(false);
-
-  }
+  };
 
   return (
     <Overlay $isHidden={!isOpen} onClick={handleModalClose}>

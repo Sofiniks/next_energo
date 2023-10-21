@@ -7,7 +7,12 @@ import PageLayout from '@/components/layout/PageLayout';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import StyledComponentsRegistry from '@/lib/registry';
-import {latvianKeywords, englishKeywords, russianKeywords, homeDescription} from './metadata'
+import {
+  latvianKeywords,
+  englishKeywords,
+  russianKeywords,
+  homeDescription,
+} from './metadata';
 import { Suspense } from 'react';
 import GoogleAnalytics from './GoogleAnalytics';
 
@@ -45,9 +50,9 @@ export async function generateMetadata({
       case 'lv':
         return latvianKeywords;
       case 'en':
-        return englishKeywords
+        return englishKeywords;
       case 'ru':
-        return russianKeywords
+        return russianKeywords;
       default:
         return latvianKeywords;
     }
@@ -96,7 +101,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={montserrat.className}>
-        <GoogleAnalytics/>
+        <GoogleAnalytics />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <StyledComponentsRegistry>
             <PageLayout>

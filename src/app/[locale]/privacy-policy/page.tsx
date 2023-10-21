@@ -4,26 +4,29 @@ import ContainerLayout from '@/components/layout/ContainerLayout';
 import { device } from '@/theme/breakpoints';
 
 const Wrapper = styled.div`
-padding-top: 80px;
-@media ${device.md} {
-  padding-top: 60px;
-}
+  padding-top: 80px;
+  @media ${device.md} {
+    padding-top: 60px;
+  }
 `;
 const StyledContainer = styled(ContainerLayout)`
-padding: 50px;
+  padding: 50px;
 `;
 const StyledContent = styled.div`
-h3, p, ul, li {
-  margin-bottom: 10px;
-  line-height: 155%;
-}
-li {
-  width: 50%;
-  list-style-type: circle;
-  @media ${device.md} {
-    width: 100%;
+  h3,
+  p,
+  ul,
+  li {
+    margin-bottom: 10px;
+    line-height: 155%;
   }
-}
+  li {
+    width: 50%;
+    list-style-type: circle;
+    @media ${device.md} {
+      width: 100%;
+    }
+  }
 `;
 
 export default function PrivacyPolicy() {

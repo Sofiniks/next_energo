@@ -14,8 +14,8 @@
             "servicesList.service1.subservices.subservice1.list.6",
             "servicesList.service1.subservices.subservice1.list.7",
             "servicesList.service1.subservices.subservice1.list.8",
-            "servicesList.service1.subservices.subservice1.list.9",
-            "servicesList.service1.subservices.subservice1.list.10"],
+            "servicesList.service1.subservices.subservice1.list.9"
+          ],
           "images": [
             "/images/Services1.png",
             "/images/Services2.png",
@@ -28,7 +28,8 @@
           "list": [
             "servicesList.service1.subservices.subservice1.list.1",
             "servicesList.service1.subservices.subservice1.list.2",
-            "servicesList.service1.subservices.subservice1.list.3"],
+            "servicesList.service1.subservices.subservice1.list.3"
+          ],
           "images": [
             "/images/Services1.png",
             "/images/Services2.png",
@@ -37,28 +38,20 @@
         },
         {
           "title": "servicesList.service1.subservices.subservice3.title",
-          "desc": ["servicesList.service1.subservices.subservice3.text"],
           "images": ["/images/Services3.png", "/images/Services4.png"]
         },
         {
           "title": "servicesList.service1.subservices.subservice4.title",
-          "list": [
-            "servicesList.service1.subservices.subservice4.list.1",
-            "servicesList.service1.subservices.subservice4.list.2",
-            "servicesList.service1.subservices.subservice4.list.3"],
-          "images": ["/images/Services2.png"]
+          "images": ["/images/Services3.png", "/images/Services4.png"]
         },
         {
           "title": "servicesList.service1.subservices.subservice5.title",
           "list": [
             "servicesList.service1.subservices.subservice5.list.1",
-            "servicesList.service1.subservices.subservice5.list.2"
+            "servicesList.service1.subservices.subservice5.list.2",
+            "servicesList.service1.subservices.subservice5.list.3"
           ],
-          "images": [
-            "/images/Services1.png",
-            "/images/Services2.png",
-            "/images/Services4.png"
-          ]
+          "images": ["/images/Services2.png"]
         },
         {
           "title": "servicesList.service1.subservices.subservice6.title",
@@ -89,6 +82,18 @@
           "list": [
             "servicesList.service1.subservices.subservice8.list.1",
             "servicesList.service1.subservices.subservice8.list.2"
+          ],
+          "images": [
+            "/images/Services1.png",
+            "/images/Services2.png",
+            "/images/Services4.png"
+          ]
+        },
+        {
+          "title": "servicesList.service1.subservices.subservice9.title",
+          "list": [
+            "servicesList.service1.subservices.subservice9.list.1",
+            "servicesList.service1.subservices.subservice9.list.2"
           ],
           "images": [
             "/images/Services1.png",

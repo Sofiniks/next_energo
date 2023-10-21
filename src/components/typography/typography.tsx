@@ -15,4 +15,4 @@ interface HeadingProps {
 }
 export const SectionHeading = ({ text }: HeadingProps) => {
   return <StyledHeading>{text}</StyledHeading>;
-}
+};

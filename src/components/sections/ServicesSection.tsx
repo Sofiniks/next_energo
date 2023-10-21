@@ -216,7 +216,7 @@ const ServicesComponent = ({
         duration: 1500,
         delay: 100,
         smooth: true,
-        offset: -100, 
+        offset: -100,
       });
     }
   }, [servicesParam]);
@@ -224,7 +224,7 @@ const ServicesComponent = ({
   const scrollToContactForm = (serviceName: string) => {
     router.push(`?serviceName=${t(`${serviceName}`)}`);
   };
-  
+
   const [activeService, setActiveService] = useState<ServiceData>(
     servicesData[0]
   );

@@ -1,254 +1,254 @@
 {
-    "Header": {
-        "home": "Uz sākumu",
-        "servicesWith": "Pakalpojumi ar",
-        "fossilEnergy": "fosilo enerģiju",
-        "electricity": "elektrību",
-        "contactUs": "Sazināties ar mums",
-        "mobileServicesFossil": "Pakalpojumi ar fosilo enerģiju",
-        "mobileServicesElectricity": "Pakalpojumi ar elektrību"
+  "Header": {
+    "home": "Uz sākumu",
+    "servicesWith": "Pakalpojumi ar",
+    "fossilEnergy": "fosilo enerģiju",
+    "electricity": "elektrību",
+    "contactUs": "Sazināties ar mums",
+    "mobileServicesFossil": "Pakalpojumi ar fosilo enerģiju",
+    "mobileServicesElectricity": "Pakalpojumi ar elektrību"
+  },
+  "Hero": {
+    "homeSectionTitle": "Par mums",
+    "homeSectionContent": "Mēs strādājam jūsu ekonomijai! Darba rezultātā samazinās arī ekoloģiskā pēda un enerģijas patēriņš. Mūsu komanda tiecas uz ilglaicīgu attīstību un alternatīvās enerģijas avotu izmantošanas popularizēšanu.",
+    "fossilServicesSectionTitle": "Pakalpojumi ar fosilo enerģiju",
+    "fossilServicesSectionContent": "Izmantojot tradicionālos enerģijas avotus, galvenais elements ir ikmēneša pakalpojumu maksa! Savā darbā mēs klientiem piedāvājam alternatīvus energotaupības veidus, nezaudējot komfortu.",
+    "electricityServicesSectionTitle": "Pakalpojumi ar elektrību",
+    "electricityServicesSectionContent": "Piedāvājam elektro aprīkojumu montāžu un uzstādīšanu, elektroinstalācijas pārbaudi atbilstoši ugunsdrošības prasībām (MK noteikumi Nr. 238) ēku nodošanai ekspluatācijā.",
+    "button": "uzzināt vairāk par mūsu pakalpojumiem",
+    "mainBanner": {
+      "titles": {
+        "1": "Pieredze",
+        "2": "Tieši kontakti",
+        "3": "Teorija un prakse",
+        "4": "Apmierināti klienti"
+      },
+      "subtitles": {
+        "1": "mūsu pieredze šajā sektorā ir vairāk nekā desmit gadu.",
+        "2": "cieši sadarbojamies ar plašu nozares speciālistu loku un publisko sektoru.",
+        "3": "garantējam ka klients sasniegs vēlamo rezultātu.",
+        "4": "80% no ienākošajiem pasūtījumiem ir atkārtoti, no klientiem, kas jau sadarbojās ar mums."
+      }
     },
-    "Hero": {
-        "homeSectionTitle": "Par mums",
-        "homeSectionContent": "Mēs strādājam jūsu ekonomijai! Darba rezultātā samazinās arī ekoloģiskā pēda un enerģijas patēriņš. Mūsu komanda tiecas uz ilglaicīgu attīstību un alternatīvās enerģijas avotu izmantošanas popularizēšanu.",
-        "fossilServicesSectionTitle": "Pakalpojumi ar fosilo enerģiju",
-        "fossilServicesSectionContent": "Izmantojot tradicionālos enerģijas avotus, galvenais elements ir ikmēneša pakalpojumu maksa! Savā darbā mēs klientiem piedāvājam alternatīvus energotaupības veidus, nezaudējot komfortu.",
-        "electricityServicesSectionTitle": "Pakalpojumi ar elektrību",
-        "electricityServicesSectionContent": "Piedāvājam elektro aprīkojumu montāžu un uzstādīšanu, elektroinstalācijas pārbaudi atbilstoši ugunsdrošības prasībām (MK noteikumi Nr. 238) ēku nodošanai ekspluatācijā.",
-        "button": "uzzināt vairāk par mūsu pakalpojumiem",
-        "mainBanner": {
-            "titles": {
-                "1": "Pieredze",
-                "2": "Tieši kontakti",
-                "3": "Teorija un prakse",
-                "4": "Apmierināti klienti"
-            },
-            "subtitles": {
-                "1": "mūsu pieredze šajā sektorā ir vairāk nekā desmit gadu.",
-                "2": "cieši sadarbojamies ar plašu nozares speciālistu loku un publisko sektoru.",
-                "3": "garantējam ka klients sasniegs vēlamo rezultātu.",
-                "4": "80% no ienākošajiem pasūtījumiem ir atkārtoti, no klientiem, kas jau sadarbojās ar mums."
-            }
-        },
-        "modal": {
-            "title": "Uzzināt vairāk par mūsu pakalpojumiem",
-            "fossil": "Pakalpojumi ar fosilo enerģiju",
-            "electricity": "Pakalpojumi ar elektrību",
-            "cancel": "Atpakaļ"
-        }
-    },
-    "Statistics": {
-        "titles": {
-            "1": "Realizētie",
-            "2": "Gadi",
-            "3": "Investīciju"
-        },
-        "subtitles": {
-            "1": "projekti",
-            "2": "tirgū",
-            "3": "piesaistīti mūsu klientiem"
-        }
-    },
-    "WhyUs": {
-        "sectionTitle": "Kāpēc mēs?",
-         "titles": {
-            "1": "Termiņi",
-            "2": "Nekādu avansu",
-            "3": "Atbildība",
-            "4": "Starpniecība"
-        },
-        "descriptions": {
-            "1": "izbraucam uz objektu 2 darba dienu laikā. Mazu un vidēju pasūtījumu izpilde vienas darba nedēļas laikā. Apjomīgu pasūtījumu izpilde 20 darba dienu laikā.",
-            "2": "darba samaksa tikai pēc visu vienošanos izpildes.",
-            "3": "100% uzdevumu risinājums augstākajā līmenī.",
-            "4": "pārstāvam klientu intereses celtniecības un projektēšanas uzraudzības iestādēs."
-        }
-
-    },
-    "ContactUs": {
-        "sectionTitle": "Sazināties ar mums",
-        "form" : {
-            "heading1": "Juties brīvi sazinaties ar mums jebkura laikā!",
-            "heading2": "Mēs ar jums sazināsimies, cik drīz vien varēsim!",
-            "placeholders": {
-                "name": "Vārds",
-                "email": "E-pasts",
-                "phone": "Tālruņa numurs",
-                "message": "Ziņojums"
-            },
-            "button": "Nosūtīt",
-            "sendConfirmation": "Ziņojums ir nosūtīts!",
-            "messageReceived": "Mēs esam saņēmuši jūsu ziņu un sazināsimies ar jums tuvāko 24 stundu laikā!",
-            "textAreaMessage": "Labdien! Cik maksā {serviceName} pakalpojums?"
-        },
-        "contacts": "Kontakti"
-    },
-    "Footer": {
-        "privacyPolicy": "Privātuma politika",
-        "contacts": "Kontakti"
-    },
-    "ServicesFossil": {
-        "sectionTitle": "Pakalpojumi",
-        "servicesList": {
-            "service1" : {
-                "title": "Energosertifikācija un energoauditi",
-                "subservices": {
-                    "subservice1" : {
-                        "title": "Ēku energoaudits",
-                        "text": "Energoaudits ir procedūra, kas nosaka ēkas energopatēriņu, faktorus, kas to ietekmē, un pasākumus, ko var veikt, lai samazinātu enerģijas patēriņu. Energoaudita galaprodukts ir atskaite, kas parāda energotaupības potenciālu un pasūtītājam sniedz objektīvu informāciju, kas ļauj pieņemt pareizu lēmumu par objekta modernizāciju un energotaupības pasākumiem ar maksimāli īsu atmaksāšanās termiņu."
-                    },
-                    "subservice2" : {
-                        "title": "Ēku energosertifikācija",
-                        "text": "Process, kura laikā tiek noteikta ēkas vai atsevišķas tās daļas energoefektivitāte un tiek izsniegts ēkas energosertifikāts uz 10 gadiem. Tiek konstatēti projektējamā, rekonstruējamā vai atjaunojamā objekta vai tā daļas esošie energoefektivitātes rādītāji.  Atšķirībā no pagaidu energosertifikāta, aprēķini tiek veikti, ņemot vērā reālo enerģijas patēriņu (kWh, m3) pēdējo 3-5 gadu laikā."
-                    },
-                    "subservice3" : {
-                        "title": "Pagaidu energosertifikāts",
-                        "text": "Kopš 2012.gada, nododot ekspluatācijā jaunu vai rekonstruētu ēku, nepieciešams pagaidu energosertifikāts.  Šī pagaidu apliecība ir derīga 3 gadus un tiek reģistrēta celtniecības informācijas sistēmā. Aprēķini tiek veikti, izmantojot matemātisku modeli, kas izveidots saskaņā ar ēkas projekta dokumentāciju."
-                    },
-                    "subservice4" : {
-                        "title": "Pasīvo māju rādītāju aprēķins",
-                        "text": "Mājas ar nulles enerģijas patēriņu - tās ir ēkas, kurās apkurei tiek izmantota alternatīvā enerģija ar nulles vērtību vai vispār netiek izmantots siltums. Pasīvās mājas specifikācija attiecas ne tikai uz dzīvojamām mājām, bet arī uz sabiedriskām ēkām. Par pasīvu māju var kļūt skola, bērnudārzs vai lielveikals, galvenais noteikums: ir jāievēro ES pasīvo māju standarti. Ēku enerģētiskās bilances aprēķinus veicam saskaņā ar Latvijas likumdošanas prasībām un starptautiskiem standartiem, izmantojot Pasīvās mājas institūta aprēķinu metodoloģiju."
-                    }
-                }
-            },
-            "service2" : {
-                "title": "Termogrāfija un gaisa apmaiņa",
-                "subservices": {
-                    "subservice1" : {
-                        "title": "Termogrāfija",
-                        "text": "Termogrāfija ir metode, ar kuras palīdzību var noteikt objektu virsmas temperatūras sadalījumu, objekta infrasarkano starojumu pārveidojot krāsainā attēlā (termogrammā). Ēku un būvju termovīzijas izpēte ir efektīvs norobežojošo konstrukciju diagnostikas veids celtniecības noslēgumā un ekspluatācijas laikā. Ar tā palīdzību varam noteikt daļējus un kopējus jūsu ēkas siltuma zudumus, kā arī atklāt iespējamus celtniecības slēptos defektus."
-                    },
-                    "subservice2" : {
-                        "title": "Konstrukciju gaisa caurlaidības tests",
-                        "text": "Aukstas telpas ne vienmēr ir nepietiekamas ēkas siltināšanas rezultāts, attiecīgi, pirms ieguldīt ievērojamus naudas resursus jūsu nekustamā īpašuma siltināšanā, pārbaudiet tā konstrukciju gaisa caurlaidību. Šī procedūra jums izmaksās daudz lētāk un sniegs 100% izpratni, kādi darbi Jums ir jāveic."
-                    }
-                }
-            },
-            "service3" : {
-                "title": "Rūpnieciskais audits",
-                "subservices": {
-                    "subservice1" : {
-                        "title": "Ražošanas energoaudits",
-                        "text": "Energoaudits ir procedūra, kas notiek lielos uzņēmumos, lai saņemtu informāciju par visām uzņēmuma energopatēriņa struktūrām, kas tiek skaitliski novērtētas rentablai energotaupībai, un kuru rezultāti tiek apkopoti uzņēmuma sagatavotā un publicētā atskaitē."
-                    },
-                    "subservice2" : {
-                        "title": "Gada elektrības bilances sastādīšana",
-                        "text": "Elektroenerģijas lietotājs saskaņā ar Energoefektivitātes likumu ir komersants, kura gada elektroenerģijas patēriņš pārsniedz 500 megavatstundas divos kalendāra gados pēc kārtas. Mēs palīdzam komersantiem sagatavot elektroenerģijas bilances un iesniegt tās Valsts iestādēs, kā arī palīdzam konstatēt elektroenerģijas papildu patēriņu darbības laikā, kas var optimizēt komersanta izdevumus."
-                    },
-                    "subservice3" : {
-                        "title": "Uzņēmumu ISO sertificēšana",
-                        "text": {
-                            "1": "Apstākļos, kad visā pasaulē strauji pieaug enerģijas cena un sabiedrības prasības samazināt siltumnīcefekta gāzu emisiju, energopatēriņa efektīva pārvalde kļūst par katra biznesa prioritāti, kas nodrošina ne tikai ātru produkcijas atmaksāšanos, bet arī ilgtermiņa attīstību energonesēju nestabilo cenu apstākļos. Palīdzam ieviest un uzturēt ISO 50001.",
-                            "2": "ISO 50001 (Energy management systems – Requirements with guidance for use) ir starptautisks standarts, ko energosistēmu pārvaldībai izveidoja Starptautiskā standartizācijas organizācija, tas nosaka energomenedžmenta sistēmas izveides, ieviešanas, attīstības un uzlabošanas prasības, kuras mērķis ir ļaut uzņēmumam ievērot sistēmisku pieeju energosistēmas secīgā uzlabošanā, tostarp energoefektivitātē, energodrošībā un enerģijas patēriņā.",
-                            "3": "ISO 50001 standarts jebkuram uzņēmumam, neatkarīgi no tā lieluma, teritoriālās vai ģeogrāfiskās atrašanās vietas, sniedz pilnvērtīgu darbības stratēģiju menedžmenta un tehniskajā jomā ar mērķi palielināt uzņēmuma energosistēmas efektivitāti."
-                        }
-                    }
-                }
-            },
-             "service4" : {
-                "title": "Tehniskā ekspertīze",
-                "subservices": {
-                    "subservice1" : {
-                        "title": "Energosertifikātu un piedāvāto projektu ekspertīze",
-                        "text": {
-                            "1": "Mūsu uzņēmuma speciālistiem ir plaša pieredze, veicot dažādas klasifikācijas ēku energoaudita un enerģētiskās pases ekspertīzi.",
-                            "2": "Eksperta slēdziens novērtē energoaudita atbilstību energoaudita aprēķinu metodikai (Ministru kabineta noteikumi Nr. 222 “Ēku energoefektivitātes aprēķina metodes un ēku energosertifikācijas noteikumi”) un citiem normatīvajiem aktiem un standartiem."
-                        }
-                    },
-                    "subservice2" : {
-                        "title": "Apkures, ventilācijas un gaisa kondicionēšanas sistēmu apsekošana",
-                        "text": {
-                            "1": "Apkures un gaisa kondicionēšanas sistēmas apskate tiek veikta:",
-                            "2": "1) apkures sistēmai un ar ventilācijas sistēmu savienotai apkures sistēmai, kuras derīgā nominālā jauda pārsniedz 70 kW;",
-                            "3": "2) gaisa kondicionēšanas sistēmai un ar ventilācijas sistēmu savienotai gaisa kondicionēšanas sistēmai, kuras derīgā nominālā jauda pārsniedz 70 kW.",
-                            "4": "Veicot pārbaudi, neatkarīgs eksperts sastāda aktu, kurā ir pārbaudes rezultāti un ieteikumi pārbaudāmās sistēmas energoefektivitātes paaugstināšanai, kā arī norāda izdevumus un ekonomiju, ieviešot energoefektivitātes paaugstināšanas pasākumus."
-                        }
-                    }
-                }
-            },
-             "service5" : {
-                "title": "Energoefektivitātes projektu administrēšana",
-                "subservices": {
-                    "subservice1" : {
-                        "title": "Pieteikumu sadaļu sagatavošana Eiropas fondu līdzfinansējuma saņemšanai.",
-                        "text": "Lai iesniegtu pieteikumu Eiropas fondu līdzfinansējuma saņemšanai jebkurā programmā, ir jāsagatavo un jāiesniedz ievērojams dokumentu skaits. Savā darbā mēs piedāvājam uzņemties visas šīs procedūras formalitātes un mūsu klientiem garantējam visaugstākā līmeņa servisu."
-                    }
-                }
-            }
-        },
-        "button": "Uzzināt pakalpojuma izmaksas"
-    },
-    "ServicesElectricity": {
-        "sectionTitle": "Pakalpojumi",
-        "servicesList": {
-            "service1" : {
-                "subservices": {
-                    "subservice1" : {
-                        "title": "Noformējam aktus, atbilstoši MK noteikumiem Nr. 238",
-                        "list": {
-                            "1": "Māju nodošanai ekspluatācijā ir nepieciešams veikt sekojošus mērījumus:",
-                            "2": "Elektroinstalācijas un kabeļu izolācijas pretestības mērījumi;",
-                            "3": "Kontaktu savienojumu pārbaude ar termokameru;",
-                            "4": "Cilpas \"fāze-nulle\" pilnās pretestības mērījumi;",
-                            "5": "Zemējumietaises un zemējuma kontūra pretestības mērījumi",
-                            "6": "Zemējumvada nepārtrauktības saites pretestības mērījumi;",
-                            "7": "Zibensaizsardzības sistēmas pretestības mērījumi un pārbaude;",
-                            "8": "Elektrosadaļņu shēmu izveide;",
-                            "9": "Apgaismojumu līmeņa mērījumi (LUX);",
-                            "10": "Noplūdes strāvas automātu darbības pārbaude"
-                        }
-                    },
-                    "subservice2" : {
-                        "title": "Kabeļu vilkšana un ierīkošana",
-                        "list": {
-                            "1": "Elektrokabeļu vilkšana un savienošana.",
-                            "2": "Signālkabeļu ierīkošana un pieslēgšana.",
-                            "3": "Datorkabeļu uzstādīšana un savienošana."
-                        }
-                    },
-                    "subservice3" : {
-                        "title": "Jauno elektroinstalāciju ierīkošana, uzstādīšana, pieslēgšana un pārbaude",
-                        "text": "Elektroinstalāciju testēšana un pārbaude, lai nodrošinātu drošu un efektīvu lietošanu"
-                    },
-                   "subservice4" : {
-                        "title": "Sadales skapju uzstādīšana, pārveidošana un pārvietošana",
-                        "list": {
-                            "1": "Jauno elektrosadales skapju uzstādīšana un pieslēgšana.",
-                            "2": "Veco sadales skapju pārveidošana, lai atbilstu MK noteikumiem 238, kā arī mūsdienīgajiem tehniska.",
-                            "3": "Sadales skapju pārvietošana un pielāgošana infrastruktūras maiņas gadījumos."
-                        }
-                    },
-                    "subservice5" : {
-                        "title": "Ielu apgaismojuma uzstādīšana",
-                        "list": {
-                            "1": "Ielu lukturu uzstādīšana un pieslēgšana.",
-                            "2": "Apgaismojuma sistēmu vadu novietošana un savienošana."
-                        }
-                    },
-                    "subservice6" : {
-                        "title": "Pieslēgšanas ierīkošana pie \"Sadales Tīkls\" sadales skapjiem",
-                        "list": {
-                            "1": "Elektriskā pieslēgšana pie vietējā elektroapgādes tīkla.",
-                            "2": "Sadales skapju savienošana ar klienta elektrosistēmu."
-                        }
-                    },
-                    "subservice7" : {
-                        "title": "Ražošanas iekārtu uzstādīšana",
-                        "list": {
-                            "1": "Elektroiekārtu uzstādīšana ražošanas procesiem.",
-                            "2": "Pieslēgšanas un testēšanas darbi ražošanas iekārtu darbības nodrošināšanai."
-                        }
-                    },
-                    "subservice8" : {
-                        "title": "Elektroapgādes un elektroiekārtu bojājumu atrašana un novēršana",
-                        "list": {
-                            "1": "Diagnostikas darbi, lai noteiktu elektroapgādes problēmas.",
-                            "2": "Bojājumu novēršana, remonts un labošana, lai atjaunotu elektroiekārtu darbību."
-                        }
-                    }
-                }
-            }
-        },
-        "button": "Uzzināt pakalpojuma izmaksas"
+    "modal": {
+      "title": "Uzzināt vairāk par mūsu pakalpojumiem",
+      "fossil": "Pakalpojumi ar fosilo enerģiju",
+      "electricity": "Pakalpojumi ar elektrību",
+      "cancel": "Atpakaļ"
     }
+  },
+  "Statistics": {
+    "titles": {
+      "1": "Realizētie",
+      "2": "Gadi",
+      "3": "Investīciju"
+    },
+    "subtitles": {
+      "1": "projekti",
+      "2": "tirgū",
+      "3": "piesaistīti mūsu klientiem"
+    }
+  },
+  "WhyUs": {
+    "sectionTitle": "Kāpēc mēs?",
+    "titles": {
+      "1": "Termiņi",
+      "2": "Nekādu avansu",
+      "3": "Atbildība",
+      "4": "Starpniecība"
+    },
+    "descriptions": {
+      "1": "izbraucam uz objektu 2 darba dienu laikā. Mazu un vidēju pasūtījumu izpilde vienas darba nedēļas laikā. Apjomīgu pasūtījumu izpilde 20 darba dienu laikā.",
+      "2": "darba samaksa tikai pēc visu vienošanos izpildes.",
+      "3": "100% uzdevumu risinājums augstākajā līmenī.",
+      "4": "pārstāvam klientu intereses celtniecības un projektēšanas uzraudzības iestādēs."
+    }
+  },
+  "ContactUs": {
+    "sectionTitle": "Sazināties ar mums",
+    "form": {
+      "heading1": "Juties brīvi sazinaties ar mums jebkura laikā!",
+      "heading2": "Mēs ar jums sazināsimies, cik drīz vien varēsim!",
+      "placeholders": {
+        "name": "Vārds",
+        "email": "E-pasts",
+        "phone": "Tālruņa numurs",
+        "message": "Ziņojums"
+      },
+      "button": "Nosūtīt",
+      "sendConfirmation": "Ziņojums ir nosūtīts!",
+      "messageReceived": "Mēs esam saņēmuši jūsu ziņu un sazināsimies ar jums tuvāko 24 stundu laikā!",
+      "textAreaMessage": "Labdien! Cik maksā {serviceName} pakalpojums?"
+    },
+    "contacts": "Kontakti"
+  },
+  "Footer": {
+    "privacyPolicy": "Privātuma politika",
+    "contacts": "Kontakti"
+  },
+  "ServicesFossil": {
+    "sectionTitle": "Pakalpojumi",
+    "servicesList": {
+      "service1": {
+        "title": "Energosertifikācija un energoauditi",
+        "subservices": {
+          "subservice1": {
+            "title": "Ēku energoaudits",
+            "text": "Energoaudits ir procedūra, kas nosaka ēkas energopatēriņu, faktorus, kas to ietekmē, un pasākumus, ko var veikt, lai samazinātu enerģijas patēriņu. Energoaudita galaprodukts ir atskaite, kas parāda energotaupības potenciālu un pasūtītājam sniedz objektīvu informāciju, kas ļauj pieņemt pareizu lēmumu par objekta modernizāciju un energotaupības pasākumiem ar maksimāli īsu atmaksāšanās termiņu."
+          },
+          "subservice2": {
+            "title": "Ēku energosertifikācija",
+            "text": "Process, kura laikā tiek noteikta ēkas vai atsevišķas tās daļas energoefektivitāte un tiek izsniegts ēkas energosertifikāts uz 10 gadiem. Tiek konstatēti projektējamā, rekonstruējamā vai atjaunojamā objekta vai tā daļas esošie energoefektivitātes rādītāji.  Atšķirībā no pagaidu energosertifikāta, aprēķini tiek veikti, ņemot vērā reālo enerģijas patēriņu (kWh, m3) pēdējo 3-5 gadu laikā."
+          },
+          "subservice3": {
+            "title": "Pagaidu energosertifikāts",
+            "text": "Kopš 2012.gada, nododot ekspluatācijā jaunu vai rekonstruētu ēku, nepieciešams pagaidu energosertifikāts.  Šī pagaidu apliecība ir derīga 3 gadus un tiek reģistrēta celtniecības informācijas sistēmā. Aprēķini tiek veikti, izmantojot matemātisku modeli, kas izveidots saskaņā ar ēkas projekta dokumentāciju."
+          },
+          "subservice4": {
+            "title": "Pasīvo māju rādītāju aprēķins",
+            "text": "Mājas ar nulles enerģijas patēriņu - tās ir ēkas, kurās apkurei tiek izmantota alternatīvā enerģija ar nulles vērtību vai vispār netiek izmantots siltums. Pasīvās mājas specifikācija attiecas ne tikai uz dzīvojamām mājām, bet arī uz sabiedriskām ēkām. Par pasīvu māju var kļūt skola, bērnudārzs vai lielveikals, galvenais noteikums: ir jāievēro ES pasīvo māju standarti. Ēku enerģētiskās bilances aprēķinus veicam saskaņā ar Latvijas likumdošanas prasībām un starptautiskiem standartiem, izmantojot Pasīvās mājas institūta aprēķinu metodoloģiju."
+          }
+        }
+      },
+      "service2": {
+        "title": "Termogrāfija un gaisa apmaiņa",
+        "subservices": {
+          "subservice1": {
+            "title": "Termogrāfija",
+            "text": "Termogrāfija ir metode, ar kuras palīdzību var noteikt objektu virsmas temperatūras sadalījumu, objekta infrasarkano starojumu pārveidojot krāsainā attēlā (termogrammā). Ēku un būvju termovīzijas izpēte ir efektīvs norobežojošo konstrukciju diagnostikas veids celtniecības noslēgumā un ekspluatācijas laikā. Ar tā palīdzību varam noteikt daļējus un kopējus jūsu ēkas siltuma zudumus, kā arī atklāt iespējamus celtniecības slēptos defektus."
+          },
+          "subservice2": {
+            "title": "Konstrukciju gaisa caurlaidības tests",
+            "text": "Aukstas telpas ne vienmēr ir nepietiekamas ēkas siltināšanas rezultāts, attiecīgi, pirms ieguldīt ievērojamus naudas resursus jūsu nekustamā īpašuma siltināšanā, pārbaudiet tā konstrukciju gaisa caurlaidību. Šī procedūra jums izmaksās daudz lētāk un sniegs 100% izpratni, kādi darbi Jums ir jāveic."
+          }
+        }
+      },
+      "service3": {
+        "title": "Rūpnieciskais audits",
+        "subservices": {
+          "subservice1": {
+            "title": "Ražošanas energoaudits",
+            "text": "Energoaudits ir procedūra, kas notiek lielos uzņēmumos, lai saņemtu informāciju par visām uzņēmuma energopatēriņa struktūrām, kas tiek skaitliski novērtētas rentablai energotaupībai, un kuru rezultāti tiek apkopoti uzņēmuma sagatavotā un publicētā atskaitē."
+          },
+          "subservice2": {
+            "title": "Gada elektrības bilances sastādīšana",
+            "text": "Elektroenerģijas lietotājs saskaņā ar Energoefektivitātes likumu ir komersants, kura gada elektroenerģijas patēriņš pārsniedz 500 megavatstundas divos kalendāra gados pēc kārtas. Mēs palīdzam komersantiem sagatavot elektroenerģijas bilances un iesniegt tās Valsts iestādēs, kā arī palīdzam konstatēt elektroenerģijas papildu patēriņu darbības laikā, kas var optimizēt komersanta izdevumus."
+          },
+          "subservice3": {
+            "title": "Uzņēmumu ISO sertificēšana",
+            "text": {
+              "1": "Apstākļos, kad visā pasaulē strauji pieaug enerģijas cena un sabiedrības prasības samazināt siltumnīcefekta gāzu emisiju, energopatēriņa efektīva pārvalde kļūst par katra biznesa prioritāti, kas nodrošina ne tikai ātru produkcijas atmaksāšanos, bet arī ilgtermiņa attīstību energonesēju nestabilo cenu apstākļos. Palīdzam ieviest un uzturēt ISO 50001.",
+              "2": "ISO 50001 (Energy management systems – Requirements with guidance for use) ir starptautisks standarts, ko energosistēmu pārvaldībai izveidoja Starptautiskā standartizācijas organizācija, tas nosaka energomenedžmenta sistēmas izveides, ieviešanas, attīstības un uzlabošanas prasības, kuras mērķis ir ļaut uzņēmumam ievērot sistēmisku pieeju energosistēmas secīgā uzlabošanā, tostarp energoefektivitātē, energodrošībā un enerģijas patēriņā.",
+              "3": "ISO 50001 standarts jebkuram uzņēmumam, neatkarīgi no tā lieluma, teritoriālās vai ģeogrāfiskās atrašanās vietas, sniedz pilnvērtīgu darbības stratēģiju menedžmenta un tehniskajā jomā ar mērķi palielināt uzņēmuma energosistēmas efektivitāti."
+            }
+          }
+        }
+      },
+      "service4": {
+        "title": "Tehniskā ekspertīze",
+        "subservices": {
+          "subservice1": {
+            "title": "Energosertifikātu un piedāvāto projektu ekspertīze",
+            "text": {
+              "1": "Mūsu uzņēmuma speciālistiem ir plaša pieredze, veicot dažādas klasifikācijas ēku energoaudita un enerģētiskās pases ekspertīzi.",
+              "2": "Eksperta slēdziens novērtē energoaudita atbilstību energoaudita aprēķinu metodikai (Ministru kabineta noteikumi Nr. 222 “Ēku energoefektivitātes aprēķina metodes un ēku energosertifikācijas noteikumi”) un citiem normatīvajiem aktiem un standartiem."
+            }
+          },
+          "subservice2": {
+            "title": "Apkures, ventilācijas un gaisa kondicionēšanas sistēmu apsekošana",
+            "text": {
+              "1": "Apkures un gaisa kondicionēšanas sistēmas apskate tiek veikta:",
+              "2": "1) apkures sistēmai un ar ventilācijas sistēmu savienotai apkures sistēmai, kuras derīgā nominālā jauda pārsniedz 70 kW;",
+              "3": "2) gaisa kondicionēšanas sistēmai un ar ventilācijas sistēmu savienotai gaisa kondicionēšanas sistēmai, kuras derīgā nominālā jauda pārsniedz 70 kW.",
+              "4": "Veicot pārbaudi, neatkarīgs eksperts sastāda aktu, kurā ir pārbaudes rezultāti un ieteikumi pārbaudāmās sistēmas energoefektivitātes paaugstināšanai, kā arī norāda izdevumus un ekonomiju, ieviešot energoefektivitātes paaugstināšanas pasākumus."
+            }
+          }
+        }
+      },
+      "service5": {
+        "title": "Energoefektivitātes projektu administrēšana",
+        "subservices": {
+          "subservice1": {
+            "title": "Pieteikumu sadaļu sagatavošana Eiropas fondu līdzfinansējuma saņemšanai.",
+            "text": "Lai iesniegtu pieteikumu Eiropas fondu līdzfinansējuma saņemšanai jebkurā programmā, ir jāsagatavo un jāiesniedz ievērojams dokumentu skaits. Savā darbā mēs piedāvājam uzņemties visas šīs procedūras formalitātes un mūsu klientiem garantējam visaugstākā līmeņa servisu."
+          }
+        }
+      }
+    },
+    "button": "Uzzināt pakalpojuma izmaksas"
+  },
+  "ServicesElectricity": {
+    "sectionTitle": "Pakalpojumi",
+    "servicesList": {
+      "service1": {
+        "subservices": {
+          "subservice1": {
+            "title": "Noformējam aktus, atbilstoši MK noteikumiem Nr. 238",
+            "list": {
+              "1": "Elektroinstalācijas un kabeļu izolācijas pretestības mērījumi;",
+              "2": "Kontaktu savienojumu pārbaude ar termokameru;",
+              "3": "Cilpas \"fāze-nulle\" pilnās pretestības mērījumi;",
+              "4": "Zemējumietaises un zemējuma kontūra pretestības mērījumi",
+              "5": "Zemējumvada nepārtrauktības saites pretestības mērījumi;",
+              "6": "Zibensaizsardzības sistēmas pretestības mērījumi un pārbaude;",
+              "7": "Elektrosadaļņu shēmu izveide;",
+              "8": "Apgaismojumu līmeņa mērījumi (LUX);",
+              "9": "Noplūdes strāvas automātu darbības pārbaude"
+            }
+          },
+          "subservice2": {
+            "title": "Kabeļu vilkšana un ierīkošana",
+            "list": {
+              "1": "Elektrokabeļu vilkšana un savienošana.",
+              "2": "Signālkabeļu ierīkošana un pieslēgšana.",
+              "3": "Datorkabeļu uzstādīšana un savienošana."
+            }
+          },
+          "subservice3": {
+            "title": "Jauno elektroinstalāciju ierīkošana, uzstādīšana, pieslēgšana un pārbaude"
+          },
+          "subservice4": {
+            "title": "Elektroinstalāciju testēšana un pārbaude, lai nodrošinātu drošu un efektīvu lietošanu"
+          },
+          "subservice5": {
+            "title": "Sadales skapju uzstādīšana, pārveidošana un pārvietošana",
+            "list": {
+              "1": "Jauno elektrosadales skapju uzstādīšana un pieslēgšana.",
+              "2": "Veco sadales skapju pārveidošana, lai atbilstu MK noteikumiem 238, kā arī mūsdienīgajiem tehniska.",
+              "3": "Sadales skapju pārvietošana un pielāgošana infrastruktūras maiņas gadījumos."
+            }
+          },
+          "subservice6": {
+            "title": "Ielu apgaismojuma uzstādīšana",
+            "list": {
+              "1": "Ielu lukturu uzstādīšana un pieslēgšana.",
+              "2": "Apgaismojuma sistēmu vadu novietošana un savienošana."
+            }
+          },
+          "subservice7": {
+            "title": "Pieslēgšanas ierīkošana pie \"Sadales Tīkls\" sadales skapjiem",
+            "list": {
+              "1": "Elektriskā pieslēgšana pie vietējā elektroapgādes tīkla.",
+              "2": "Sadales skapju savienošana ar klienta elektrosistēmu."
+            }
+          },
+          "subservice8": {
+            "title": "Ražošanas iekārtu uzstādīšana",
+            "list": {
+              "1": "Elektroiekārtu uzstādīšana ražošanas procesiem.",
+              "2": "Pieslēgšanas un testēšanas darbi ražošanas iekārtu darbības nodrošināšanai."
+            }
+          },
+          "subservice9": {
+            "title": "Elektroapgādes un elektroiekārtu bojājumu atrašana un novēršana",
+            "list": {
+              "1": "Diagnostikas darbi, lai noteiktu elektroapgādes problēmas.",
+              "2": "Bojājumu novēršana, remonts un labošana, lai atjaunotu elektroiekārtu darbību."
+            }
+          }
+        }
+      }
+    },
+    "button": "Uzzināt pakalpojuma izmaksas"
+  }
 }

@@ -5,15 +5,15 @@ Registration of acts for building commissioning per the law (Cabinet of Minister
 
 The following measures must be obtained in order to complete a building commissioning:
 
- Measuring the insulation resistance of electrical installations and cables;
- Checking contact connections using a thermal imager;
- Measuring the impedance of the phase-zero loop;
- Measurement of resistance of grounding equipment and ground loop;
- Measurement of continuity resistance of protective and grounding conductors;
- Measurement and testing of lightning protection systems;
- Drawing up distribution board diagrams;
- Measurement of illumination level (Lux) of lighting;
- Checking the functionality of leakage circuit breakers.
+Measuring the insulation resistance of electrical installations and cables;
+Checking contact connections using a thermal imager;
+Measuring the impedance of the phase-zero loop;
+Measurement of resistance of grounding equipment and ground loop;
+Measurement of continuity resistance of protective and grounding conductors;
+Measurement and testing of lightning protection systems;
+Drawing up distribution board diagrams;
+Measurement of illumination level (Lux) of lighting;
+Checking the functionality of leakage circuit breakers.
 
 Laying and installation of cables:
 

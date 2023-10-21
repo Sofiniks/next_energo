@@ -6,7 +6,7 @@ export default function Loading() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <h1>Loading...</h1>
