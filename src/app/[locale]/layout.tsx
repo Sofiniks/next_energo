@@ -1,4 +1,5 @@
 import './globals.css';
+import Smartlook from 'smartlook-client';
 import { Montserrat } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
@@ -15,6 +16,7 @@ import {
 } from './metadata';
 import { Suspense } from 'react';
 import GoogleAnalytics from './GoogleAnalytics';
+import SmartLookComponent from './Smartlook';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -102,6 +104,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={montserrat.className}>
         <GoogleAnalytics />
+        <SmartLookComponent />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <StyledComponentsRegistry>
             <PageLayout>

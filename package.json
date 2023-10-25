@@ -26,6 +26,7 @@
     "react-facebook-pixel": "^1.0.4",
     "react-scroll": "^1.8.9",
     "sharp": "^0.32.6",
+    "smartlook-client": "^8.2.0",
     "styled-components": "^6.0.8",
     "typescript": "5.2.2"
   },
