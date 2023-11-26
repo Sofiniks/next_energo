@@ -239,6 +239,7 @@ const FormElement = () => {
     fbEvent({
       eventName: 'SubmitApplication',
     });
+    console.log(process.env.NEXT_PUBLIC_FB_PIXEL_ID);
   };
 
   return (

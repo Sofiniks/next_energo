@@ -18,9 +18,10 @@ export const FacebookPixelEvents: React.FC = () => {
 
   useEffect(() => {
     fbEvent({
-      eventName: 'PageView'
-    })
-  },[])
+      eventName: 'PageView',
+    });
+    console.log(process.env.NEXT_PUBLIC_FB_PIXEL_ID);
+  }, []);
 
   return null;
 };
