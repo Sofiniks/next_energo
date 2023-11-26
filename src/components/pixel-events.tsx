@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+import { fbEvent } from '@rivercode/facebook-conversion-api-nextjs';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 export const FacebookPixelEvents: React.FC = () => {
@@ -14,6 +15,12 @@ export const FacebookPixelEvents: React.FC = () => {
         ReactPixel.pageView();
       });
   }, [pathname, searchParams]);
+
+  useEffect(() => {
+    fbEvent({
+      eventName: 'PageView'
+    })
+  },[])
 
   return null;
 };

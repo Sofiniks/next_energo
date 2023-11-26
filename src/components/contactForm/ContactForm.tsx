@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { fbEvent } from '@rivercode/facebook-conversion-api-nextjs';
 import styled from 'styled-components';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
@@ -235,6 +236,9 @@ const FormElement = () => {
       message: '',
     });
     setIsModalOpen(true);
+    fbEvent({
+      eventName: 'SubmitApplication',
+    });
   };
 
   return (
