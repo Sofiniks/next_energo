@@ -64,18 +64,18 @@ const SectionText = styled.div`
     font-weight: bold;
     margin-bottom: 23px;
     padding-left: 32px;
-    border-left: 10px solid #ffc91e;
+    border-left: 10px solid #c9a24d;
 
     @media ${device.md} {
       font-size: 40px;
       padding-left: 18px;
-      border-left: 8px solid #ffc91e;
+      border-left: 8px solid #c9a24d;
     }
 
     @media ${device.sm} {
       font-size: 22px;
       padding-left: 10px;
-      border-left: 5px solid #ffc91e;
+      border-left: 5px solid #c9a24d;
     }
   }
   h3 {

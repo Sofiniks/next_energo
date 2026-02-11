@@ -37,12 +37,12 @@ const FormContainer = styled.div`
   width: calc(100% - 250px);
   @media ${device.md} {
     width: 100%;
-    background-color: #282d33;
+    background-color: #2F4A3C;
   }
 `;
 
 const Form = styled.form`
-  background-color: #282d33;
+  background-color: #2F4A3C;
   color: #fff;
   padding: 60px 0 60px 240px;
   display: flex;
@@ -89,7 +89,7 @@ const PositionAbsoluteBlock = styled.div`
 `;
 
 const YellowBlock = styled.div`
-  background-color: #ffc91e;
+  background-color: #c9a24d;
   width: 320px;
   height: 375px;
   padding: 40px 40px 0 30px;

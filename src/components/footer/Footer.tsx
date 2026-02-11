@@ -11,7 +11,7 @@ import { Phone } from '../icons/Phone';
 import contacts from '@/data/contacts.json';
 
 const FooterWrapper = styled.footer`
-  background-color: #282d33;
+  background-color: #2F4A3C;
   padding: 20px 40px;
   color: white;
 `;
@@ -53,7 +53,7 @@ const LogoWrapper = styled.div`
   }
 
   img {
-    width: 120px;
+    width: 157px;
     height: auto;
   }
 `;
@@ -131,10 +131,10 @@ export default function Footer() {
           <LogoWrapper>
             <Link href={`/${locale}`}>
               <Image
-                src="/images/energoLogo.png"
+                src="/images/footerLogo.svg"
                 alt="logo"
-                width={100}
-                height={72}
+                width={157}
+                height={51}
               />
             </Link>
           </LogoWrapper>

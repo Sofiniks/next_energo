@@ -50,7 +50,7 @@ const StyledItem = styled.li`
   }
 
   &:hover {
-    background-color: #ffc91e;
+    background-color: #c9a24d;
     transform: scaleY(1.07);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }

@@ -24,7 +24,7 @@ const MenuContainer = styled.div<{ $isOpen: boolean }>`
   top: ${({ $isOpen }) => ($isOpen ? '0' : '-100%')};
   left: 0;
   width: 100%;
-  background-color: #282d33;
+  background-color: #2F4A3C;
   z-index: 11;
   transition: top 0.3s ease-in-out;
 `;

@@ -48,7 +48,7 @@ const ServicesContent = styled.div`
 `;
 
 const ServicesHeading = styled.div`
-  background-color: #ffc91e;
+  background-color: #c9a24d;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
@@ -97,10 +97,10 @@ const SubServicesItem = styled.li<{ $isActive: boolean }>`
   cursor: pointer;
   transition: ease-in 0.3s;
   border-left: ${({ $isActive }) =>
-    $isActive ? '3px solid #ffc91e' : '3px solid transparent'};
+    $isActive ? '3px solid #c9a24d' : '3px solid transparent'};
   font-weight: ${({ $isActive }) => ($isActive ? 'bold' : 'unset')};
   &:hover {
-    border-left: 3px solid #ffc91e;
+    border-left: 3px solid #c9a24d;
     font-weight: bold;
   }
 

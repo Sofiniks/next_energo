@@ -7,7 +7,7 @@ const StyledHeading = styled.h2`
   margin-bottom: 38px;
   font-size: 32px;
   padding-left: 10px;
-  border-left: 5px solid #ffc91e;
+  border-left: 5px solid #c9a24d;
 `;
 
 interface HeadingProps {

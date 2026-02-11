@@ -26,7 +26,7 @@ const HeaderWrapper = styled.header`
   z-index: 100;
   @media ${device.sm} {
     height: 60px;
-    padding: 0 20px;
+    padding: 10px 20px;
   }
 `;
 const HeaderDesktopContainer = styled(DesktopContainer)`
@@ -90,6 +90,7 @@ const HeaderMobile = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  min-height: 40px;
 `;
 
 export default function Header() {
@@ -108,10 +109,10 @@ export default function Header() {
             <LogoWrapper>
               <Link href={`/${locale}`}>
                 <Image
-                  src="/images/energoLogo.png"
+                  src="/images/headerLogo.svg"
                   alt="logo"
-                  width={100}
-                  height={72}
+                  width={157}
+                  height={51}
                 />
               </Link>
             </LogoWrapper>
@@ -154,10 +155,10 @@ export default function Header() {
             <LogoWrapper>
               <Link href={`/${locale}`}>
                 <Image
-                  src="/images/energoLogo.png"
+                  src="/images/headerLogo.svg"
                   alt="logo"
-                  width={80}
-                  height={58}
+                  width={137}
+                  height={41}
                 />
               </Link>
             </LogoWrapper>

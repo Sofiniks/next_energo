@@ -7,10 +7,10 @@ import { StatisticsBannerData } from '@/types/dataTypes';
 import statisticsData from '@/data/statisticsData.json';
 
 const BannerWrapper = styled.div`
-  background-color: #282d33;
+  background-color: #2F4A3C;
   margin-bottom: 80px;
   padding: 20px 0;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   width: 100%;
   max-width: 100%;
@@ -41,7 +41,7 @@ const StyledItem = styled.li`
 
   h3 {
     font-size: 54px;
-    color: #ffc91e;
+    color: #c9a24d;
     margin-bottom: 5px;
 
     @media ${device.md} {

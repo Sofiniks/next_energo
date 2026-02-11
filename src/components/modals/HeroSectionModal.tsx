@@ -32,7 +32,7 @@ const StyledLink = styled(Link)`
   font-size: 16px;
   font-weight: bold;
   padding: 14px 40px;
-  border: 1px solid #ffc91e;
+  border: 1px solid #c9a24d;
   cursor: pointer;
   transition: all 0.2s;
 

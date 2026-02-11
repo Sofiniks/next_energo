@@ -66,7 +66,7 @@ const BlockWithImage = styled.div`
   height: 120px;
   bottom: -10px;
   left: -10px;
-  background-color: #ffc91e;
+  background-color: #c9a24d;
   padding: 20px 10px 20px 20px;
   transition: all 0.3s;
   transform: scale(1);
@@ -102,7 +102,7 @@ const AdvantageItem = styled.li`
 `;
 
 const BlockForTablets = styled.div`
-  background-color: #ffc91e;
+  background-color: #c9a24d;
   width: 285px;
   min-height: 200px;
   padding: 20px;
